@@ -11,8 +11,42 @@
     background-color: transparent;
 }
 body{
-    overflow:hidden;
+    /* overflow:hidden; */
 }
 #canvas-container{
     height:500px;
-}  
+}
+
+
+.position-relative{
+    position: relative;
+}
+
+.abs-pos{
+    position: absolute;
+}
+
+.color-box{
+    
+    display: grid;
+    
+    border: 1px solid black;
+
+    grid-template-columns: repeat(10,10%);
+    grid-template-rows: 10% 20% repeat(12, 1fr);
+
+    width: 600px;
+    height: 800px;
+
+}
+
+
+#col-display{
+    grid-row: 1/2;
+    grid-column: 1/11;
+}
+#col-cont{
+    grid-row: 2/3;
+    grid-column: 1/11;
+}
+
