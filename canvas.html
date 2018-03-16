@@ -89,7 +89,6 @@
                         <span class="btn position-relative col-pic" id="bgc">Background Color
                         </span>
                     </div>
-
                     <!-- Color picker box temp spot -->
                     <div class="color-box" id="abs-pos" status="stroke">
                         <div id="col-display"></div>
@@ -278,31 +277,34 @@
     <script type='text/javascript' src="color-picker.js"></script>
 
     <script type='text/javascript '>
-        // default selects Pencil
-        currentFunction = new Pencil(contextReal, contextDraft);
+      // default selects Pencil
+      currentFunction = new Pencil(contextReal, contextDraft);
 
-        $('#pencil').click(() => {
-            currentFunction = new Pencil(contextReal, contextDraft);
-        });
-        $('#eraser').click(() => {
-            currentFunction = new Eraser(contextReal, contextDraft);
-        });
-        $('#rectangle').click(() => {
-            currentFunction = new Rectangle(contextReal, contextDraft);
-        });
-        $('#rectangle-fill').click(() => {
-            currentFunction = new RectangleFill(contextReal, contextDraft);
-        });
-        $('#circle').click(() => {
-            currentFunction = new Circle(contextReal, contextDraft);
-        });
-        $('#line').click(() => {
-            currentFunction = new Line(contextReal, contextDraft);
-        });
-        $('#polygon').click(() => {
-            currentFunction = new Polygon(contextReal, contextDraft);
-        });
-    </script>
+      $('#pencil').click(() => {
+          currentFunction = new Pencil(contextReal, contextDraft);
+      });
+      $('#eraser').click(() => {
+          currentFunction = new Eraser(contextReal, contextDraft);
+      });
+      $('#rectangle').click(() => {
+          currentFunction = new Rectangle(contextReal, contextDraft);
+      });
+      $('#rectangle-fill').click(() => {
+          currentFunction = new RectangleFill(contextReal, contextDraft);
+      });
+      $('#circle').click(() => {
+          currentFunction = new Circle(contextReal, contextDraft);
+      });
+      $('#circle-fill').click(() => {
+          currentFunction = new CircleFill (contextReal, contextDraft);
+      });
+      $('#line').click(() => {
+          currentFunction = new Line(contextReal, contextDraft);
+      });
+      $('#polygon').click(() => {
+          currentFunction = new Polygon(contextReal, contextDraft);
+      });
+</script>
 </body>
 
 </html>
