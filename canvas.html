@@ -30,49 +30,49 @@
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
           <div class="row">
-            <span class="btn btn-primary" id="pencil" data-toggle="tooltip" data-placement="right" title="pencil">
+            <span class="btn btn-primary" id="pencil">
               <i class="fas fa-pencil-alt"></i>
               Pencil
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="eraser" data-toggle="tooltip" data-placement="right" title="eraser">
+            <span class="btn btn-primary" id="eraser">
               <i class="fas fa-eraser"></i>
               Eraser
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="line" data-toggle="tooltip" data-placement="right" title="line">
+            <span class="btn btn-primary" id="line">
               <i class="fas fa-minus"></i>
               Line
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="rectangle" data-toggle="tooltip" data-placement="right" title="rectangle">
+            <span class="btn btn-primary" id="rectangle">
               <i class="fas fa-square"></i>
               Rectangle
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="rectangle-fill" data-toggle="tooltip" data-placement="right" title="filled rectangle">
+            <span class="btn btn-primary" id="rectangle-fill">
               <i class="fas fa-square"></i>
-              Fill rectangle
+              Filled rectangle
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="circle" data-toggle="tooltip" data-placement="right" title="circle">
+            <span class="btn btn-primary" id="circle">
               <i class="fas fa-circle"></i>
               Circle
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="circle-fill" data-toggle="tooltip" data-placement="right" title="filled circle">
+            <span class="btn btn-primary" id="circle-fill">
               <i class="fas fa-circle"></i>
               Filled circle
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-primary" id="polygon" data-toggle="tooltip" data-placement="right" title="polygon">
+            <span class="btn btn-primary" id="polygon">
               <i class="fas fa-retweet"></i>
               Polygon
             </span>
@@ -124,12 +124,10 @@
   <script type='text/javascript ' src="rectangle.js"></script>
   <script type='text/javascript ' src="rectangle-fill.js"></script>
   <script type='text/javascript ' src="circle.js"></script>
-  <!-- <script type='text/javascript ' src="circle-fill.js"></script> -->
+  <script type='text/javascript ' src="circle-fill.js"></script>
   <script type='text/javascript ' src="polygon.js"></script>
 
   <script type='text/javascript '>
-  //Bootstrap tooltips
-      $('[data-toggle="tooltip"]').tooltip()
       // default selects Pencil
       currentFunction = new Pencil(contextReal, contextDraft);
 
