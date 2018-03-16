@@ -5,6 +5,14 @@ const contextDraft = canvasDraft.getContext('2d');
 let currentFunction;
 let dragging = false;
 
+const curCol = {
+  stroke: '#000000',
+  fill: '#FFFFFF',
+  bgc: '#FFFFFF',
+};
+
+const strokeSize = 5;
+
 $('#canvas-draft').mousedown(e => {
   const mouseX = e.offsetX;
   const mouseY = e.offsetY;
