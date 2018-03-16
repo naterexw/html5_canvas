@@ -12,8 +12,7 @@ class Text extends PaintFunction {
     onMouseMove() { }
     
     onMouseUp(coord, event) {
-        console.log(coord);
-        console.log(event);
+
         this.contextReal.fillText("Hello World", coord[0], coord[1]);
      }
     onMouseLeave() { }
