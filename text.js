@@ -1,5 +1,5 @@
 class Text extends PaintFunction {
-    constructor(contextReal) {
+    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint) {
         super();
         this.contextReal = contextReal;
     }

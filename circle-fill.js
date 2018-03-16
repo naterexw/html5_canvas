@@ -1,13 +1,15 @@
 class CircleFill extends PaintFunction{
-    constructor(contextReal,contextDraft){
+    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint){
         super();
         this.contextReal = contextReal;
-        this.contextDraft = contextDraft;            
+        this.contextDraft = contextDraft;
+        this.fill =  _fill;
+        // this.stroke = _strokeCol;           
     }
     
     onMouseDown(coord, event){
-        this.contextReal.fillStyle = "#f44";
-        this.contextDraft.fillStyle = "#f44";
+        this.contextReal.fillStyle = this.fill;
+        this.contextDraft.fillStyle = this.fill;
         this.origX = coord[0];
         this.origY = coord[1];
     }

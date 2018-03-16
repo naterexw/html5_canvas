@@ -278,31 +278,31 @@
 
     <script type='text/javascript '>
       // default selects Pencil
-      currentFunction = new Pencil(contextReal, contextDraft);
+      currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
 
       $('#pencil').click(() => {
-          currentFunction = new Pencil(contextReal, contextDraft);
+          currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#eraser').click(() => {
-          currentFunction = new Eraser(contextReal, contextDraft);
+          currentFunction = new Eraser(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#rectangle').click(() => {
-          currentFunction = new Rectangle(contextReal, contextDraft);
+          currentFunction = new Rectangle(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#rectangle-fill').click(() => {
-          currentFunction = new RectangleFill(contextReal, contextDraft);
+          currentFunction = new RectangleFill(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#circle').click(() => {
-          currentFunction = new Circle(contextReal, contextDraft);
+          currentFunction = new Circle(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#circle-fill').click(() => {
-          currentFunction = new CircleFill (contextReal, contextDraft);
+          currentFunction = new CircleFill (contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#line').click(() => {
-          currentFunction = new Line(contextReal, contextDraft);
+          currentFunction = new Line(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
       $('#polygon').click(() => {
-          currentFunction = new Polygon(contextReal, contextDraft);
+          currentFunction = new Polygon(contextReal, contextDraft, curCol.fill, curCol.stroke);
       });
 </script>
 </body>

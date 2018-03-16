@@ -1,6 +1,6 @@
 let check = false;
 class Polygon extends PaintFunction {
-    constructor(contextReal, contextDraft) {
+    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint) {
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;

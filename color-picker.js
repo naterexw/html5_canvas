@@ -1,13 +1,20 @@
+// Giving attribute to the box on click
 $(".col-pic").click(function(){
-    console.log($(this).attr("id"));
+    
     $(".color-box").toggle();
     $(".color-box").attr("status",$(this).attr("id"));
 })
 
-
+// Picking color, depending on the attribute
 $(".colors").click(function (event) {
     let nowColor = $(this).css("background-color");
+     
+    style.curCol[$(".color-box").attr("status")] = nowColor;
+    $(`#${$(".color-box").attr("status")}`).css("background-color", nowColor);
+
     $("#col-display").css("background-color", nowColor);
+
+    console.log(style);
 })
 
 
