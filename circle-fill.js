@@ -1,4 +1,4 @@
-class Circle extends PaintFunction{
+class CircleFill extends PaintFunction{
     constructor(contextReal,contextDraft){
         super();
         this.contextReal = contextReal;
@@ -6,8 +6,8 @@ class Circle extends PaintFunction{
     }
     
     onMouseDown(coord, event){
-        this.contextReal.strokeStyle = "#f44";
-        this.contextDraft.strokeStyle = "#f44";
+        this.contextReal.fillStyle = "#f44";
+        this.contextDraft.fillStyle = "#f44";
         this.origX = coord[0];
         this.origY = coord[1];
     }
@@ -16,7 +16,7 @@ class Circle extends PaintFunction{
         this.radius = Math.sqrt( Math.pow(this.origX - coord[0] , 2) + Math.pow(this.origY - coord[1], 2) );
         this.contextDraft.beginPath();
         this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2*Math.PI, false);
-        this.contextDraft.stroke();
+        this.contextDraft.fill();
     }
 
     onMouseMove(){}
@@ -24,7 +24,7 @@ class Circle extends PaintFunction{
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextReal.beginPath();
         this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2*Math.PI, false);
-        this.contextReal.stroke();
+        this.contextReal.fill();
     }
     onMouseLeave(){}
     onMouseEnter(){}

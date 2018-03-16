@@ -23,6 +23,7 @@
         <span class="btn btn-primary fa fa-rectangle" id="rectangle">Rectangle</span>
         <span class="btn btn-primary fa fa-rectangle-fill" id="rectangle-fill">Rectangle Fill</span>
         <span class="btn btn-primary fa fa-circle" id="circle">Circle</span>
+        <span class="btn btn-primary fa fa-circle" id="circle-fill">Circle Fill</span>
         <span class="btn btn-primary fa fa-polygon" id="polygon">Polygon</span>
     </div>
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -35,6 +36,7 @@
     <script type='text/javascript' src="rectangle.js"></script>
     <script type='text/javascript' src="rectangle-fill.js"></script>
     <script type='text/javascript' src="circle.js"></script>
+    <script type='text/javascript' src="circle-fill.js"></script>
     <script type='text/javascript' src="polygon.js"></script>
 
     <script type='text/javascript'>
@@ -52,6 +54,9 @@
         });
         $('#circle').click(() => {
             currentFunction = new Circle(contextReal, contextDraft);
+        });
+        $('#circle-fill').click(() => {
+            currentFunction = new CircleFill(contextReal, contextDraft);
         });
         $('#line').click(() => {
             currentFunction = new Line(contextReal, contextDraft);
