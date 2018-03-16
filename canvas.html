@@ -78,6 +78,12 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-danger" id="reset">
+                            <i class="fas fa-sync"></i>
+                            Reset
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn position-relative col-pic" id="stroke">Stroke Color
                         </span>
                     </div>
@@ -265,16 +271,17 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
         crossorigin="anonymous"></script>
-    <script type='text/javascript ' src="canvas-common.js"></script>
-    <script type='text/javascript ' src="pencil.js"></script>
-    <script type='text/javascript ' src="eraser.js"></script>
-    <script type='text/javascript ' src="line.js"></script>
-    <script type='text/javascript ' src="rectangle.js"></script>
-    <script type='text/javascript ' src="rectangle-fill.js"></script>
-    <script type='text/javascript ' src="circle.js"></script>
-    <script type='text/javascript ' src="circle-fill.js"></script>
-    <script type='text/javascript ' src="polygon.js"></script>
+    <script type='text/javascript' src="canvas-common.js"></script>
+    <script type='text/javascript' src="pencil.js"></script>
+    <script type='text/javascript' src="eraser.js"></script>
+    <script type='text/javascript' src="line.js"></script>
+    <script type='text/javascript' src="rectangle.js"></script>
+    <script type='text/javascript' src="rectangle-fill.js"></script>
+    <script type='text/javascript' src="circle.js"></script>
+    <script type='text/javascript' src="circle-fill.js"></script>
+    <script type='text/javascript' src="polygon.js"></script>
     <script type='text/javascript' src="color-picker.js"></script>
+    <script type='text/javascript' src="reset.js"></script>
 
     <script type='text/javascript '>
       // default selects Pencil
@@ -303,6 +310,10 @@
       });
       $('#polygon').click(() => {
           currentFunction = new Polygon(contextReal, contextDraft);
+      });
+      $('#reset').click(() => {
+          currentFunction = new Reset(contextReal, contextDraft);
+          currentFunction = new Pencil(contextReal, contextDraft);
       });
 </script>
 </body>
