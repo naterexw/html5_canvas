@@ -1,18 +1,22 @@
-.canvas{
-    border:1px black dotted;
-    position:absolute;
-    top:0px;
+body {
+  /* overflow: hidden; */
+}
+.canvas {
+  /* border: 1px black dotted; */
+  position: absolute;
+  /* top:0px;
     bottom:0px;
     left:0px;
-    right:0px
+    right:0px */
 }
-
-#canvas-draft{
-    background-color: transparent;
+#canvas-draft {
+  border: 1px red dotted;
+  cursor: pointer;
+  background-color: transparent;
 }
-body{
-    overflow:hidden;
+#canvas-real {
+  border: 1px black dotted;
 }
-#canvas-container{
-    height:500px;
-}  
+#canvas-container {
+  height: 500px;
+}
