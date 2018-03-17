@@ -12,6 +12,7 @@ class RectangleFill extends PaintFunction {
   }
   onDragging(coord, event) {
     this.contextDraft.fillStyle = '#f44';
+    this.contextDraft.lineWidth = canvasSettings.brushSize;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.fillRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
   }

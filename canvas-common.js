@@ -11,8 +11,6 @@ const curCol = {
   bgc: '#FFFFFF',
 };
 
-const strokeSize = 5;
-
 $('#canvas-draft').mousedown(e => {
   const mouseX = e.offsetX;
   const mouseY = e.offsetY;
