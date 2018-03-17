@@ -8,12 +8,13 @@ class Line extends PaintFunction {
   onMouseDown(coord, event) {
     this.contextReal.strokeStyle = '#df4b26';
     this.contextDraft.strokeStyle = '#df4b26';
+    this.contextReal.lineJoin = 'round';
+    this.contextReal.lineWidth = canvasSettings.brushSize;
     this.origX = coord[0];
     this.origY = coord[1];
-    this.contextReal.lineJoin = 'round';
-    this.contextReal.lineWidth = 5;
   }
   onDragging(coord, event) {
+    this.contextDraft.lineWidth = canvasSettings.brushSize;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.drawDraft(coord[0], coord[1]);
   }
