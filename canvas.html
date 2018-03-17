@@ -277,34 +277,34 @@
     <script type='text/javascript' src="color-picker.js"></script>
 
     <script type='text/javascript '>
-      // default selects Pencil
-      currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        // default selects Pencil
+        currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
 
-      $('#pencil').click(() => {
-          currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#eraser').click(() => {
-          currentFunction = new Eraser(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#rectangle').click(() => {
-          currentFunction = new Rectangle(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#rectangle-fill').click(() => {
-          currentFunction = new RectangleFill(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#circle').click(() => {
-          currentFunction = new Circle(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#circle-fill').click(() => {
-          currentFunction = new CircleFill (contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#line').click(() => {
-          currentFunction = new Line(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-      $('#polygon').click(() => {
-          currentFunction = new Polygon(contextReal, contextDraft, curCol.fill, curCol.stroke);
-      });
-</script>
+        $('#pencil').click(() => {
+            currentFunction = new Pencil(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#eraser').click(() => {
+            currentFunction = new Eraser(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#rectangle').click(() => {
+            currentFunction = new Rectangle(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#rectangle-fill').click(() => {
+            currentFunction = new RectangleFill(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#circle').click(() => {
+            currentFunction = new Circle(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#circle-fill').click(() => {
+            currentFunction = new CircleFill(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#line').click(() => {
+            currentFunction = new Line(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+        $('#polygon').click(() => {
+            currentFunction = new Polygon(contextReal, contextDraft, curCol.fill, curCol.stroke);
+        });
+    </script>
 </body>
 
 </html>
