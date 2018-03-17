@@ -19,8 +19,9 @@ $(".colors").click(function (event) {
 
 
 function assignColor() {
+    
     for (let j = 1; j < 11; j++) {
-        let currentRow = $(`[id$='-${j}']`)
+        let currentRow = $(`[id$="-${j}"]`);
         for (let i = 0; i < currentRow.length; i++) {
             let colH = i * 30;
             $(currentRow[i]).css("background-color", `hsla(${colH},100%,${j*5}%)`);

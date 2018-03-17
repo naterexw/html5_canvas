@@ -4,7 +4,7 @@ class Text extends PaintFunction {
         this.contextReal = contextReal;
     }
 
-    onMouseDown(coord, event) {
+    onMouseDown(coord, event, style) {
         this.contextReal.font = '48px serif';
     }
     
