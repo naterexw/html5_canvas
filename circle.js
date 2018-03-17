@@ -8,10 +8,12 @@ class Circle extends PaintFunction {
   onMouseDown(coord, event) {
     this.contextReal.strokeStyle = '#f44';
     this.contextDraft.strokeStyle = '#f44';
+    this.contextReal.lineWidth = canvasSettings.brushSize;
     this.origX = coord[0];
     this.origY = coord[1];
   }
   onDragging(coord, event) {
+    this.contextDraft.lineWidth = canvasSettings.brushSize;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.radius = Math.sqrt(Math.pow(this.origX - coord[0], 2) + Math.pow(this.origY - coord[1], 2));
     this.contextDraft.beginPath();

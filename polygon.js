@@ -10,8 +10,7 @@ class Polygon extends PaintFunction {
     this.contextReal.strokeStyle = '#df4b26';
     this.contextDraft.strokeStyle = '#696969';
     this.contextReal.lineJoin = 'round';
-    this.contextReal.lineWidth = 5;
-
+    this.contextReal.lineWidth = canvasSettings.brushSize;
     if ((check = false)) {
       this.origX = coord[0];
       this.origY = coord[1];
