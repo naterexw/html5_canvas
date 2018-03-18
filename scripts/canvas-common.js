@@ -5,9 +5,13 @@ const contextDraft = canvasDraft.getContext('2d');
 
 let currentFunction;
 let dragging = false;
+let storeImg = HTMLImageElement;
+
+
+// let newImg = "";
 
 let style = {
-  "strokeWth": 5,
+  "strokeWth": 20,
   "joint": "round",
   "curCol": {
     "stroke": "#fff228",
@@ -19,6 +23,15 @@ let style = {
     "fontfamily": "serif"
   }
 }
+
+
+$("#test").click(()=>{
+  saveImage(canvasReal);
+  console.log(storeImg);
+});
+$("#retrive").click(()=>{
+  retriveImage(storeImg);
+});
 
 
 $('#canvas-draft').mousedown(e => {
