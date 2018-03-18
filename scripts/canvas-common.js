@@ -7,9 +7,6 @@ let currentFunction;
 let dragging = false;
 let storeImg = HTMLImageElement;
 
-
-// let newImg = "";
-
 let style = {
   "strokeWth": 20,
   "joint": "round",
