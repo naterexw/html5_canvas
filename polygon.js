@@ -38,7 +38,7 @@ class Polygon extends PaintFunction {
           this.contextDraft.strokeStyle = "#df4b26";
           this.contextDraft.lineWidth = canvasSettings.brushSize;
           this.contextDraft.beginPath();
-          this.contextDraft.moveTo(this.startX[0], this.startY[0]);
+          this.contextDraft.moveTo(this.startX[0], this.startY[0]); 
           var i;
           for (i = 0; i < this.startX.length; i++) {
               this.contextDraft.lineTo(this.startX[i], this.startY[i]);

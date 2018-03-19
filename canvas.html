@@ -98,6 +98,12 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-primary" id="text">
+                            <i class="fas fa-retweet"></i>
+                            Text
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn btn-danger" id="reset">
                             <i class="fas fa-sync"></i>
                             Reset
@@ -300,6 +306,7 @@
     <script type='text/javascript' src="circle.js"></script>
     <script type='text/javascript' src="circle-fill.js"></script>
     <script type='text/javascript' src="polygon.js"></script>
+    <script type='text/javascript' src="text.js"></script>
     <script type='text/javascript' src="color-picker.js"></script>
     <script type='text/javascript' src="reset.js"></script>
 
@@ -345,6 +352,9 @@
       });
       $('#polygon').click(() => {
           currentFunction = new Polygon(contextReal, contextDraft);
+      });
+      $('#text').click(() => {
+          currentFunction = new Text(contextReal, contextDraft);
       });
       $('#reset').click(() => {
           currentFunction = new Reset(contextReal, contextDraft);
