@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Canvas app</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+
+    <!-- Custom styles for this template -->
+    <link href="./style/bootstrap.css" rel="stylesheet" type='text/css'>
+    <link href="./style/spectrum.css" rel="stylesheet" type='text/css'>
+    <link href="./style/style.css" rel="stylesheet" type='text/css'>
+</head>
+
+<body>
+    <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
+        <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Canvas app by Nate, Ivan, & Andrew</a>
+        <ul class="navbar-nav px-3">
+            <li class="nav-item text-nowrap">
+                <!-- <a class="nav-link" href="#">Sign out</a> -->
+            </li>
+        </ul>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+                <div class="sidebar-sticky">
+                    <div class="row">
+                        <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
+                            <label class="btn btn-sm btn-outline-primary active">
+                                <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
+                                <i class="fas fa-circle fa-sm xxs align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
+                                <i class="fas fa-circle fa-sm align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
+                                <i class="fas fa-circle fa-lg align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
+                                <i class="fas fa-circle fa-2x align-middle"></i>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="pencil">
+                            <i class="fas fa-pencil-alt"></i>
+                            Pencil
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="eraser">
+                            <i class="fas fa-eraser"></i>
+                            Eraser
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="line">
+                            <i class="fas fa-minus"></i>
+                            Line
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="rectangle">
+                            <i class="fas fa-square"></i>
+                            Rectangle
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="rectangle-fill">
+                            <i class="fas fa-square"></i>
+                            Filled rectangle
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="circle">
+                            <i class="fas fa-circle"></i>
+                            Circle
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="circle-fill">
+                            <i class="fas fa-circle"></i>
+                            Filled circle
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="polygon">
+                            <i class="fas fa-retweet"></i>
+                            Polygon
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="text">
+                            <i class="fas fa-retweet"></i>
+                            Text
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-danger" id="reset">
+                            <i class="fas fa-sync"></i>
+                            Reset
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn position-relative col-pic" id="stroke">Stroke Color
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn position-relative col-pic" id="fill">Fill Color
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn position-relative col-pic" id="bgc">Background Color
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="test">
+                            <i class="fas fa-pencil-alt"></i>
+                            Testing Retrive
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="retrive">
+                            <i class="fas fa-pencil-alt"></i>
+                            Retrive Image
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="testingbutton">
+                            <i class="fas fa-pencil-alt"></i>
+                            Test Button
+                        </span>
+                    </div>
+                    <!-- Color picker tester -->
+                    <input type='text' id="custom" />
+                </div>
+            </nav>
+
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+                <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+                    <h1 class="h2">Draw something lah</h1>
+                    <div class="btn-toolbar mb-2 mb-md-0">
+                        <div class="btn-group mr-2">
+                            <button class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-share"></i>
+                                Share
+                            </button>
+                            <button class="btn btn-sm btn-outline-secondary">
+                                <i class="fas fa-save"></i>
+                                Save
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div id="canvas-container">
+                        <canvas id="canvas-real" class="canvas" width='800px' height='500px'></canvas>
+                        <canvas id="canvas-draft" class="canvas" width='800px' height='500px'></canvas>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+        crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+        crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./scripts/spectrum.js"></script>
+    <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+    <script type='text/javascript' src="./scripts/brush-size.js"></script>
+    <script type='text/javascript' src="./scripts/pencil.js"></script>
+    <script type='text/javascript' src="./scripts/eraser.js"></script>
+    <script type='text/javascript' src="./scripts/line.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/circle.js"></script>
+    <script type='text/javascript' src="./scripts/circle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/polygon.js"></script>
+    <script type='text/javascript' src="./scripts/text.js"></script>
+    <script type='text/javascript' src="./scripts/color-picker.js"></script>
+    <script type='text/javascript' src="./scripts/image-storage.js"></script>
+    <script type='text/javascript' src="./scripts/reset.js"></script>
+
+    <script type='text/javascript '>
+        currentFunction = new Pencil(contextReal, contextDraft);
+
+        $('#pencil').click(() => {
+            currentFunction = new Pencil(contextReal, contextDraft);
+        });
+        $('#eraser').click(() => {
+            currentFunction = new Eraser(contextReal, contextDraft);
+        });
+        $('#rectangle').click(() => {
+            currentFunction = new Rectangle(contextReal, contextDraft);
+        });
+        $('#rectangle-fill').click(() => {
+            currentFunction = new RectangleFill(contextReal, contextDraft);
+        });
+        $('#circle').click(() => {
+            currentFunction = new Circle(contextReal, contextDraft);
+        });
+        $('#circle-fill').click(() => {
+            currentFunction = new CircleFill(contextReal, contextDraft);
+        });
+        $('#line').click(() => {
+            currentFunction = new Line(contextReal, contextDraft);
+        });
+        $('#polygon').click(() => {
+            currentFunction = new Polygon(contextReal, contextDraft);
+        });
+        $('#text').click(() => {
+            currentFunction = new Text(contextReal, contextDraft);
+        });
+        $('#reset').click(() => {
+            oldFunction = currentFunction;
+            currentFunction = new Reset(contextReal, contextDraft);
+            currentFunction = oldFunction;
+        });
+    </script>
+</body>
+
+</html>
