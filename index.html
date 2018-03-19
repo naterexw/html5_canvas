@@ -101,6 +101,16 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-outline-primary tools mr-2" id="bucket">
+                            <i class="fab fa-gg"></i>
+                            <!-- Polygon -->
+                        </span>
+                        <span class="btn btn-outline-primary tools" id='eyedropper'>
+                            <i class="fab fa-gg"></i>
+                            <!-- Polygon -->
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn position-relative col-pic mr-2" id="stroke">Stroke Color
                         </span>
                     </div>
@@ -187,6 +197,7 @@
     <script type='text/javascript' src="./scripts/polygon.js"></script>
     <script type='text/javascript' src="./scripts/text.js"></script>
     <script type='text/javascript' src="./scripts/bucket.js"></script>
+    <script type='text/javascript' src="./scripts/eyedropper.js"></script>
     <script type='text/javascript' src="./scripts/color-picker.js"></script>
     <script type='text/javascript' src="./scripts/image-storage.js"></script>
     <script type='text/javascript' src="./scripts/reset.js"></script>
@@ -244,14 +255,17 @@
             $(this).addClass('active');
             currentFunction = new Polygon(contextReal, contextDraft);
         });
-<<<<<<< HEAD
-        $('#bucket').click(() => {
+        $('span#bucket').on('click', function() {
+            $('.tools').removeClass('active');
+            $(this).addClass('active');
             currentFunction = new Bucket(contextReal, contextDraft);
         });
-        $('#reset').click(() => {
-=======
+        $('span#eyedropper').on('click', function() {
+            $('.tools').removeClass('active');
+            $(this).addClass('active');
+            currentFunction = new Eyedropper(contextReal, contextDraft);
+        });
         $('span#reset').on('click', function() {
->>>>>>> master
             oldFunction = currentFunction;
             currentFunction = new Reset(contextReal, contextDraft);
             currentFunction = oldFunction;
