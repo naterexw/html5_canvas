@@ -1,7 +1,3 @@
-# canvas-app
-
-# HTML canvas used to draw graphics on a web page.
-
 # Canvas app
 
 HTML5 web app used to draw graphics via scripting in JavaScript.
