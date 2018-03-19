@@ -1,0 +1,20 @@
+{
+  "name": "canvas-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "canvas-common.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "lite-server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/naterexw/canvas-app.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/naterexw/canvas-app/issues"
+  },
+  "homepage": "https://github.com/naterexw/canvas-app#readme"
+}

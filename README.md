@@ -1,3 +1,6 @@
+# canvas-app
+HTML canvas  used to draw graphics on a web page.
+=======
 # Canvas app
 
 HTML5 web app used to draw graphics via scripting in JavaScript.
@@ -19,3 +22,4 @@ Click [here to try the app](http://canvas-html5-app.surge.sh/)
 * [Nate Welling](https://github.com/naterexw)
 * [Ivan Oung](https://github.com/ivanoung)
 * [Andrew Cheung](https://github.com/cheungdzinyung)
+

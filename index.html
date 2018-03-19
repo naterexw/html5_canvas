@@ -4,15 +4,16 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>HTML 5 Canvas app</title>
+    <title>Canvas app</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
 
     <!-- Custom styles for this template -->
-    <link href="bootstrap.css" rel="stylesheet" type='text/css'>
-    <link href="style.css" rel="stylesheet" type='text/css'>
+    <link href="./style/bootstrap.css" rel="stylesheet" type='text/css'>
+    <link href="./style/spectrum.css" rel="stylesheet" type='text/css'>
+    <link href="./style/style.css" rel="stylesheet" type='text/css'>
 </head>
 
 <body>
@@ -115,142 +116,26 @@
                         <span class="btn position-relative col-pic" id="bgc">Background Color
                         </span>
                     </div>
-                    <!-- Color picker box temp spot -->
-                    <div class="color-box" id="abs-pos" status="stroke">
-                        <div id="col-display"></div>
-                        <div id="col-cont"></div>
-                        <div class="colors" id="r1-1"></div>
-                        <div class="colors" id="r1-2"></div>
-                        <div class="colors" id="r1-3"></div>
-                        <div class="colors" id="r1-4"></div>
-                        <div class="colors" id="r1-5"></div>
-                        <div class="colors" id="r1-6"></div>
-                        <div class="colors" id="r1-7"></div>
-                        <div class="colors" id="r1-8"></div>
-                        <div class="colors" id="r1-9"></div>
-                        <div class="colors" id="r1-10"></div>
-                        <div class="colors" id="r2-1"></div>
-                        <div class="colors" id="r2-2"></div>
-                        <div class="colors" id="r2-3"></div>
-                        <div class="colors" id="r2-4"></div>
-                        <div class="colors" id="r2-5"></div>
-                        <div class="colors" id="r2-6"></div>
-                        <div class="colors" id="r2-7"></div>
-                        <div class="colors" id="r2-8"></div>
-                        <div class="colors" id="r2-9"></div>
-                        <div class="colors" id="r2-10"></div>
-                        <div class="colors" id="r3-1"></div>
-                        <div class="colors" id="r3-2"></div>
-                        <div class="colors" id="r3-3"></div>
-                        <div class="colors" id="r3-4"></div>
-                        <div class="colors" id="r3-5"></div>
-                        <div class="colors" id="r3-6"></div>
-                        <div class="colors" id="r3-7"></div>
-                        <div class="colors" id="r3-8"></div>
-                        <div class="colors" id="r3-9"></div>
-                        <div class="colors" id="r3-10"></div>
-                        <div class="colors" id="r4-1"></div>
-                        <div class="colors" id="r4-2"></div>
-                        <div class="colors" id="r4-3"></div>
-                        <div class="colors" id="r4-4"></div>
-                        <div class="colors" id="r4-5"></div>
-                        <div class="colors" id="r4-6"></div>
-                        <div class="colors" id="r4-7"></div>
-                        <div class="colors" id="r4-8"></div>
-                        <div class="colors" id="r4-9"></div>
-                        <div class="colors" id="r4-10"></div>
-                        <div class="colors" id="r5-1"></div>
-                        <div class="colors" id="r5-2"></div>
-                        <div class="colors" id="r5-3"></div>
-                        <div class="colors" id="r5-4"></div>
-                        <div class="colors" id="r5-5"></div>
-                        <div class="colors" id="r5-6"></div>
-                        <div class="colors" id="r5-7"></div>
-                        <div class="colors" id="r5-8"></div>
-                        <div class="colors" id="r5-9"></div>
-                        <div class="colors" id="r5-10"></div>
-                        <div class="colors" id="r6-1"></div>
-                        <div class="colors" id="r6-2"></div>
-                        <div class="colors" id="r6-3"></div>
-                        <div class="colors" id="r6-4"></div>
-                        <div class="colors" id="r6-5"></div>
-                        <div class="colors" id="r6-6"></div>
-                        <div class="colors" id="r6-7"></div>
-                        <div class="colors" id="r6-8"></div>
-                        <div class="colors" id="r6-9"></div>
-                        <div class="colors" id="r6-10"></div>
-                        <div class="colors" id="r7-1"></div>
-                        <div class="colors" id="r7-2"></div>
-                        <div class="colors" id="r7-3"></div>
-                        <div class="colors" id="r7-4"></div>
-                        <div class="colors" id="r7-5"></div>
-                        <div class="colors" id="r7-6"></div>
-                        <div class="colors" id="r7-7"></div>
-                        <div class="colors" id="r7-8"></div>
-                        <div class="colors" id="r7-9"></div>
-                        <div class="colors" id="r7-10"></div>
-                        <div class="colors" id="r8-1"></div>
-                        <div class="colors" id="r8-2"></div>
-                        <div class="colors" id="r8-3"></div>
-                        <div class="colors" id="r8-4"></div>
-                        <div class="colors" id="r8-5"></div>
-                        <div class="colors" id="r8-6"></div>
-                        <div class="colors" id="r8-7"></div>
-                        <div class="colors" id="r8-8"></div>
-                        <div class="colors" id="r8-9"></div>
-                        <div class="colors" id="r8-10"></div>
-                        <div class="colors" id="r8-1"></div>
-                        <div class="colors" id="r8-2"></div>
-                        <div class="colors" id="r8-3"></div>
-                        <div class="colors" id="r8-4"></div>
-                        <div class="colors" id="r8-5"></div>
-                        <div class="colors" id="r8-6"></div>
-                        <div class="colors" id="r8-7"></div>
-                        <div class="colors" id="r8-8"></div>
-                        <div class="colors" id="r8-9"></div>
-                        <div class="colors" id="r8-10"></div>
-                        <div class="colors" id="r9-1"></div>
-                        <div class="colors" id="r9-2"></div>
-                        <div class="colors" id="r9-3"></div>
-                        <div class="colors" id="r9-4"></div>
-                        <div class="colors" id="r9-5"></div>
-                        <div class="colors" id="r9-6"></div>
-                        <div class="colors" id="r9-7"></div>
-                        <div class="colors" id="r9-8"></div>
-                        <div class="colors" id="r9-9"></div>
-                        <div class="colors" id="r9-10"></div>
-                        <div class="colors" id="r10-1"></div>
-                        <div class="colors" id="r10-2"></div>
-                        <div class="colors" id="r10-3"></div>
-                        <div class="colors" id="r10-4"></div>
-                        <div class="colors" id="r10-5"></div>
-                        <div class="colors" id="r10-6"></div>
-                        <div class="colors" id="r10-7"></div>
-                        <div class="colors" id="r10-8"></div>
-                        <div class="colors" id="r10-9"></div>
-                        <div class="colors" id="r10-10"></div>
-                        <div class="colors" id="r11-1"></div>
-                        <div class="colors" id="r11-2"></div>
-                        <div class="colors" id="r11-3"></div>
-                        <div class="colors" id="r11-4"></div>
-                        <div class="colors" id="r11-5"></div>
-                        <div class="colors" id="r11-6"></div>
-                        <div class="colors" id="r11-7"></div>
-                        <div class="colors" id="r11-8"></div>
-                        <div class="colors" id="r11-9"></div>
-                        <div class="colors" id="r11-10"></div>
-                        <div class="colors" id="r12-1"></div>
-                        <div class="colors" id="r12-2"></div>
-                        <div class="colors" id="r12-3"></div>
-                        <div class="colors" id="r12-4"></div>
-                        <div class="colors" id="r12-5"></div>
-                        <div class="colors" id="r12-6"></div>
-                        <div class="colors" id="r12-7"></div>
-                        <div class="colors" id="r12-8"></div>
-                        <div class="colors" id="r12-9"></div>
-                        <div class="colors" id="r12-10"></div>
-                        <div class="colors"></div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="test">
+                            <i class="fas fa-pencil-alt"></i>
+                            Testing Retrive
+                        </span>
                     </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="retrive">
+                            <i class="fas fa-pencil-alt"></i>
+                            Retrive Image
+                        </span>
+                    </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="testingbutton">
+                            <i class="fas fa-pencil-alt"></i>
+                            Test Button
+                        </span>
+                    </div>
+                    <!-- Color picker tester -->
+                    <input type='text' id="custom" />
                 </div>
             </nav>
 
@@ -291,35 +176,25 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
         crossorigin="anonymous"></script>
-    <script type='text/javascript' src="canvas-common.js"></script>
-    <script type='text/javascript' src="pencil.js"></script>
-    <script type='text/javascript' src="eraser.js"></script>
-    <script type='text/javascript' src="line.js"></script>
-    <script type='text/javascript' src="rectangle.js"></script>
-    <script type='text/javascript' src="rectangle-fill.js"></script>
-    <script type='text/javascript' src="circle.js"></script>
-    <script type='text/javascript' src="circle-fill.js"></script>
-    <script type='text/javascript' src="polygon.js"></script>
-    <script type='text/javascript' src="color-picker.js"></script>
-    <script type='text/javascript' src="reset.js"></script>
+    <script type="text/javascript" src="./scripts/spectrum.js"></script>
+    <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+    <script type='text/javascript' src="./scripts/brush-size.js"></script>
 
+
+    <script type='text/javascript' src="./scripts/pencil.js"></script>
+    <script type='text/javascript' src="./scripts/eraser.js"></script>
+    <script type='text/javascript' src="./scripts/line.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/circle.js"></script>
+    <script type='text/javascript' src="./scripts/circle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/polygon.js"></script>
+    <script type='text/javascript' src="./scripts/color-picker.js"></script>
+    <script type='text/javascript' src="./scripts/image-storage.js"></script>
+    <script type='text/javascript' src="./scripts/reset.js"></script>
+    
     <script type='text/javascript '>
         currentFunction = new Pencil(contextReal, contextDraft);
-
-        const canvasSettings = {
-          brushSize: 1,
-        }
-        $("#brushSize :input").change(function() {
-            if (this.id == 'brushSize-xs'){
-                canvasSettings.brushSize = 1;
-            } else if (this.id == 'brushSize-sm') {
-                canvasSettings.brushSize = 4;
-            } else if (this.id == 'brushSize-lg') {
-                canvasSettings.brushSize = 8;
-            } else if (this.id == 'brushSize-2x') {
-                canvasSettings.brushSize = 12;
-            }
-        });
 
         $('#pencil').click(() => {
             currentFunction = new Pencil(contextReal, contextDraft);
@@ -337,7 +212,7 @@
             currentFunction = new Circle(contextReal, contextDraft);
         });
         $('#circle-fill').click(() => {
-            currentFunction = new CircleFill (contextReal, contextDraft);
+            currentFunction = new CircleFill(contextReal, contextDraft);
         });
         $('#line').click(() => {
             currentFunction = new Line(contextReal, contextDraft);
@@ -346,9 +221,8 @@
             currentFunction = new Polygon(contextReal, contextDraft);
         });
         $('#reset').click(() => {
-            oldFunction = currentFunction
             currentFunction = new Reset(contextReal, contextDraft);
-            currentFunction = oldFunction
+            currentFunction = new Pencil(contextReal, contextDraft);
         });
     </script>
 </body>
