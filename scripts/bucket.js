@@ -6,12 +6,10 @@ class Bucket extends PaintFunction {
   
     onMouseDown(coord, event) {
         let destinationColor = this.contextReal.getImageData(coord[0], coord[1], 1, 1).data;
-        // style.curCol.fill 
         console.log(destinationColor[0]);
         console.log(destinationColor[1]);
         console.log(destinationColor[2]);
         console.log('test');
-        
         console.log(hexToR(style.curCol.fill));
         console.log(hexToG(style.curCol.fill));
         console.log(hexToB(style.curCol.fill));
