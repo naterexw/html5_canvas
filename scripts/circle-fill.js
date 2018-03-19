@@ -4,8 +4,8 @@ class CircleFill extends PaintFunction{
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
     }
-    
-    onMouseDown(coord, event, style){
+
+    onMouseDown(coord, event){
         this.contextReal.fillStyle = style.curCol.fill;
         this.contextDraft.fillStyle = style.curCol.fill;
         this.origX = coord[0];

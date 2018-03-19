@@ -5,30 +5,41 @@ const contextDraft = canvasDraft.getContext('2d');
 
 let currentFunction;
 let dragging = false;
-let storeImg = HTMLImageElement;
 
-let style = {
-  // "strokeWth": 20,
-  "joint": "round",
-  "curCol": {
-    "stroke": "#fff228",
-    "fill": "#244a73",
-    "bgc": "#FFFFFF"
+const storeImg = HTMLImageElement;
+
+const style = {
+  strokeWth: 1,
+  joint: 'round',
+  curCol: {
+    stroke: '#fff228',
+    fill: '#244a73',
+    bgc: '#FFFFFF',
   },
-  "txt": {
-    "size": "48px",
-    "fontfamily": "serif"
+  txt: {
+    size: '48px',
+    fontfamily: 'serif',
+  },
+};
+
+$('#brushSize :input').change(function() {
+  if (this.id === 'brushSize-xs') {
+    style.strokeWth = 1;
+  } else if (this.id === 'brushSize-sm') {
+    style.strokeWth = 4;
+  } else if (this.id === 'brushSize-lg') {
+    style.strokeWth = 8;
+  } else if (this.id === 'brushSize-2x') {
+    style.strokeWth = 12;
   }
-}
+});
 
-
-$("#test").click(()=>{
+$('#test').click(() => {
   saveImage(canvasReal);
 });
-$("#retrive").click(()=>{
+$('#retrive').click(() => {
   retriveImage(storeImg);
 });
-
 
 $('#canvas-draft').mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
