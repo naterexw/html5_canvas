@@ -5,7 +5,7 @@ const contextDraft = canvasDraft.getContext('2d');
 
 let currentFunction;
 let dragging = false;
-let storeImg = HTMLImageElement;
+
 
 let style = {
   // "strokeWth": 20,
@@ -22,13 +22,15 @@ let style = {
 }
 
 
-$("#test").click(()=>{
-  saveImage(canvasReal);
-});
-$("#retrive").click(()=>{
-  retriveImage(storeImg);
-});
 
+
+
+$(window).on("keydown", (event)=> {
+  if (event.keyCode == 107 ){
+    console.log("click:)");
+    retriveImage(storeImg);
+  }
+})
 
 $('#canvas-draft').mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];

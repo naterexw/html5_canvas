@@ -1,3 +1,5 @@
+let storeImg = [0];
+
 let saveImage = canvas => {
   canvas.toBlob(blob => {
     let newImg = document.createElement("img"),
@@ -5,9 +7,7 @@ let saveImage = canvas => {
 
     newImg.src = url;
     newImg.onload = () => {
-      // writeTempImg(newImg);
     };
-
     writeTempImg(newImg);
   });
 };
@@ -18,5 +18,27 @@ function retriveImage(img) {
 }
 
 function writeTempImg(imgElement) {
-  storeImg = imgElement;
+  storeImg.push(imgElement);
+  console.log(storeImg);
 }
+
+
+let map = {};
+$(window).on("keydown", (e) => {
+  map[e.keyCode] = e.type == "keydown";
+  if (map[17] && map[90]) {
+    retriveImage(storeImg[storeImg.length-2]);
+    storeImg.pop();
+    map = {};
+    return false;
+  }
+})
+
+
+
+$("#test").click(() => {
+  saveImage(canvasReal);
+});
+$("#retrive").click(() => {
+  retriveImage(storeImg);
+});
