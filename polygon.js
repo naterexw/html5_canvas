@@ -19,7 +19,7 @@ class Polygon extends PaintFunction {
   
   onMouseUp(coord, event) {
       this.contextReal.strokeStyle = "#df4b26";
-      this.contextReal.lineWidth = 5;
+      this.contextReal.lineWidth = canvasSettings.brushSize;
       this.contextReal.lineJoin = "round";
       this.contextReal.lineTo(coord[0], coord[1]);
       this.origX = coord[0];
@@ -36,7 +36,7 @@ class Polygon extends PaintFunction {
       if (this.check == false) {
           this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
           this.contextDraft.strokeStyle = "#df4b26";
-          this.contextDraft.lineWidth = 5;
+          this.contextDraft.lineWidth = canvasSettings.brushSize;
           this.contextDraft.beginPath();
           this.contextDraft.moveTo(this.startX[0], this.startY[0]);
           var i;
