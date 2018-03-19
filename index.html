@@ -95,17 +95,20 @@
                             <i class="fab fa-gg"></i>
                             <!-- Polygon -->
                         </span>
-                        <span class="btn btn-outline-primary tools" id="polygon">
+                        <span class="btn btn-danger tools" id="polygon-fill">
                             <i class="fab fa-gg-circle"></i>
                             <!-- Polygon -->
                         </span>
                     </div>
                     <div class="row">
-                        <span class="btn position-relative col-pic" id="stroke">Stroke Color
+                        <span class="btn position-relative col-pic mr-2" id="stroke">Stroke Color
                         </span>
                     </div>
                     <div class="row">
-                        <span class="btn position-relative col-pic" id="fill">Fill Color
+                        <span class="btn position-relative col-pic mr-2" id="fill">Fill Color
+                        </span>
+                        <span>
+                            <input type='text' id="custom" />
                         </span>
                     </div>
                     <div class="row">
@@ -130,8 +133,6 @@
                             Test Button
                         </span>
                     </div>
-                    <!-- Color picker tester -->
-                    <input type='text' id="custom" />
                 </div>
             </nav>
 
@@ -202,6 +203,16 @@
             $(this).addClass('active');
             currentFunction = new Eraser(contextReal, contextDraft);
         });
+        $('span#line').on('click', function() {
+            $('.tools').removeClass('active');
+            $(this).addClass('active');
+            currentFunction = new Line(contextReal, contextDraft);
+        });
+        $('span#text').on('click', function() {
+            $('.tools').removeClass('active');
+            $(this).addClass('active');
+            currentFunction = new Text(contextReal, contextDraft);
+        });
         $('span#rectangle').on('click', function() {
             $('.tools').removeClass('active');
             $(this).addClass('active');
@@ -218,22 +229,19 @@
             currentFunction = new Circle(contextReal, contextDraft);
         });
         $('span#circle-fill').on('click', function() {
-            currentFunction = new CircleFill(contextReal, contextDraft);
-        });
-        $('span#line').on('click', function() {
             $('.tools').removeClass('active');
             $(this).addClass('active');
-            currentFunction = new Line(contextReal, contextDraft);
+            currentFunction = new CircleFill(contextReal, contextDraft);
         });
         $('span#polygon').on('click', function() {
             $('.tools').removeClass('active');
             $(this).addClass('active');
             currentFunction = new Polygon(contextReal, contextDraft);
         });
-        $('span#text').on('click', function() {
+        $('span#polygon-fill').on('click', function() {
             $('.tools').removeClass('active');
             $(this).addClass('active');
-            currentFunction = new Text(contextReal, contextDraft);
+            currentFunction = new Polygon(contextReal, contextDraft);
         });
         $('span#reset').on('click', function() {
             oldFunction = currentFunction;
