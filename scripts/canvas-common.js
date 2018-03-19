@@ -8,7 +8,7 @@ let dragging = false;
 let storeImg = HTMLImageElement;
 
 let style = {
-  "strokeWth": 20,
+  // "strokeWth": 20,
   "joint": "round",
   "curCol": {
     "stroke": "#fff228",
@@ -24,7 +24,6 @@ let style = {
 
 $("#test").click(()=>{
   saveImage(canvasReal);
-  console.log(storeImg);
 });
 $("#retrive").click(()=>{
   retriveImage(storeImg);

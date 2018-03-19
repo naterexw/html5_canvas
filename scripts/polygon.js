@@ -1,16 +1,19 @@
 let check = false;
 class Polygon extends PaintFunction {
-    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint) {
+    constructor(contextReal,contextDraft) {
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
     }
 
     onMouseDown(coord, event, style) {
-        this.contextReal.strokeStyle = style.curCol.stroke;
         this.contextDraft.strokeStyle = style.curCol.stroke;
+        this.contextDraft.lineJoin = style.joint;
+        this.contextDraft.lineWidth = canvasSettings.brushSize;
+        
+        this.contextReal.strokeStyle = style.curCol.stroke;
         this.contextReal.lineJoin = style.joint;
-        this.contextReal.lineWidth = style.strokeWth;
+        this.contextReal.lineWidth = canvasSettings.brushSize;
 
         if (check = false) { 
             this.origX = coord[0];

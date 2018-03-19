@@ -1,17 +1,23 @@
 class Line extends PaintFunction {
-    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint) {
+    constructor(contextReal,contextDraft) {
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;
     }
 
     onMouseDown(coord, event, style) {
-        this.contextReal.strokeStyle = style.curCol.stroke;
         this.contextDraft.strokeStyle = style.curCol.stroke;
+        this.contextDraft.lineJoin = style.joint;
+        this.contextDraft.lineWidth = canvasSettings.brushSize;
+
+        this.contextReal.strokeStyle = style.curCol.stroke;
+        this.contextReal.lineJoin = style.joint;
+        this.contextReal.lineWidth = canvasSettings.brushSize;
+        
+
         this.origX = coord[0];
         this.origY = coord[1];
-        this.contextReal.lineJoin = style.joint;
-        this.contextReal.lineWidth = style.strokeWth;
+        
     }
     onDragging(coord, event) {
         this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);

@@ -12,7 +12,7 @@
 
     <!-- Custom styles for this template -->
     <link href="./style/bootstrap.css" rel="stylesheet" type='text/css'>
-    <link rel="stylesheet" href="./style/spectrum.css">
+    <link href="./style/spectrum.css" rel="stylesheet" type='text/css'>
     <link href="./style/style.css" rel="stylesheet" type='text/css'>
 </head>
 
@@ -30,6 +30,26 @@
         <div class="row">
             <nav class="col-md-2 d-none d-md-block bg-light sidebar">
                 <div class="sidebar-sticky">
+                    <div class="row">
+                        <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
+                            <label class="btn btn-sm btn-outline-primary active">
+                                <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
+                                <i class="fas fa-circle fa-sm xxs align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
+                                <i class="fas fa-circle fa-sm align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
+                                <i class="fas fa-circle fa-lg align-middle"></i>
+                            </label>
+                            <label class="btn btn-sm btn-outline-primary">
+                                <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
+                                <i class="fas fa-circle fa-2x align-middle"></i>
+                            </label>
+                        </div>
+                    </div>
                     <div class="row">
                         <span class="btn btn-primary" id="pencil">
                             <i class="fas fa-pencil-alt"></i>
@@ -79,9 +99,14 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-danger" id="reset">
+                            <i class="fas fa-sync"></i>
+                            Reset
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn position-relative col-pic" id="stroke">Stroke Color
                         </span>
-                        
                     </div>
                     <div class="row">
                         <span class="btn position-relative col-pic" id="fill">Fill Color
@@ -94,7 +119,7 @@
                     <div class="row">
                         <span class="btn btn-primary" id="test">
                             <i class="fas fa-pencil-alt"></i>
-                            Testing
+                            Testing Retrive
                         </span>
                     </div>
                     <div class="row">
@@ -103,9 +128,14 @@
                             Retrive Image
                         </span>
                     </div>
+                    <div class="row">
+                        <span class="btn btn-primary" id="testingbutton">
+                            <i class="fas fa-pencil-alt"></i>
+                            Test Button
+                        </span>
+                    </div>
+                    <!-- Color picker tester -->
                     <input type='text' id="custom" />
-
-
                 </div>
             </nav>
 
@@ -146,8 +176,11 @@
         crossorigin="anonymous"></script>
     <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
         crossorigin="anonymous"></script>
-        <script src="./scripts/spectrum.js"></script>
+    <script type="text/javascript" src="./scripts/spectrum.js"></script>
     <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+    <script type='text/javascript' src="./scripts/brush-size.js"></script>
+
+
     <script type='text/javascript' src="./scripts/pencil.js"></script>
     <script type='text/javascript' src="./scripts/eraser.js"></script>
     <script type='text/javascript' src="./scripts/line.js"></script>
@@ -158,34 +191,38 @@
     <script type='text/javascript' src="./scripts/polygon.js"></script>
     <script type='text/javascript' src="./scripts/color-picker.js"></script>
     <script type='text/javascript' src="./scripts/image-storage.js"></script>
-
+    <script type='text/javascript' src="./scripts/reset.js"></script>
+    
     <script type='text/javascript '>
-        // default selects Pencil
-        currentFunction = new Pencil(contextReal, contextDraft, style);
+        currentFunction = new Pencil(contextReal, contextDraft);
 
         $('#pencil').click(() => {
-            currentFunction = new Pencil(contextReal, contextDraft, style);
+            currentFunction = new Pencil(contextReal, contextDraft);
         });
         $('#eraser').click(() => {
-            currentFunction = new Eraser(contextReal, contextDraft, style);
+            currentFunction = new Eraser(contextReal, contextDraft);
         });
         $('#rectangle').click(() => {
-            currentFunction = new Rectangle(contextReal, contextDraft, style);
+            currentFunction = new Rectangle(contextReal, contextDraft);
         });
         $('#rectangle-fill').click(() => {
-            currentFunction = new RectangleFill(contextReal, contextDraft, style);
+            currentFunction = new RectangleFill(contextReal, contextDraft);
         });
         $('#circle').click(() => {
-            currentFunction = new Circle(contextReal, contextDraft, style);
+            currentFunction = new Circle(contextReal, contextDraft);
         });
         $('#circle-fill').click(() => {
-            currentFunction = new CircleFill(contextReal, contextDraft, style);
+            currentFunction = new CircleFill(contextReal, contextDraft);
         });
         $('#line').click(() => {
-            currentFunction = new Line(contextReal, contextDraft, style);
+            currentFunction = new Line(contextReal, contextDraft);
         });
         $('#polygon').click(() => {
-            currentFunction = new Polygon(contextReal, contextDraft, style);
+            currentFunction = new Polygon(contextReal, contextDraft);
+        });
+        $('#reset').click(() => {
+            currentFunction = new Reset(contextReal, contextDraft);
+            currentFunction = new Pencil(contextReal, contextDraft);
         });
     </script>
 </body>

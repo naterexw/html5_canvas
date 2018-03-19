@@ -6,13 +6,19 @@ class Circle extends PaintFunction{
     }
     
     onMouseDown(coord, event, style){
-        this.contextReal.strokeStyle = style.curCol.fill;
-        this.contextDraft.strokeStyle = style.curCol.fill;
+        this.contextDraft.strokeStyle = style.curCol.stroke;
+        this.contextDraft.lineWidth = canvasSettings.brushSize;
+
+        this.contextReal.strokeStyle = style.curCol.stroke;
+        this.contextReal.lineWidth = canvasSettings.brushSize;
+
         this.origX = coord[0];
         this.origY = coord[1];
     }
     onDragging(coord, event){
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
+        this.contextReal.lineWidth = canvasSettings.brushSize;
+        
         this.radius = Math.sqrt( Math.pow(this.origX - coord[0] , 2) + Math.pow(this.origY - coord[1], 2) );
         this.contextDraft.beginPath();
         this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2*Math.PI, false);

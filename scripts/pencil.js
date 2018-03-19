@@ -1,5 +1,5 @@
 class Pencil extends PaintFunction {
-    constructor(contextReal,contextDraft, _fill, _strokeCol,_strokeWidth,_joint) {
+    constructor(contextReal,contextDraft) {
         super();
         this.context = contextReal;
     }
