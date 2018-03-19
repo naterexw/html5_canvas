@@ -105,6 +105,12 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-primary" id="bucket">
+                            <i class="fas fa-retweet"></i>
+                            Bucket
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn btn-danger" id="reset">
                             <i class="fas fa-sync"></i>
                             Reset
@@ -194,6 +200,7 @@
     <script type='text/javascript' src="./scripts/circle-fill.js"></script>
     <script type='text/javascript' src="./scripts/polygon.js"></script>
     <script type='text/javascript' src="./scripts/text.js"></script>
+    <script type='text/javascript' src="./scripts/bucket.js"></script>
     <script type='text/javascript' src="./scripts/color-picker.js"></script>
     <script type='text/javascript' src="./scripts/image-storage.js"></script>
     <script type='text/javascript' src="./scripts/reset.js"></script>
@@ -227,6 +234,9 @@
         });
         $('#text').click(() => {
             currentFunction = new Text(contextReal, contextDraft);
+        });
+        $('#bucket').click(() => {
+            currentFunction = new Bucket(contextReal, contextDraft);
         });
         $('#reset').click(() => {
             oldFunction = currentFunction;
