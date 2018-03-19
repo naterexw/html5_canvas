@@ -186,6 +186,7 @@
     <script type='text/javascript' src="./scripts/circle-fill.js"></script>
     <script type='text/javascript' src="./scripts/polygon.js"></script>
     <script type='text/javascript' src="./scripts/text.js"></script>
+    <script type='text/javascript' src="./scripts/bucket.js"></script>
     <script type='text/javascript' src="./scripts/color-picker.js"></script>
     <script type='text/javascript' src="./scripts/image-storage.js"></script>
     <script type='text/javascript' src="./scripts/reset.js"></script>
@@ -243,7 +244,14 @@
             $(this).addClass('active');
             currentFunction = new Polygon(contextReal, contextDraft);
         });
+<<<<<<< HEAD
+        $('#bucket').click(() => {
+            currentFunction = new Bucket(contextReal, contextDraft);
+        });
+        $('#reset').click(() => {
+=======
         $('span#reset').on('click', function() {
+>>>>>>> master
             oldFunction = currentFunction;
             currentFunction = new Reset(contextReal, contextDraft);
             currentFunction = oldFunction;
