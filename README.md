@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # canvas-app
 HTML canvas  used to draw graphics on a web page.
 =======
@@ -23,4 +22,4 @@ Click [here to try the app]()
 * [Nate Welling](https://github.com/naterexw)
 * [Ivan Oung](https://github.com/ivanoung)
 * [Andrew Cheung](https://github.com/cheungdzinyung)
->>>>>>> master
+
