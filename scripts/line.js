@@ -32,6 +32,7 @@ class Line extends PaintFunction {
         this.contextReal.lineTo(coord[0], coord[1]);
         this.contextReal.closePath();
         this.contextReal.stroke();
+        saveImage(canvasReal);
     }
 
     onMouseLeave() { }
