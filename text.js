@@ -7,41 +7,29 @@ class Text extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        console.log('error');
         addText(event);
     }
 
     onDragging() { }
     onMouseMove() { }
     onMouseUp() { }
-
     onMouseLeave() { }
     onMouseEnter() { }
 }
 
 function addText(e) {
-    var canvas = canvasReal;
-    var ctx = contextReal;
+
     var font = '14px sans-serif';
 
-    // canvas.onclick = function (e) {
-
-
     function addInput(x, y) {
-
         var input = document.createElement('input');
-
         input.type = 'text';
         input.style.position = 'fixed';
-        input.style.left = (x - 4) + 'px';
-        input.style.top = (y - 4) + 'px';
-
+        input.style.left = x + 'px';
+        input.style.top = y + 'px';
         input.onkeydown = handleEnter;
-
         document.body.appendChild(input);
-
         input.focus();
-
         hasInput = true;
     }
 
@@ -55,14 +43,10 @@ function addText(e) {
     }
 
     function drawText(txt, x, y) {
-        ctx.textBaseline = 'top';
-        ctx.textAlign = 'left';
-        ctx.font = font;
-        ctx.fillText(txt, x - 4, y - 4);
+        contextReal.textBaseline = 'top';
+        contextReal.textAlign = 'left';
+        contextReal.font = font;
+        contextReal.fillText(txt, e.offsetX, e.offsetY);
     }
-
-    console.log('erroe333')
     addInput(e.clientX, e.clientY);
-
-
 }
