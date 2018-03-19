@@ -95,7 +95,7 @@
                             <i class="fab fa-gg"></i>
                             <!-- Polygon -->
                         </span>
-                        <span class="btn btn-danger tools" id="polygon-fill">
+                        <span class="btn btn-outline-danger tools" id="polygon-fill">
                             <i class="fab fa-gg-circle"></i>
                             <!-- Polygon -->
                         </span>
@@ -244,14 +244,10 @@
             $(this).addClass('active');
             currentFunction = new Polygon(contextReal, contextDraft);
         });
-<<<<<<< HEAD
-        $('#bucket').click(() => {
+        $('#bucket').on('click', function() {
             currentFunction = new Bucket(contextReal, contextDraft);
         });
-        $('#reset').click(() => {
-=======
-        $('span#reset').on('click', function() {
->>>>>>> master
+        $('#reset').on('click', function() {
             oldFunction = currentFunction;
             currentFunction = new Reset(contextReal, contextDraft);
             currentFunction = oldFunction;
