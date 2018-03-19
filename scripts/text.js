@@ -24,6 +24,11 @@ function addText(e) {
     function addInput(x, y) {
         var input = document.createElement('input');
         input.type = 'text';
+        // input.placeholder = 'Press enter when complete';
+        input.style.outline = 'none';
+        input.style.background = 'transparent';
+        input.style.border = 'transparent';
+        input.style.width = 300 + 'px';
         input.style.position = 'fixed';
         input.style.left = x + 'px';
         input.style.top = y + 'px';
@@ -46,7 +51,7 @@ function addText(e) {
         contextReal.textBaseline = 'top';
         contextReal.textAlign = 'left';
         contextReal.font = font;
-        contextReal.fillText(txt, e.offsetX, e.offsetY);
+        contextReal.fillText(txt, e.offsetX, e.offsetY + 6);
     }
     addInput(e.clientX, e.clientY);
 }

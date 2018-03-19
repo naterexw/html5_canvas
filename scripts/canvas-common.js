@@ -12,7 +12,7 @@ const style = {
   strokeWth: 1,
   joint: 'round',
   curCol: {
-    stroke: '#fff228',
+    stroke: '#000000',
     fill: '#244a73',
     bgc: '#FFFFFF',
   },
