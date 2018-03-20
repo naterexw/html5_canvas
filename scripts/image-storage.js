@@ -40,7 +40,6 @@ $(window).on("keydown", (e) => {
   }
 })
 
-
 // Click on save button and get the current image from real canvas
 $("#save").click(function(ev){
   let saveTp = "jpg";
