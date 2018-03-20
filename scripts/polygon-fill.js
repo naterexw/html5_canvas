@@ -42,7 +42,7 @@ class PolygonFill extends PaintFunction {
     ) {
       this.check = true;
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextReal.stroke();
+      // this.contextReal.stroke();
       this.contextReal.fill();
       this.startX = 0;
       this.startY = 0;
