@@ -14,7 +14,10 @@ class Eyedropper extends PaintFunction {
     onMouseMove() { }
 
     onMouseUp(coord, event) {
-        alert('You picked the color: ' + rgbToHex(destinationColor[0], destinationColor[1], destinationColor[2]));
+        let selectedColor = rgbToHex(destinationColor[0], destinationColor[1], destinationColor[2]);
+        canvasSettings.curCol.fill = selectedColor;
+        canvasSettings.curCol.stroke = selectedColor;
+        $("#custom").spectrum("set", selectedColor);
     }
 
     onMouseLeave() { }
