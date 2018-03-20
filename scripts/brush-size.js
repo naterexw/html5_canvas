@@ -1,7 +1,3 @@
-let canvasSettings = {
-    //   brushSize: $('#brushSize').val(),
-    brushSize: 1,
-}
 $("#brushSize :input").change(function () {
     if (this.id == 'brushSize-xs') {
         canvasSettings.brushSize = 1;

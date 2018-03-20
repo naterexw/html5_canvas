@@ -99,37 +99,24 @@
                         </span>
                     </div>
                     <div class="row">
+                        <span class="btn btn-primary" id="img-fill">
+                            <i class="fas fa-retweet"></i>
+                            Fill w/ Image
+                        </span>
+                    </div>
+                    <div class="row">
                         <span class="btn btn-danger" id="reset">
                             <i class="fas fa-sync"></i>
                             Reset
                         </span>
                     </div>
                     <div class="row">
-                        <span class="btn position-relative col-pic" id="stroke">Stroke Color
-                        </span>
-                    </div>
-                    <div class="row">
                         <span class="btn position-relative col-pic" id="fill">Fill Color
                         </span>
                     </div>
-                    <div class="row">
-                        <span class="btn position-relative col-pic" id="bgc">Background Color
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="btn btn-primary" id="test">
-                            <i class="fas fa-pencil-alt"></i>
-                            Testing Retrive
-                        </span>
-                    </div>
-                    <div class="row">
-                        <span class="btn btn-primary" id="retrive">
-                            <i class="fas fa-pencil-alt"></i>
-                            Retrive Image
-                        </span>
-                    </div>
+
+                    <!-- Testing with color picker and image picker -->
                     <input id = "dr-img" type="file"  accept="image/*">
-                    <!-- Color picker tester -->
                     <input type='text' id="custom" />
                 </div>
             </nav>
@@ -174,6 +161,8 @@
     <script type="text/javascript" src="./scripts/spectrum.js"></script>
     <script type='text/javascript' src="./scripts/canvas-common.js"></script>
     <script type='text/javascript' src="./scripts/brush-size.js"></script>
+    <script type='text/javascript' src="./scripts/image-storage.js"></script>
+    <script type='text/javascript' src="./scripts/image-drawer.js"></script>
     <script type='text/javascript' src="./scripts/pencil.js"></script>
     <script type='text/javascript' src="./scripts/eraser.js"></script>
     <script type='text/javascript' src="./scripts/line.js"></script>
@@ -183,42 +172,11 @@
     <script type='text/javascript' src="./scripts/circle-fill.js"></script>
     <script type='text/javascript' src="./scripts/polygon.js"></script>
     <script type='text/javascript' src="./scripts/color-picker.js"></script>
-    <script type='text/javascript' src="./scripts/image-storage.js"></script>
+    <script type='text/javascript' src="./scripts/text.js"></script>
     <script type='text/javascript' src="./scripts/reset.js"></script>
-    <script src="./scripts/image-drawer.js"></script>
+    
 
-    <script type='text/javascript '>
-        currentFunction = new Pencil(contextReal, contextDraft);
 
-        $('#pencil').click(() => {
-            currentFunction = new Pencil(contextReal, contextDraft);
-        });
-        $('#eraser').click(() => {
-            currentFunction = new Eraser(contextReal, contextDraft);
-        });
-        $('#rectangle').click(() => {
-            currentFunction = new Rectangle(contextReal, contextDraft);
-        });
-        $('#rectangle-fill').click(() => {
-            currentFunction = new RectangleFill(contextReal, contextDraft);
-        });
-        $('#circle').click(() => {
-            currentFunction = new Circle(contextReal, contextDraft);
-        });
-        $('#circle-fill').click(() => {
-            currentFunction = new CircleFill(contextReal, contextDraft);
-        });
-        $('#line').click(() => {
-            currentFunction = new Line(contextReal, contextDraft);
-        });
-        $('#polygon').click(() => {
-            currentFunction = new Polygon(contextReal, contextDraft);
-        });
-        $('#reset').click(() => {
-            currentFunction = new Reset(contextReal, contextDraft);
-            currentFunction = new Pencil(contextReal, contextDraft);
-        });
-    </script>
 </body>
 
 </html>

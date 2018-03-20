@@ -8,7 +8,6 @@ let saveImage = canvas => {
   canvas.toBlob(blob => {
     let newImg = document.createElement("img"),
       url = URL.createObjectURL(blob);
-
     newImg.src = url;
     newImg.onload = () => {
     };
@@ -18,6 +17,7 @@ let saveImage = canvas => {
 
 function retriveImage(img) {
   contextReal.clearRect(0, 0, 800, 500);
+  console.log(img);
   contextReal.drawImage(img, 0, 0);
 }
 

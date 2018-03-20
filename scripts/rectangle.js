@@ -7,17 +7,17 @@ class Rectangle extends PaintFunction {
 
   onMouseDown(coord, event, style) {
     this.contextDraft.strokeStyle = style.curCol.stroke;
-    this.contextDraft.lineWidth = canvasSettings.brushSize;
+    this.contextDraft.lineWidth = style.brushSize;
 
     this.contextReal.strokeStyle = style.curCol.stroke;
-    this.contextReal.lineWidth = canvasSettings.brushSize;
+    this.contextReal.lineWidth = style.brushSize;
     
     this.origX = coord[0];
     this.origY = coord[1];
   }
   onDragging(coord, event, style) {
     this.contextDraft.strokeStyle = style.curCol.stroke;
-    this.contextDraft.lineWidth = canvasSettings.brushSize;
+    this.contextDraft.lineWidth = style.brushSize;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.strokeRect(
       this.origX,
