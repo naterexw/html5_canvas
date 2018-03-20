@@ -11,8 +11,8 @@ let canvasSettings = {
   brushSize: 1,
   joint: "round",
   curCol: {
-      stroke: "#fff228",
-      fill: "#244a73",
+      stroke: "#000000",
+      fill: "#000000",
       bgc: "#FFFFFF"
   },
   txt: {

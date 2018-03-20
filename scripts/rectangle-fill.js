@@ -5,7 +5,7 @@ class RectangleFill extends PaintFunction {
     this.contextDraft = contextDraft;
   }
 
-  onMouseDown(coord, event) {
+  onMouseDown(coord, event, style) {
     this.contextDraft.fillStyle = style.curCol.fill;
     this.contextReal.fillStyle = style.curCol.fill;
     this.origX = coord[0];

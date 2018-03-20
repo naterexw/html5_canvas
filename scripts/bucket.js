@@ -5,40 +5,68 @@ class Bucket extends PaintFunction {
     }
 
     onMouseDown(coord, event) {
-        let newX = coord[0];
-        let newY = coord[1];
-        let destinationColor = this.contextReal.getImageData(coord[0], coord[1], 1, 1).data;
-        let oneUp = this.contextReal.getImageData(coord[0], coord[1] - 1, 1, 1).data;
-        let fillColor = style.curCol.fill;
-        let matchingPixel = [];
+        let pixelStack = [coord[0], coord[1]];
 
-        console.log(destinationColor);
-        console.log(oneUp);
-        
+        while (pixelStack.length) {
+            var newPos, x, y, pixelPos, reachLeft, reachRight;
+            newPos = pixelStack.pop();
+            x = newPos[0];
+            y = newPos[1];
 
-        while (newY >= 0) {
-            if (this.contextReal.getImageData(newX, newY, 1, 1).data[0] == this.contextReal.getImageData(newX, newY - 1, 1, 1).data[0]) {
-                this.contextReal.putImageData(fillColor, newX, newY);
-                // matchingPixel.push([newX, newY]);
-            };
-            newY--;
-        };
+            pixelPos = (y * canvasWidth + x) * 4;
+            while (y-- >= drawingBoundTop && matchStartColor(pixelPos)) {
+                pixelPos -= canvasWidth * 4;
+            }
+            pixelPos += canvasWidth * 4;
+            ++y;
+            reachLeft = false;
+            reachRight = false;
+            while (y++ < canvasHeight - 1 && matchStartColor(pixelPos)) {
+                colorPixel(pixelPos);
 
-        // if (destinationColor[0] == hexToR(style.curCol.fill) && destinationColor[1] == hexToG(style.curCol.fill) && destinationColor[2] != hexToB(style.curCol.fill)) {
-        //     return;
-        // } else {
-        //     matchingPixel.push(coord);
-        // }
-        // console.log(matchingPixel);
+                if (x > 0) {
+                    if (matchStartColor(pixelPos - 4)) {
+                        if (!reachLeft) {
+                            pixelStack.push([x - 1, y]);
+                            reachLeft = true;
+                        }
+                    }
+                    else if (reachLeft) {
+                        reachLeft = false;
+                    }
+                }
 
+                if (x < canvasWidth - 1) {
+                    if (matchStartColor(pixelPos + 4)) {
+                        if (!reachRight) {
+                            pixelStack.push([x + 1, y]);
+                            reachRight = true;
+                        }
+                    }
+                    else if (reachRight) {
+                        reachRight = false;
+                    }
+                }
 
-        // console.log(destinationColor[0]);
-        // console.log(destinationColor[1]);
-        // console.log(destinationColor[2]);
-        // console.log('test');
-        // console.log(hexToR(style.curCol.fill));
-        // console.log(hexToG(style.curCol.fill));
-        // console.log(hexToB(style.curCol.fill));
+                pixelPos += canvasWidth * 4;
+            }
+        }
+        context.putImageData(colorLayer, 0, 0);
+
+        function matchStartColor(pixelPos) {
+            var r = colorLayer.data[pixelPos];
+            var g = colorLayer.data[pixelPos + 1];
+            var b = colorLayer.data[pixelPos + 2];
+
+            return (r == startR && g == startG && b == startB);
+        }
+
+        function colorPixel(pixelPos) {
+            colorLayer.data[pixelPos] = fillColorR;
+            colorLayer.data[pixelPos + 1] = fillColorG;
+            colorLayer.data[pixelPos + 2] = fillColorB;
+            colorLayer.data[pixelPos + 3] = 255;
+        }
     }
 
     onDragging() { }
@@ -46,10 +74,5 @@ class Bucket extends PaintFunction {
     onMouseUp() { }
     onMouseLeave() { }
     onMouseEnter() { }
-
 }
 
-function hexToR(h) { return parseInt((cutHex(h)).substring(0, 2), 16) }
-function hexToG(h) { return parseInt((cutHex(h)).substring(2, 4), 16) }
-function hexToB(h) { return parseInt((cutHex(h)).substring(4, 6), 16) }
-function cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h }
