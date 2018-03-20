@@ -18,12 +18,13 @@ class CircleFill extends PaintFunction {
     this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);
     this.contextDraft.fill();
   }
-
   onMouseMove() {}
   onMouseUp(coord, event) {
+    this.contextDraft.closePath();
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.beginPath();
     this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);
+    this.contextReal.closePath();
     this.contextReal.fill();
     saveImage(canvasReal);
   }

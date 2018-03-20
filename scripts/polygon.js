@@ -6,8 +6,6 @@ class Polygon extends PaintFunction {
     this.check = true;
   }
 
-
-
   onMouseDown(coord, event, style) {
     if (this.check == true) {
       this.contextDraft.strokeStyle = style.curCol.stroke;
@@ -43,7 +41,6 @@ class Polygon extends PaintFunction {
       this.startY = 0;
       saveImage(canvasReal);
     }
-    
   }
 
   onMouseMove(coord, event) {
