@@ -6,25 +6,20 @@
     left:0px;
     right:0px */
 }
-
 #canvas-draft {
   border: 1px red dotted;
   cursor: pointer;
   background-color: transparent;
 }
-
 #canvas-real {
   border: 1px black dotted;
 }
-
 #canvas-container {
   height: 500px;
 }
-
 .position-relative {
   position: relative;
 }
-
 .position-absolute {
   position: absolute;
 }
@@ -51,4 +46,12 @@
 .xxs {
   -webkit-transform: scale(0.5);
 }
-
+.sidebar-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 48px; /* Height of navbar */
+  height: calc(100vh - 48px);
+  padding-top: 0.5rem;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+}
