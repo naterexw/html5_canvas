@@ -1,3 +1,4 @@
+// Initiating image storage array 
 let storeImg = [];
 
 $(document).ready(()=>{
@@ -23,10 +24,9 @@ function retriveImage(img) {
 
 function writeTempImg(imgElement) {
   storeImg.push(imgElement);
-  console.log(storeImg);
 }
 
-
+// Ctrl + z for reverting drawing 1 step
 let map = {};
 $(window).on("keydown", (e) => {
   map[e.keyCode] = e.type == "keydown";
@@ -41,10 +41,9 @@ $(window).on("keydown", (e) => {
 })
 
 
-
-$("#test").click(() => {
-  saveImage(canvasReal);
-});
-$("#retrive").click(() => {
-  retriveImage(storeImg);
+// Click on save button and get the current image from real canvas
+$("#save").click(function(ev){
+  let saveTp = "jpg";
+  $("#save").attr("href",canvasReal.toDataURL(`image/${saveTp}`));
+  $("#save").attr("download",`mypainting.${saveTp}`);
 });
