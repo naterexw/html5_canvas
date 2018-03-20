@@ -18,7 +18,7 @@ class Pencil extends PaintFunction {
 
   onMouseMove() {}
   onMouseUp() {
-    saveImage(canvasReal);
+    saveImage(canvasReal, storeImg);
   }
   onMouseLeave() {}
   onMouseEnter() {}

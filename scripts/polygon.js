@@ -41,7 +41,7 @@ class Polygon extends PaintFunction {
       this.contextReal.stroke();
       this.startX = 0;
       this.startY = 0;
-      saveImage(canvasReal);
+      saveImage(canvasReal, storeImg);
     }
     
   }
