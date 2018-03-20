@@ -194,6 +194,9 @@
     $('#eraser').click(() => {
       currentFunction = new Eraser(contextReal, contextDraft);
     });
+    $('#line').click(() => {
+      currentFunction = new Line(contextReal, contextDraft);
+    });
     $('#rectangle').click(() => {
       currentFunction = new Rectangle(contextReal, contextDraft);
     });
@@ -206,18 +209,16 @@
     $('#circle-fill').click(() => {
       currentFunction = new CircleFill(contextReal, contextDraft);
     });
-    $('#line').click(() => {
-      currentFunction = new Line(contextReal, contextDraft);
-    });
     $('#polygon').click(() => {
       currentFunction = new Polygon(contextReal, contextDraft);
-    });
-    $('#img-fill').click(() => {
-      currentFunction = new ImageFill(contextReal, contextDraft, deImage);
     });
     $('#polygon-fill').click(() => {
       currentFunction = new PolygonFill(contextReal, contextDraft);
     });
+    $('#img-fill').click(() => {
+      currentFunction = new ImageFill(contextReal, contextDraft, deImage);
+    });
+    
 
     $('#reset').click(() => {
       currentFunction = new Reset(contextReal, contextDraft);

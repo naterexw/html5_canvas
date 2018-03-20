@@ -6,13 +6,10 @@ class Circle extends PaintFunction {
     }
 
     onMouseDown(coord, event, style) {
-        
         this.contextDraft.strokeStyle = style.curCol.stroke;
         this.contextDraft.lineWidth = style.brushSize;
-
         this.contextReal.strokeStyle = style.curCol.stroke;
         this.contextReal.lineWidth = style.brushSize;
-
         this.origX = coord[0];
         this.origY = coord[1];
     }
