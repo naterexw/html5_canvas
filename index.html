@@ -36,7 +36,7 @@
                 <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
                 <i class="fas fa-circle fa-sm xxs align-middle"></i>
               </label>
-              <label class="btn btn-sm btn-outline-primary activegs">
+              <label class="btn btn-sm btn-outline-primary active">
                 <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
                 <i class="fas fa-circle fa-sm align-middle"></i>
               </label>
@@ -195,6 +195,7 @@
   <script type='text/javascript '>
   // Default selected tool is pencil
   currentFunction = new Pencil(contextReal, contextDraft);
+  $('span#pencil').addClass('active');
   // Initialize bootstrap tooltips
   $('[data-toggle="tooltip"]').tooltip()
 
