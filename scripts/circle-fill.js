@@ -16,11 +16,11 @@ class CircleFill extends PaintFunction {
     this.radius = Math.sqrt(Math.pow(this.origX - coord[0], 2) + Math.pow(this.origY - coord[1], 2));
     this.contextDraft.beginPath();
     this.contextDraft.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);
+    this.contextDraft.closePath();
     this.contextDraft.fill();
   }
   onMouseMove() {}
   onMouseUp(coord, event) {
-    this.contextDraft.closePath();
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.beginPath();
     this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);

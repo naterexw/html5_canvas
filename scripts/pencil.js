@@ -4,22 +4,24 @@ class Pencil extends PaintFunction {
     this.context = contextReal;
   }
 
-    onMouseDown(coord, event, style) {
-        this.context.strokeStyle = style.curCol.stroke;
-        this.context.lineJoin = style.joint;
-        this.context.lineWidth = style.brushSize;
-        this.context.beginPath();
-        this.context.moveTo(coord[0], coord[1]);
-        this.draw(coord[0], coord[1]);
-    }
-    onDragging(coord, event) {
-        this.draw(coord[0], coord[1]);
-    }
+  onMouseDown(coord, event, style) {
+    this.context.strokeStyle = style.curCol.stroke;
+    this.context.lineJoin = style.joint;
+    this.context.lineWidth = style.brushSize;
+    this.context.beginPath();
+    this.context.moveTo(coord[0], coord[1]);
+    this.draw(coord[0], coord[1]);
+  }
+  onDragging(coord, event) {
+    this.draw(coord[0], coord[1]);
+  }
 
   onMouseMove() {}
+
   onMouseUp() {
     saveImage(canvasReal);
   }
+
   onMouseLeave() {}
   onMouseEnter() {}
 
