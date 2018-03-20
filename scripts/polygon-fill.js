@@ -8,11 +8,17 @@ class PolygonFill extends PaintFunction {
     this.check = false;
   }
 
-  onMouseDown(coord, event) {
+  onMouseDown(coord, event, style) {
     this.contextReal.strokeStyle = style.curCol.stroke;
-    this.contextReal.lineWidth = style.strokeWth;
-    this.contextReal.lineJoin = style.joint;
     this.contextReal.fillStyle = style.curCol.fill;
+    this.contextReal.lineWidth = style.brushSize;
+    this.contextReal.lineJoin = style.joint;
+    
+    this.contextDraft.strokeStyle = style.curCol.stroke;
+    this.contextDraft.fillStyle = style.curCol.fill;
+    this.contextDraft.lineWidth = style.brushSize;
+    this.contextDraft.lineJoin = style.joint;
+
     if (this.check == true) {
       this.startX = [];
       this.startY = [];
@@ -41,13 +47,12 @@ class PolygonFill extends PaintFunction {
       this.startX = 0;
       this.startY = 0;
     }
+    saveImage(canvasReal);
   }
 
   onMouseMove(coord, event) {
     if (this.check == false) {
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextDraft.strokeStyle = style.curCol.stroke;
-      this.contextDraft.lineWidth = style.strokeWth;
       this.contextDraft.beginPath();
       this.contextDraft.moveTo(this.startX[0], this.startY[0]);
       for (let i = 0; i < this.startX.length; i++) {
