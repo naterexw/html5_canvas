@@ -28,7 +28,7 @@
   <div class="container-fluid">
     <div class="row d-flex justify-content-between ">
       <nav class="col-6 col-sm-2 bg-light sidebar-sticky">
-        <div class="row">
+        <div class="row ">
           <div class="col-12 py-2">
             <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
               <label class="btn btn-sm btn-outline-primary">
@@ -99,11 +99,21 @@
               <!-- Polygon-fill -->
             </span>
           </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="bucket" data-toggle="tooltip" data-placement="top" title="Bucket">
+              <i class="fab fa-bitbucket"></i>
+              <!-- Bucket -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="eyedropper" data-toggle="tooltip" data-placement="top" title="Eyedropper">
+              <i class="fas fa-eye-dropper"></i>
+              <!-- Eyedropper -->
+            </span>
+          </div>
           <div class="col-10 py-2">
             <div class="input-group">
               <div class="custom-file">
-                <input type="file" accept="image/*" class="custom-file-input" id="dr-img" style="cursor: pointer">
-                <label class="custom-file-label" for="dr-img" style="cursor: pointer">Select file</label>
+                <input type="file" accept="image/*" class="custom-file-input" id="dr-img">
+                <label class="custom-file-label" for="dr-img">Select file</label>
               </div>
             </div>
           </div>
@@ -114,7 +124,7 @@
             </span>
           </div>
           <div class="col-12 py-2">
-            <div class="btn-group">
+            <div class="btn-group py-2">
               <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
               <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
               <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
@@ -176,6 +186,8 @@
   <script type='text/javascript' src="./scripts/circle-fill.js"></script>
   <script type='text/javascript' src="./scripts/polygon.js"></script>
   <script type='text/javascript' src="./scripts/polygon-fill.js"></script>
+  <script type='text/javascript' src="./scripts/eyedropper.js"></script>
+  <script type='text/javascript' src="./scripts/bucket.js"></script>
   <script type='text/javascript' src="./scripts/image-storage.js"></script>
   <script type='text/javascript' src="./scripts/image-drawer.js"></script>
   <script type='text/javascript' src="./scripts/color-picker.js"></script>
@@ -249,13 +261,15 @@
     $('#bucket').on('click', function () {
       currentFunction = new Bucket(contextReal, contextDraft);
     });
+    $('#eyedropper').on('click', function () {
+      currentFunction = new Eyedropper(contextReal, contextDraft);
+    });
     $('#reset').on('click', function () {
       oldFunction = currentFunction;
       currentFunction = new Reset(contextReal, contextDraft);
       currentFunction = oldFunction;
     });
   </script>
-
 </body>
 
 </html>
