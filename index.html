@@ -197,6 +197,9 @@
     $('#line').click(() => {
       currentFunction = new Line(contextReal, contextDraft);
     });
+    $('#text').click(() => {
+      currentFunction = new Text(contextReal, contextDraft);
+    });
     $('#rectangle').click(() => {
       currentFunction = new Rectangle(contextReal, contextDraft);
     });
@@ -218,8 +221,6 @@
     $('#img-fill').click(() => {
       currentFunction = new ImageFill(contextReal, contextDraft, deImage);
     });
-    
-
     $('#reset').click(() => {
       currentFunction = new Reset(contextReal, contextDraft);
       currentFunction = new Pencil(contextReal, contextDraft);
