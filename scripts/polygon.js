@@ -3,6 +3,7 @@ class Polygon extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.check = true;
   }
 
 

@@ -113,7 +113,12 @@
           </div>
           <div class="row py-2">
             <input id="dr-img" type="file" accept="image/*">
-            <input type='text' id="custom" />
+            <input  class = "col-picker" type='text' id="custom" />
+
+            
+            <button value = "bgc">bgc</button>
+            <button value = "fill">Fill</button>
+            <button value = "stroke">Stroke</button>
           </div>
 
 
@@ -173,6 +178,7 @@
   <script type='text/javascript' src="./scripts/circle.js"></script>
   <script type='text/javascript' src="./scripts/circle-fill.js"></script>
   <script type='text/javascript' src="./scripts/polygon.js"></script>
+  <script type='text/javascript' src="./scripts/polygon-fill.js"></script>
   <script type='text/javascript' src="./scripts/color-picker.js"></script>
   <script type='text/javascript' src="./scripts/text.js"></script>
   <script type='text/javascript' src="./scripts/reset.js"></script>
@@ -209,6 +215,10 @@
     $('#img-fill').click(() => {
       currentFunction = new ImageFill(contextReal, contextDraft, deImage);
     });
+    $('#polygon-fill').click(() => {
+      currentFunction = new PolygonFill(contextReal, contextDraft);
+    });
+
     $('#reset').click(() => {
       currentFunction = new Reset(contextReal, contextDraft);
       currentFunction = new Pencil(contextReal, contextDraft);
