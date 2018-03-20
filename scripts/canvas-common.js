@@ -9,7 +9,7 @@ let dragging = false;
 const storeImg = HTMLImageElement;
 
 const style = {
-  strokeWth: 1,
+  strokeWth: 4,
   joint: 'round',
   curCol: {
     stroke: '#000000',
