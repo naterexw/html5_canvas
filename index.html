@@ -51,51 +51,51 @@
             </div>
           </div>
           <div class="row">
-            <span class="btn btn-outline-primary tools mr-2" id="pencil">
+            <span class="btn btn-outline-primary tools mr-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
               <i class="fas fa-pencil-alt"></i>
               <!-- Pencil -->
             </span>
-            <span class="btn btn-outline-primary tools" id="eraser">
+            <span class="btn btn-outline-primary tools" id="eraser" data-toggle="tooltip" data-placement="top" title="Eraser">
               <i class="fas fa-eraser"></i>
               <!-- Eraser -->
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-outline-primary tools mr-2" id="line">
+            <span class="btn btn-outline-primary tools mr-2" id="line" data-toggle="tooltip" data-placement="top" title="Line">
               <i class="fas fa-minus"></i>
               <!-- Line -->
             </span>
-            <span class="btn btn-outline-primary tools" id="text">
+            <span class="btn btn-outline-primary tools" id="text" data-toggle="tooltip" data-placement="top" title="Text">
               <i class="fas fa-font"></i>
               <!-- Text -->
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-outline-primary tools mr-2" id="rectangle">
+            <span class="btn btn-outline-primary tools mr-2" id="rectangle" data-toggle="tooltip" data-placement="top" title="Rectangle">
               <i class="far fa-square"></i>
               <!-- Rectangle -->
             </span>
-            <span class="btn btn-outline-primary tools" id="rectangle-fill">
+            <span class="btn btn-outline-primary tools" id="rectangle-fill" data-toggle="tooltip" data-placement="top" title="Filled rectangle">
               <i class="fas fa-square"></i>
               <!-- Filled rectangle -->
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-outline-primary tools mr-2" id="circle">
+            <span class="btn btn-outline-primary tools mr-2" id="circle" data-toggle="tooltip" data-placement="top" title="Circle">
               <i class="far fa-circle"></i>
               <!-- Circle -->
             </span>
-            <span class="btn btn-outline-primary tools" id="circle-fill">
+            <span class="btn btn-outline-primary tools" id="circle-fill" data-toggle="tooltip" data-placement="top" title="Filled circle">
               <i class="fas fa-circle"></i>
               <!-- Filled circle -->
             </span>
           </div>
           <div class="row">
-            <span class="btn btn-outline-primary tools mr-2" id="polygon">
+            <span class="btn btn-outline-primary tools mr-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
               <i class="fab fa-gg"></i>
               <!-- Polygon -->
             </span>
-            <span class="btn btn-outline-primary tools" id="polygon-fill">
+            <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
               <i class="fab fa-gg-circle"></i>
               <!-- Polygon -->
             </span>
@@ -193,7 +193,10 @@
   <script type='text/javascript' src="./scripts/reset.js"></script>
 
   <script type='text/javascript '>
+  // Default selected tool is pencil
   currentFunction = new Pencil(contextReal, contextDraft);
+  // Initialize bootstrap tooltips
+  $('[data-toggle="tooltip"]').tooltip()
 
   $('span#pencil').on('click', function() {
     $('.tools').removeClass('active');
