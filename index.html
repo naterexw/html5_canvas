@@ -11,7 +11,6 @@
     crossorigin="anonymous">
 
   <!-- Custom styles for this template -->
-  <link href="./style/bootstrap.css" rel="stylesheet" type='text/css'>
   <link href="./style/spectrum.css" rel="stylesheet" type='text/css'>
   <link href="./style/style.css" rel="stylesheet" type='text/css'>
 </head>
@@ -28,108 +27,106 @@
 
   <div class="container-fluid">
     <div class="row d-flex justify-content-between ">
-      <nav class="col-2 bg-light">
-        <div class="sidebar-sticky">
-          <div class="row ">
-            <div class="col-12 py-2">
-              <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
-                <label class="btn btn-sm btn-outline-primary">
-                  <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
-                  <i class="fas fa-circle fa-sm xxs align-middle"></i>
-                </label>
-                <label class="btn btn-sm btn-outline-primary active">
-                  <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
-                  <i class="fas fa-circle fa-sm align-middle"></i>
-                </label>
-                <label class="btn btn-sm btn-outline-primary">
-                  <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
-                  <i class="fas fa-circle fa-lg align-middle"></i>
-                </label>
-                <label class="btn btn-sm btn-outline-primary">
-                  <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
-                  <i class="fas fa-circle fa-2x align-middle"></i>
-                </label>
+      <nav class="col-6 col-sm-2 bg-light sidebar-sticky">
+        <div class="row">
+          <div class="col-12 py-2">
+            <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
+              <label class="btn btn-sm btn-outline-primary">
+                <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
+                <i class="fas fa-circle fa-sm xxs align-middle"></i>
+              </label>
+              <label class="btn btn-sm btn-outline-primary active">
+                <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
+                <i class="fas fa-circle fa-sm align-middle"></i>
+              </label>
+              <label class="btn btn-sm btn-outline-primary">
+                <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
+                <i class="fas fa-circle fa-lg align-middle"></i>
+              </label>
+              <label class="btn btn-sm btn-outline-primary">
+                <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
+                <i class="fas fa-circle fa-2x align-middle"></i>
+              </label>
+            </div>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
+              <i class="fas fa-pencil-alt"></i>
+              <!-- Pencil -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="eraser" data-toggle="tooltip" data-placement="top" title="Eraser">
+              <i class="fas fa-eraser"></i>
+              <!-- Eraser -->
+            </span>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="line" data-toggle="tooltip" data-placement="top" title="Line">
+              <i class="fas fa-minus"></i>
+              <!-- Line -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="text" data-toggle="tooltip" data-placement="top" title="Text">
+              <i class="fas fa-font"></i>
+              <!-- Text -->
+            </span>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="rectangle" data-toggle="tooltip" data-placement="top" title="Rectangle">
+              <i class="far fa-square"></i>
+              <!-- Rectangle -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="rectangle-fill" data-toggle="tooltip" data-placement="top" title="Filled rectangle">
+              <i class="fas fa-square"></i>
+              <!-- Filled rectangle -->
+            </span>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="circle" data-toggle="tooltip" data-placement="top" title="Circle">
+              <i class="far fa-circle"></i>
+              <!-- Circle -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="circle-fill" data-toggle="tooltip" data-placement="top" title="Filled circle">
+              <i class="fas fa-circle"></i>
+              <!-- Filled circle -->
+            </span>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
+              <i class="fab fa-gg"></i>
+              <!-- Polygon -->
+            </span>
+            <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
+              <i class="fab fa-gg-circle"></i>
+              <!-- Polygon-fill -->
+            </span>
+          </div>
+          <div class="col-10 py-2">
+            <div class="input-group">
+              <div class="custom-file">
+                <input type="file" accept="image/*" class="custom-file-input" id="dr-img" style="cursor: pointer">
+                <label class="custom-file-label" for="dr-img" style="cursor: pointer">Select file</label>
               </div>
             </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
-                <i class="fas fa-pencil-alt"></i>
-                <!-- Pencil -->
-              </span>
-              <span class="btn btn-outline-primary tools" id="eraser" data-toggle="tooltip" data-placement="top" title="Eraser">
-                <i class="fas fa-eraser"></i>
-                <!-- Eraser -->
-              </span>
+          </div>
+          <div class="col-12 py-2">
+            <span class="btn btn-outline-primary tools mr-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
+              <i class="fas fa-image"></i>
+              <!-- Draw with image -->
+            </span>
+          </div>
+          <div class="col-12 py-2">
+            <div class="btn-group">
+              <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
+              <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
+              <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
             </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="line" data-toggle="tooltip" data-placement="top" title="Line">
-                <i class="fas fa-minus"></i>
-                <!-- Line -->
-              </span>
-              <span class="btn btn-outline-primary tools" id="text" data-toggle="tooltip" data-placement="top" title="Text">
-                <i class="fas fa-font"></i>
-                <!-- Text -->
-              </span>
-            </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="rectangle" data-toggle="tooltip" data-placement="top" title="Rectangle">
-                <i class="far fa-square"></i>
-                <!-- Rectangle -->
-              </span>
-              <span class="btn btn-outline-primary tools" id="rectangle-fill" data-toggle="tooltip" data-placement="top" title="Filled rectangle">
-                <i class="fas fa-square"></i>
-                <!-- Filled rectangle -->
-              </span>
-            </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="circle" data-toggle="tooltip" data-placement="top" title="Circle">
-                <i class="far fa-circle"></i>
-                <!-- Circle -->
-              </span>
-              <span class="btn btn-outline-primary tools" id="circle-fill" data-toggle="tooltip" data-placement="top" title="Filled circle">
-                <i class="fas fa-circle"></i>
-                <!-- Filled circle -->
-              </span>
-            </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
-                <i class="fab fa-gg"></i>
-                <!-- Polygon -->
-              </span>
-              <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
-                <i class="fab fa-gg-circle"></i>
-                <!-- Polygon-fill -->
-              </span>
-            </div>
-            <div class="col-12 py-2">
-              <span class="btn btn-outline-primary tools mr-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
-                <i class="fas fa-image"></i>
-                <!-- Draw with image -->
-              </span>
-            </div>
-            <div class="col-10 py-2">
-              <div class="input-group">
-                <div class="custom-file">
-                  <input type="file" accept="image/*" class="custom-file-input" id="dr-img">
-                  <label class="custom-file-label" for="dr-img">Select file</label>
-                </div>
-              </div>
-            </div>
-            <div class="col-12 py-2">
-              <div class="py-2">
-                <input class="col-picker" type='text' id="custom" />
-              </div>
-              <div class="btn-group">
-                <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
-                <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
-                <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
-              </div>
+            <div class="py-2">
+              <input class="col-picker" type='text' id="custom" />
             </div>
           </div>
         </div>
       </nav>
 
-      <main role="main" class="col pt-3 px-4">
+      <main role="main" class="col-6 col-sm-10 pt-3 px-4">
         <div class="row d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 class="h2">Draw something lah</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
