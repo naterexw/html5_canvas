@@ -5,15 +5,13 @@ class Line extends PaintFunction {
     this.contextDraft = contextDraft;
   }
 
-  onMouseDown(coord, event) {
+  onMouseDown(coord, event, style) {
     this.contextDraft.strokeStyle = style.curCol.stroke;
     this.contextDraft.lineJoin = style.joint;
-    this.contextDraft.lineWidth = style.strokeWth;
-
+    this.contextDraft.lineWidth = style.brushSize;
     this.contextReal.strokeStyle = style.curCol.stroke;
     this.contextReal.lineJoin = style.joint;
-    this.contextReal.lineWidth = style.strokeWth;
-
+    this.contextReal.lineWidth = style.brushSize;
     this.origX = coord[0];
     this.origY = coord[1];
   }
@@ -30,6 +28,7 @@ class Line extends PaintFunction {
     this.contextReal.lineTo(coord[0], coord[1]);
     this.contextReal.closePath();
     this.contextReal.stroke();
+    saveImage(canvasReal);
   }
 
   onMouseLeave() {}

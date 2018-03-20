@@ -13,6 +13,7 @@ class Bucket extends PaintFunction {
     console.log(hexToR(style.curCol.fill));
     console.log(hexToG(style.curCol.fill));
     console.log(hexToB(style.curCol.fill));
+    saveImage(canvasReal);
   }
 
   onDragging() {}

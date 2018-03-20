@@ -5,7 +5,7 @@ class CircleFill extends PaintFunction {
     this.contextDraft = contextDraft;
   }
 
-  onMouseDown(coord, event) {
+  onMouseDown(coord, event, style) {
     this.contextReal.fillStyle = style.curCol.fill;
     this.contextDraft.fillStyle = style.curCol.fill;
     this.origX = coord[0];
@@ -25,6 +25,7 @@ class CircleFill extends PaintFunction {
     this.contextReal.beginPath();
     this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);
     this.contextReal.fill();
+    saveImage(canvasReal);
   }
   onMouseLeave() {}
   onMouseEnter() {}

@@ -100,39 +100,28 @@
               <!-- Polygon -->
             </span>
           </div>
+
           <div class="row py-2">
-            <span class="btn col-pic mr-2" id="stroke">Stroke Color
+            <span class="btn btn-outline-primary tools mr-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
+              <i class="fas fa-gg"></i>
+              <!-- Draw with image -->
             </span>
+            <!-- <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
+              <i class="fab fa-gg-circle"></i>
+              Polygon
+            </span> -->
           </div>
           <div class="row py-2">
-            <span class="btn col-pic mr-2" id="fill">Fill Color
-            </span>
-            <span>
-              <input type='text' id="custom" />
-            </span>
+            <input id="dr-img" type="file" accept="image/*">
+            <input  class = "col-picker" type='text' id="custom" />
+
+            
+            <button value = "bgc">bgc</button>
+            <button value = "fill">Fill</button>
+            <button value = "stroke">Stroke</button>
           </div>
-          <div class="row py-2">
-            <span class="btn col-pic" id="bgc">Background Color
-            </span>
-          </div>
-          <div class="row py-2">
-            <span class="btn btn-outline-primary tools" id="test">
-              <i class="fas fa-pencil-alt"></i>
-              Testing Retrive
-            </span>
-          </div>
-          <div class="row py-2">
-            <span class="btn btn-outline-primary tools" id="retrive">
-              <i class="fas fa-pencil-alt"></i>
-              Retrive Image
-            </span>
-          </div>
-          <div class="row py-2">
-            <span class="btn btn-outline-primary tools" id="testingbutton">
-              <i class="fas fa-pencil-alt"></i>
-              Test Button
-            </span>
-          </div>
+
+
         </div>
       </nav>
 
@@ -173,91 +162,71 @@
     crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
     crossorigin="anonymous"></script>
-  <script type="text/javascript" src="./scripts/spectrum.js"></script>
   <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+  <script type="text/javascript" src="./scripts/spectrum.js"></script>
+
+  <script type='text/javascript' src="./scripts/brush-size.js"></script>
+  <script type='text/javascript' src="./scripts/image-storage.js"></script>
+  <script type='text/javascript' src="./scripts/image-drawer.js"></script>
   <script type='text/javascript' src="./scripts/pencil.js"></script>
   <script type='text/javascript' src="./scripts/eraser.js"></script>
   <script type='text/javascript' src="./scripts/line.js"></script>
-  <script type='text/javascript' src="./scripts/text.js"></script>
   <script type='text/javascript' src="./scripts/rectangle.js"></script>
   <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
   <script type='text/javascript' src="./scripts/circle.js"></script>
   <script type='text/javascript' src="./scripts/circle-fill.js"></script>
   <script type='text/javascript' src="./scripts/polygon.js"></script>
   <script type='text/javascript' src="./scripts/polygon-fill.js"></script>
-  <script type='text/javascript' src="./scripts/bucket.js"></script>
   <script type='text/javascript' src="./scripts/color-picker.js"></script>
-  <script type='text/javascript' src="./scripts/image-storage.js"></script>
+  <script type='text/javascript' src="./scripts/text.js"></script>
   <script type='text/javascript' src="./scripts/reset.js"></script>
+  <script>
+    // receiving input when performing mouse activity
 
-  <script type='text/javascript '>
-  // Default selected tool is pencil
-  currentFunction = new Pencil(contextReal, contextDraft);
-  $('span#pencil').addClass('active');
-  // Initialize bootstrap tooltips
-  $('[data-toggle="tooltip"]').tooltip()
-
-  $('span#pencil').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
+    // Initiate canvas function when clicking corresponding button on canvas
     currentFunction = new Pencil(contextReal, contextDraft);
-  });
-  $('span#eraser').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new Eraser(contextReal, contextDraft);
-  });
-  $('span#line').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new Line(contextReal, contextDraft);
-  });
-  $('span#text').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new Text(contextReal, contextDraft);
-  });
-  $('span#rectangle').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-  currentFunction = new Rectangle(contextReal, contextDraft);
-  });
-  $('span#rectangle-fill').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new RectangleFill(contextReal, contextDraft);
-  });
-  $('span#circle').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new Circle(contextReal, contextDraft);
-  });
-  $('span#circle-fill').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new CircleFill(contextReal, contextDraft);
-  });
-  $('span#polygon').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new Polygon(contextReal, contextDraft);
-  });
-  $('span#polygon-fill').on('click', function() {
-    $('.tools').removeClass('active');
-    $(this).addClass('active');
-    currentFunction = new PolygonFill(contextReal, contextDraft);
-  });
-  $('#bucket').on('click', function() {
-    currentFunction = new Bucket(contextReal, contextDraft);
-  });
-  $('#reset').on('click', function() {
-    oldFunction = currentFunction;
-    currentFunction = new Reset(contextReal, contextDraft);
-    currentFunction = oldFunction;
-  });
+
+    $('#pencil').click(() => {
+      currentFunction = new Pencil(contextReal, contextDraft);
+    });
+    $('#eraser').click(() => {
+      currentFunction = new Eraser(contextReal, contextDraft);
+    });
+    $('#line').click(() => {
+      currentFunction = new Line(contextReal, contextDraft);
+    });
+    $('#text').click(() => {
+      currentFunction = new Text(contextReal, contextDraft);
+    });
+    $('#rectangle').click(() => {
+      currentFunction = new Rectangle(contextReal, contextDraft);
+    });
+    $('#rectangle-fill').click(() => {
+      currentFunction = new RectangleFill(contextReal, contextDraft);
+    });
+    $('#circle').click(() => {
+      currentFunction = new Circle(contextReal, contextDraft);
+    });
+    $('#circle-fill').click(() => {
+      currentFunction = new CircleFill(contextReal, contextDraft);
+    });
+    $('#polygon').click(() => {
+      currentFunction = new Polygon(contextReal, contextDraft);
+    });
+    $('#polygon-fill').click(() => {
+      currentFunction = new PolygonFill(contextReal, contextDraft);
+    });
+    $('#img-fill').click(() => {
+      currentFunction = new ImageFill(contextReal, contextDraft, deImage);
+    });
+    $('#reset').click(() => {
+      currentFunction = new Reset(contextReal, contextDraft);
+      currentFunction = new Pencil(contextReal, contextDraft);
+    });
   </script>
+
 </body>
 
 </html>
