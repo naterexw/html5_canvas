@@ -21,41 +21,6 @@ let canvasSettings = {
   }
 }
 
-// Initiate canvas function when clicking corresponding button on canvas
-currentFunction = new Pencil(contextReal, contextDraft);
-
-$('#pencil').click(() => {
-  currentFunction = new Pencil(contextReal, contextDraft);
-});
-$('#eraser').click(() => {
-  currentFunction = new Eraser(contextReal, contextDraft);
-});
-$('#rectangle').click(() => {
-  currentFunction = new Rectangle(contextReal, contextDraft);
-});
-$('#rectangle-fill').click(() => {
-  currentFunction = new RectangleFill(contextReal, contextDraft);
-});
-$('#circle').click(() => {
-  currentFunction = new Circle(contextReal, contextDraft);
-});
-$('#circle-fill').click(() => {
-  currentFunction = new CircleFill(contextReal, contextDraft);
-});
-$('#line').click(() => {
-  currentFunction = new Line(contextReal, contextDraft);
-});
-$('#polygon').click(() => {
-  currentFunction = new Polygon(contextReal, contextDraft);
-});
-$('#img-fill').click(() => {
-  currentFunction = new ImageFill(contextReal, contextDraft, deImage);
-});
-$('#reset').click(() => {
-  currentFunction = new Reset(contextReal, contextDraft);
-  currentFunction = new Pencil(contextReal, contextDraft);
-});
-
 // receiving input when performing mouse activity
 
 $('#canvas-draft').mousedown(e => {

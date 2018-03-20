@@ -26,7 +26,7 @@
     </ul>
   </nav>
 
- <div class="container-fluid">
+  <div class="container-fluid">
     <div class="row">
       <nav class="col-md-2 d-none d-md-block bg-light sidebar">
         <div class="sidebar-sticky">
@@ -102,78 +102,121 @@
           </div>
 
           <div class="row py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
-              <i class="fab fa-gg"></i>
+            <span class="btn btn-outline-primary tools mr-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
+              <i class="fas fa-gg"></i>
               <!-- Draw with image -->
             </span>
             <!-- <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
               <i class="fab fa-gg-circle"></i>
-              <!-- Polygon -->
+              Polygon
             </span> -->
           </div>
-          <input id="dr-img" type="file" accept="image/*">
-          <input type='text' id="custom" />
+          <div class="row py-2">
+            <input id="dr-img" type="file" accept="image/*">
+            <input type='text' id="custom" />
+          </div>
+
 
         </div>
       </nav>
 
-            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
-              <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-                <h1 class="h2">Draw something lah</h1>
-                <div class="btn-toolbar mb-2 mb-md-0">
-                  <span class="btn btn-danger mr-2" id="reset">
-                    <i class="fas fa-sync-alt"></i>
-                    Reset
-                  </span>
-                  <div class="btn-group mr-2">
-                    <button class="btn btn-sm btn-outline-secondary">
-                      <i class="fas fa-share"></i>
-                      Share
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary">
-                      <i class="fas fa-save"></i>
-                      Save
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div id="canvas-container">
-                  <canvas id="canvas-real" class="canvas" width='800px' height='500px'></canvas>
-                  <canvas id="canvas-draft" class="canvas" width='800px' height='500px'></canvas>
-                </div>
-              </div>
-
-            </main>
+      <main role="main" class="col-md-9 ml-sm-auto col-lg-10 pt-3 px-4">
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
+          <h1 class="h2">Draw something lah</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <span class="btn btn-danger mr-2" id="reset">
+              <i class="fas fa-sync-alt"></i>
+              Reset
+            </span>
+            <div class="btn-group mr-2">
+              <button class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-share"></i>
+                Share
+              </button>
+              <button class="btn btn-sm btn-outline-secondary">
+                <i class="fas fa-save"></i>
+                Save
+              </button>
+            </div>
+          </div>
         </div>
-      </div>
+        <div class="row">
+          <div id="canvas-container">
+            <canvas id="canvas-real" class="canvas" width='800px' height='500px'></canvas>
+            <canvas id="canvas-draft" class="canvas" width='800px' height='500px'></canvas>
+          </div>
+        </div>
 
-      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-        crossorigin="anonymous"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-        crossorigin="anonymous"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-        crossorigin="anonymous"></script>
-      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
-        crossorigin="anonymous"></script>
-      <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
-        crossorigin="anonymous"></script>
-      <script type="text/javascript" src="./scripts/spectrum.js"></script>
-      <script type='text/javascript' src="./scripts/canvas-common.js"></script>
-      <script type='text/javascript' src="./scripts/brush-size.js"></script>
-      <script type='text/javascript' src="./scripts/image-storage.js"></script>
-      <script type='text/javascript' src="./scripts/image-drawer.js"></script>
-      <script type='text/javascript' src="./scripts/pencil.js"></script>
-      <script type='text/javascript' src="./scripts/eraser.js"></script>
-      <script type='text/javascript' src="./scripts/line.js"></script>
-      <script type='text/javascript' src="./scripts/rectangle.js"></script>
-      <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
-      <script type='text/javascript' src="./scripts/circle.js"></script>
-      <script type='text/javascript' src="./scripts/circle-fill.js"></script>
-      <script type='text/javascript' src="./scripts/polygon.js"></script>
-      <script type='text/javascript' src="./scripts/color-picker.js"></script>
-      <script type='text/javascript' src="./scripts/text.js"></script>
-      <script type='text/javascript' src="./scripts/reset.js"></script>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/solid.js" integrity="sha384-+Ga2s7YBbhOD6nie0DzrZpJes+b2K1xkpKxTFFcx59QmVPaSA8c7pycsNaFwUK6l"
+    crossorigin="anonymous"></script>
+  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/fontawesome.js" integrity="sha384-7ox8Q2yzO/uWircfojVuCQOZl+ZZBg2D2J5nkpLqzH1HY0C1dHlTKIbpRz/LG23c"
+    crossorigin="anonymous"></script>
+  <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+  <script type="text/javascript" src="./scripts/spectrum.js"></script>
+
+  <script type='text/javascript' src="./scripts/brush-size.js"></script>
+  <script type='text/javascript' src="./scripts/image-storage.js"></script>
+  <script type='text/javascript' src="./scripts/image-drawer.js"></script>
+  <script type='text/javascript' src="./scripts/pencil.js"></script>
+  <script type='text/javascript' src="./scripts/eraser.js"></script>
+  <script type='text/javascript' src="./scripts/line.js"></script>
+  <script type='text/javascript' src="./scripts/rectangle.js"></script>
+  <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
+  <script type='text/javascript' src="./scripts/circle.js"></script>
+  <script type='text/javascript' src="./scripts/circle-fill.js"></script>
+  <script type='text/javascript' src="./scripts/polygon.js"></script>
+  <script type='text/javascript' src="./scripts/color-picker.js"></script>
+  <script type='text/javascript' src="./scripts/text.js"></script>
+  <script type='text/javascript' src="./scripts/reset.js"></script>
+  <script>
+    // receiving input when performing mouse activity
+
+    // Initiate canvas function when clicking corresponding button on canvas
+    currentFunction = new Pencil(contextReal, contextDraft);
+
+    $('#pencil').click(() => {
+      currentFunction = new Pencil(contextReal, contextDraft);
+    });
+    $('#eraser').click(() => {
+      currentFunction = new Eraser(contextReal, contextDraft);
+    });
+    $('#rectangle').click(() => {
+      currentFunction = new Rectangle(contextReal, contextDraft);
+    });
+    $('#rectangle-fill').click(() => {
+      currentFunction = new RectangleFill(contextReal, contextDraft);
+    });
+    $('#circle').click(() => {
+      currentFunction = new Circle(contextReal, contextDraft);
+    });
+    $('#circle-fill').click(() => {
+      console.log("hu");
+      currentFunction = new CircleFill(contextReal, contextDraft);
+    });
+    $('#line').click(() => {
+      currentFunction = new Line(contextReal, contextDraft);
+    });
+    $('#polygon').click(() => {
+      currentFunction = new Polygon(contextReal, contextDraft);
+    });
+    $('#img-fill').click(() => {
+      currentFunction = new ImageFill(contextReal, contextDraft, deImage);
+    });
+    $('#reset').click(() => {
+      currentFunction = new Reset(contextReal, contextDraft);
+      currentFunction = new Pencil(contextReal, contextDraft);
+    });
+  </script>
 
 </body>
 
