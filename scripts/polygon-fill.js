@@ -1,20 +1,25 @@
-class Polygon extends PaintFunction {
+class PolygonFill extends PaintFunction {
   constructor(contextReal, contextDraft) {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.startX = [];
+    this.startY = [];
+    this.check = false;
   }
 
+  onMouseDown(coord, event, style) {
+    this.contextReal.strokeStyle = style.curCol.stroke;
+    this.contextReal.fillStyle = style.curCol.fill;
+    this.contextReal.lineWidth = style.brushSize;
+    this.contextReal.lineJoin = style.joint;
+    
+    this.contextDraft.strokeStyle = style.curCol.stroke;
+    this.contextDraft.fillStyle = style.curCol.fill;
+    this.contextDraft.lineWidth = style.brushSize;
+    this.contextDraft.lineJoin = style.joint;
 
-
-  onMouseDown(coord, event) {
     if (this.check == true) {
-      this.contextDraft.strokeStyle = style.curCol.stroke;
-      this.contextDraft.lineJoin = style.joint;
-      this.contextDraft.lineWidth = style.brushSize;
-      this.contextReal.strokeStyle = style.curCol.stroke;
-      this.contextReal.lineJoin = style.joint;
-      this.contextReal.lineWidth = style.brushSize;
       this.startX = [];
       this.startY = [];
       this.contextReal.beginPath();
@@ -23,7 +28,7 @@ class Polygon extends PaintFunction {
     }
   }
 
-  onMouseUp(coord, event, style) {
+  onMouseUp(coord, event) {
     this.contextReal.lineTo(coord[0], coord[1]);
     this.origX = coord[0];
     this.origY = coord[1];
@@ -38,6 +43,7 @@ class Polygon extends PaintFunction {
       this.check = true;
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
       this.contextReal.stroke();
+      this.contextReal.fill();
       this.startX = 0;
       this.startY = 0;
     }
