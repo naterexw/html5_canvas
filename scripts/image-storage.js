@@ -1,6 +1,6 @@
-let saveImage = canvas => {
+const saveImage = canvas => {
   canvas.toBlob(blob => {
-    let newImg = document.createElement("img"),
+    let newImg = document.createElement('img'),
       url = URL.createObjectURL(blob);
 
     newImg.src = url;
