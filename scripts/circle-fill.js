@@ -25,6 +25,7 @@ class CircleFill extends PaintFunction {
     this.contextReal.beginPath();
     this.contextReal.arc(this.origX, this.origY, this.radius, 0, 2 * Math.PI, false);
     this.contextReal.fill();
+    saveImage(canvasReal);
   }
   onMouseLeave() {}
   onMouseEnter() {}

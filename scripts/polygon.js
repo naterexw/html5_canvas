@@ -3,13 +3,18 @@ class Polygon extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
-    this.startX = [];
-    this.startY = [];
-    this.check = false;
   }
+
+
 
   onMouseDown(coord, event) {
     if (this.check == true) {
+      this.contextDraft.strokeStyle = style.curCol.stroke;
+      this.contextDraft.lineJoin = style.joint;
+      this.contextDraft.lineWidth = style.brushSize;
+      this.contextReal.strokeStyle = style.curCol.stroke;
+      this.contextReal.lineJoin = style.joint;
+      this.contextReal.lineWidth = style.brushSize;
       this.startX = [];
       this.startY = [];
       this.contextReal.beginPath();
@@ -18,10 +23,7 @@ class Polygon extends PaintFunction {
     }
   }
 
-  onMouseUp(coord, event) {
-    this.contextReal.strokeStyle = style.curCol.stroke;
-    this.contextReal.lineWidth = style.strokeWth;
-    this.contextReal.lineJoin = style.joint;
+  onMouseUp(coord, event, style) {
     this.contextReal.lineTo(coord[0], coord[1]);
     this.origX = coord[0];
     this.origY = coord[1];
@@ -39,13 +41,12 @@ class Polygon extends PaintFunction {
       this.startX = 0;
       this.startY = 0;
     }
+    saveImage(canvasReal);
   }
 
   onMouseMove(coord, event) {
     if (this.check == false) {
       this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
-      this.contextDraft.strokeStyle = style.curCol.stroke;
-      this.contextDraft.lineWidth = style.strokeWth;
       this.contextDraft.beginPath();
       this.contextDraft.moveTo(this.startX[0], this.startY[0]);
       for (let i = 0; i < this.startX.length; i++) {

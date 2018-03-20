@@ -7,6 +7,7 @@ class Reset extends PaintFunction {
 
   reset() {
     this.contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
+    saveImage(canvasReal);
   }
 
   onMouseDown() {}

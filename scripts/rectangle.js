@@ -7,17 +7,17 @@ class Rectangle extends PaintFunction {
 
   onMouseDown(coord, event) {
     this.contextDraft.strokeStyle = style.curCol.stroke;
-    this.contextDraft.lineWidth = style.strokeWth;
+    this.contextDraft.lineWidth = style.brushSize;
 
     this.contextReal.strokeStyle = style.curCol.stroke;
-    this.contextReal.lineWidth = style.strokeWth;
-
+    this.contextReal.lineWidth = style.brushSize;
+    
     this.origX = coord[0];
     this.origY = coord[1];
   }
   onDragging(coord, event) {
     this.contextDraft.strokeStyle = style.curCol.stroke;
-    this.contextDraft.lineWidth = style.strokeWth;
+    this.contextDraft.lineWidth = style.brushSize;
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextDraft.strokeRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
   }
@@ -26,6 +26,7 @@ class Rectangle extends PaintFunction {
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.strokeRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
+    saveImage(canvasReal);
   }
   onMouseLeave() {}
   onMouseEnter() {}
