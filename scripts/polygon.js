@@ -7,7 +7,7 @@ class Polygon extends PaintFunction {
 
 
 
-  onMouseDown(coord, event) {
+  onMouseDown(coord, event, style) {
     if (this.check == true) {
       this.contextDraft.strokeStyle = style.curCol.stroke;
       this.contextDraft.lineJoin = style.joint;
@@ -23,7 +23,7 @@ class Polygon extends PaintFunction {
     }
   }
 
-  onMouseUp(coord, event, style) {
+  onMouseUp(coord, event) {
     this.contextReal.lineTo(coord[0], coord[1]);
     this.origX = coord[0];
     this.origY = coord[1];
@@ -40,8 +40,9 @@ class Polygon extends PaintFunction {
       this.contextReal.stroke();
       this.startX = 0;
       this.startY = 0;
+      saveImage(canvasReal);
     }
-    saveImage(canvasReal);
+    
   }
 
   onMouseMove(coord, event) {
