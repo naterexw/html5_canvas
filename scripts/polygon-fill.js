@@ -13,7 +13,7 @@ class PolygonFill extends PaintFunction {
     this.contextReal.fillStyle = style.curCol.fill;
     this.contextReal.lineWidth = style.brushSize;
     this.contextReal.lineJoin = style.joint;
-    
+
     this.contextDraft.strokeStyle = style.curCol.stroke;
     this.contextDraft.fillStyle = style.curCol.fill;
     this.contextDraft.lineWidth = style.brushSize;
@@ -48,7 +48,6 @@ class PolygonFill extends PaintFunction {
       this.startY = 0;
       saveImage(canvasReal);
     }
-    
   }
 
   onMouseMove(coord, event) {

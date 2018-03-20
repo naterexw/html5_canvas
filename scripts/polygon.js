@@ -3,9 +3,8 @@ class Polygon extends PaintFunction {
     super();
     this.contextReal = contextReal;
     this.contextDraft = contextDraft;
+    this.check = true;
   }
-
-
 
   onMouseDown(coord, event, style) {
     if (this.check == true) {
@@ -42,7 +41,6 @@ class Polygon extends PaintFunction {
       this.startY = 0;
       saveImage(canvasReal);
     }
-    
   }
 
   onMouseMove(coord, event) {
