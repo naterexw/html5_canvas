@@ -171,13 +171,15 @@
               Reset
             </span>
             <div class="btn-group mr-2">
-              <button class="btn btn-sm btn-outline-secondary" id="share">
+              <!-- <button class="btn btn-sm btn-outline-secondary" id="share">
                 <i class="fas fa-share"></i>
                 Share
-              </button>
-              <a class="btn btn-sm btn-outline-secondary" href="" id="save" download="mypainting.jpg">
-                <i class="fas fa-save"></i>
-                Save
+              </button> -->
+              <a class="" href="" id="save" download="mypainting.jpg">
+                <button class="btn btn-outline-secondary" id="share">
+                  <i class="fas fa-save"></i>
+                  Save
+                </button>
               </a>
             </div>
           </div>
@@ -225,9 +227,9 @@
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach((canvas) => {
       canvas.width = (window.innerWidth * 0.8);
-      console.log(canvas.width);
+      // console.log(canvas.width);
       canvas.height = window.innerHeight * 0.8;
-      console.log(canvas.height);
+      // console.log(canvas.height);
     });
 
     // receiving input when performing mouse activity
