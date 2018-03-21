@@ -8,20 +8,23 @@ class Bucket extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-        var startX = event.clientX - 10;
-        var startY = event.clientY - 10;
-        let startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
-        if (startColor[0] == hexToR(canvasSettings.curCol.fill) && startColor[1] == hexToG(canvasSettings.curCol.fill)
-            && startColor[2] == hexToB(canvasSettings.curCol.fill)) {
-            return;
-        }
-            floodFill(coord[0], coord[1], {
-                r: hexToR(canvasSettings.curCol.fill),
-                g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
-            });
-            saveImage(canvasReal);
-        ;
+    let startX = event.clientX - 10;
+    let startY = event.clientY - 10;
+    const startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
+    if (
+      startColor[0] == hexToR(canvasSettings.curCol.fill) &&
+      startColor[1] == hexToG(canvasSettings.curCol.fill) &&
+      startColor[2] == hexToB(canvasSettings.curCol.fill)
+    ) {
+      return;
     }
+    floodFill(coord[0], coord[1], {
+      r: hexToR(canvasSettings.curCol.fill),
+      g: hexToG(canvasSettings.curCol.fill),
+      b: hexToB(canvasSettings.curCol.fill),
+    });
+    saveImage(canvasReal);
+  }
   onDragging() {}
   onMouseMove() {}
   onMouseUp() {}
@@ -29,14 +32,14 @@ class Bucket extends PaintFunction {
   onMouseEnter() {}
 }
 
-let canvas = canvasReal;
-let ctx = contextReal;
+const canvas = canvasReal;
+const ctx = contextReal;
 
-let getPixelPos = function(x, y) {
+const getPixelPos = function(x, y) {
   return (y * canvas.width + x) * 4;
 };
 
-let matchStartColor = function(data, pos, startColor) {
+const matchStartColor = function(data, pos, startColor) {
   return (
     data[pos] === startColor.r &&
     data[pos + 1] === startColor.g &&
@@ -45,7 +48,7 @@ let matchStartColor = function(data, pos, startColor) {
   );
 };
 
-let colorPixel = function(data, pos, color) {
+const colorPixel = function(data, pos, color) {
   data[pos] = color.r || 0;
   data[pos + 1] = color.g || 0;
   data[pos + 2] = color.b || 0;
@@ -53,19 +56,19 @@ let colorPixel = function(data, pos, color) {
 };
 
 var floodFill = function(startX, startY, fillColor) {
-  let dstImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
-  let dstData = dstImg.data;
-  let startPos = getPixelPos(startX, startY);
-  let startColor = {
+  const dstImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
+  const dstData = dstImg.data;
+  const startPos = getPixelPos(startX, startY);
+  const startColor = {
     r: dstData[startPos],
     g: dstData[startPos + 1],
     b: dstData[startPos + 2],
     a: dstData[startPos + 3],
   };
-  let todo = [[startX, startY]];
+  const todo = [[startX, startY]];
   while (todo.length) {
-    let pos = todo.pop();
-    let x = pos[0];
+    const pos = todo.pop();
+    const x = pos[0];
     let y = pos[1];
     let currentPos = getPixelPos(x, y);
     while (y-- >= 0 && matchStartColor(dstData, currentPos, startColor)) {
