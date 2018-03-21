@@ -22,7 +22,7 @@ class Rectangle extends PaintFunction {
   onMouseUp(coord) {
     this.contextDraft.clearRect(0, 0, canvasDraft.width, canvasDraft.height);
     this.contextReal.strokeRect(this.origX, this.origY, coord[0] - this.origX, coord[1] - this.origY);
-    saveImage(canvasReal);
+    saveImage(canvasReal, storeImg);
   }
   onMouseLeave() {}
   onMouseEnter() {}
