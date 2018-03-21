@@ -1,14 +1,27 @@
+let canvasWidth = 800;
+let canvasHeight = 500;
+
 class Bucket extends PaintFunction {
-    constructor(contextReal, contextDraft) {
+    constructor(context) {
         super();
-        this.contextReal = contextReal;
+        this.context = context;
     }
 
     onMouseDown(coord, event) {
+        var startX = event.clientX - 10;
+        var startY = event.clientY - 10;
         let startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
-        floodFill(coord[0], coord[1], event);
+        if (startColor[0] == hexToR(canvasSettings.curCol.fill) && startColor[1] == hexToG(canvasSettings.curCol.fill)
+            && startColor[2] == hexToB(canvasSettings.curCol.fill)) {
+            return;
+        } else {
+            floodFill(coord[0], coord[1], {
+                r: hexToR(canvasSettings.curCol.fill),
+                g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
+            });
+            saveImage(canvasReal);
+        };
     }
-
     onDragging() { }
     onMouseMove() { }
     onMouseUp() { }
@@ -16,29 +29,57 @@ class Bucket extends PaintFunction {
     onMouseEnter() { }
 }
 
-function floodFill(startX, startY, e) {
-    let pixelStack = [[startX, startY]];
-    while (pixelStack.length) {
-        var newPos, x, y, pixelPos, reachLeft, reachRight;
-        newPos = pixelStack.pop();
-        x = newPos[0];
-        y = newPos[1];
+var canvas = canvasReal;
+var ctx = contextReal;
 
-        pixelPos = (y * 800 + x) * 4;
-        while (y-- >= e.offsetX && matchStartColor(pixelPos)) {
-            pixelPos -= 800 * 4;
+var getPixelPos = function (x, y) {
+
+    return (y * canvas.width + x) * 4;
+};
+
+var matchStartColor = function (data, pos, startColor) {
+    return (data[pos] === startColor.r &&
+        data[pos + 1] === startColor.g &&
+        data[pos + 2] === startColor.b &&
+        data[pos + 3] === startColor.a);
+};
+
+var colorPixel = function (data, pos, color) {
+    data[pos] = color.r || 0;
+    data[pos + 1] = color.g || 0;
+    data[pos + 2] = color.b || 0;
+    data[pos + 3] = color.hasOwnProperty("a") ? color.a : 255;
+};
+
+var floodFill = function (startX, startY, fillColor) {
+    var dstImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var dstData = dstImg.data;
+    var startPos = getPixelPos(startX, startY);
+    var startColor = {
+        r: dstData[startPos],
+        g: dstData[startPos + 1],
+        b: dstData[startPos + 2],
+        a: dstData[startPos + 3]
+    };
+    var todo = [[startX, startY]];
+    while (todo.length) {
+        var pos = todo.pop();
+        var x = pos[0];
+        var y = pos[1];
+        var currentPos = getPixelPos(x, y);
+        while ((y-- >= 0) && matchStartColor(dstData, currentPos, startColor)) {
+            currentPos -= canvas.width * 4;
         }
-        pixelPos += 800 * 4;
+        currentPos += canvas.width * 4;
         ++y;
-        reachLeft = false;
-        reachRight = false;
-        while (y++ < 500 - 1 && matchStartColor(pixelPos)) {
-            colorPixel(pixelPos);
-
+        var reachLeft = false;
+        var reachRight = false;
+        while ((y++ < canvas.height - 1) && matchStartColor(dstData, currentPos, startColor)) {
+            colorPixel(dstData, currentPos, fillColor);
             if (x > 0) {
-                if (matchStartColor(pixelPos - 4)) {
+                if (matchStartColor(dstData, currentPos - 4, startColor)) {
                     if (!reachLeft) {
-                        pixelStack.push([x - 1, y]);
+                        todo.push([x - 1, y]);
                         reachLeft = true;
                     }
                 }
@@ -46,11 +87,10 @@ function floodFill(startX, startY, e) {
                     reachLeft = false;
                 }
             }
-
-            if (x < 800 - 1) {
-                if (matchStartColor(pixelPos + 4)) {
+            if (x < canvas.width - 1) {
+                if (matchStartColor(dstData, currentPos + 4, startColor)) {
                     if (!reachRight) {
-                        pixelStack.push([x + 1, y]);
+                        todo.push([x + 1, y]);
                         reachRight = true;
                     }
                 }
@@ -58,26 +98,13 @@ function floodFill(startX, startY, e) {
                     reachRight = false;
                 }
             }
-
-            pixelPos += 800 * 4;
+            currentPos += canvas.width * 4;
         }
     }
-    
-    var colorLayer = [0,10,0,255];
-    context.putImageData(colorLayer, 0, 0);
+    ctx.putImageData(dstImg, 0, 0);
+};
 
-    function matchStartColor(pixelPos) {
-        var r = colorLayer.data[pixelPos];
-        var g = colorLayer.data[pixelPos + 1];
-        var b = colorLayer.data[pixelPos + 2];
-
-        return (r == startR && g == startG && b == startB);
-    }
-
-    function colorPixel(pixelPos) {
-        colorLayer.data[pixelPos] = fillColorR;
-        colorLayer.data[pixelPos + 1] = fillColorG;
-        colorLayer.data[pixelPos + 2] = fillColorB;
-        colorLayer.data[pixelPos + 3] = 255;
-    }
-}
+function hexToR(h) { return parseInt((cutHex(h)).substring(0, 2), 16) }
+function hexToG(h) { return parseInt((cutHex(h)).substring(2, 4), 16) }
+function hexToB(h) { return parseInt((cutHex(h)).substring(4, 6), 16) }
+function cutHex(h) { return (h.charAt(0) == "#") ? h.substring(1, 7) : h }

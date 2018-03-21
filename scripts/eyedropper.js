@@ -18,10 +18,10 @@ class Eyedropper extends PaintFunction {
         if (destinationColor[0] + destinationColor[1] + destinationColor[2] + destinationColor[3] == 0) {
             selectedColor = '#ffffff';
         };
-        console.log(selectedColor);
         canvasSettings.curCol.fill = selectedColor;
         canvasSettings.curCol.stroke = selectedColor;
         $("#custom").spectrum("set", selectedColor);
+        console.log(selectedColor);
     }
 
     onMouseLeave() { }
