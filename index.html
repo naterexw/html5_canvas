@@ -135,7 +135,7 @@
                 <input class="col-picker" type='text' id="custom" />
               </div>
               <div>Blur
-                <input type="number" name="" id="blur" value="0">px</div>
+                <input type="number" name="" id="dw-blur-adj" value="0">px</div>
               <div>Brightness
                 <span id="dw-brightness-dsply">100</span>%
                 <input type="range" name="" id="dw-brightness-adj" min="0" max="100" value="100">
@@ -195,11 +195,19 @@
                 Share
               </button> -->
               <a class="" href="" id="save" download="mypainting.jpg">
-                <button class="btn btn-outline-secondary" id="share">
+                <button class="btn btn-outline-secondary" id="save-as">
                   <i class="fas fa-save"></i>
                   Save
                 </button>
               </a>
+              <span class="btn  mr-2">
+                <i class="fas"></i>
+                Image ext:
+                <select name="" id="img-option">
+                  <option value="jpg">jpg</option>
+                  <option value="png">png</option>
+                </select>
+              </span>
             </div>
           </div>
         </div>
