@@ -9,9 +9,24 @@
 
 // $("#blur").val()
 
+let canvasFilterSetting = {
+    blur: 0,
+    brightness: 100,
+    contrast: 100,
+    dropshadow: [0,0,0,"black"],
+    grayscale: 0,
+    huerotate: 0,
+    invert: 0,
+    opacity: 100,
+    saturate: 100,
+    sepia: 0
+}
+
 let mousedown = false;
 $(window).on('mousedown',()=>mousedown = true);
 $(window).on('mouseup',()=>mousedown = false);
+
+
 
 $('#brightness-adjustment').on('mousemove',function(){
     if (mousedown){
@@ -22,3 +37,6 @@ $('#brightness-adjustment').on('mousemove',function(){
     }
     
 })
+
+
+`blur(10px) brightness(100%) contrast(100%) drop-shadow(1px 1px 1px red) grayscale(0%) hue-rotate(0deg) invert(0%) opacity(100%) saturate(100%) sepia(0%)`
