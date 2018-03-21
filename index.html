@@ -130,10 +130,24 @@
               <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
             </div>
             <div class="py-2">
-              <input id="dr-img" type="file" accept="image/*">
               <input class="col-picker" type='text' id="custom" />
             </div>
-            <div>Blur<input type="text" name="" id="blur" value = "0">px</div>
+            <div>Blur<input type="number" name="" id="blur" value = "0">px</div>
+            <div>Brightness <span id = "brightness-degree">100</span> %<input type="range" name="" id="brightness-adjustment" min = "0" max = "100" value = "100"></div>
+            <div>Dropshadow
+              <input type="number" name="offset-x" id="offset-x" value ="0">px
+              <input type="number" name="offset-y" id="offset-y" value ="0">px
+              <input type="number" name="blur-radius" id="dps-blur-radius" value ="0">px
+              <input type="text" name="color" id="dps-color" value= "#">
+            </div>
+            
+            <div>Grayscale<input type="number" name="" id="blur" value = "0">px</div>
+            <div>hue-rotate<input type="number" name="" id="blur" value = "0">px</div>
+            <div>Invert<input type="text" name="" id="blur" value = "0">px</div>
+            <div>Opacity<input type="text" name="" id="blur" value = "0">px</div>
+            <div>Saturate<input type="text" name="" id="blur" value = "0">px</div>
+            <div>Sepia<input type="text" name="" id="blur" value = "0">px</div>
+            
           </div>
         </div>
       </nav>
