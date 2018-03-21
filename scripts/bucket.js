@@ -8,15 +8,19 @@ class Bucket extends PaintFunction {
   }
 
   onMouseDown(coord, event) {
-    let startX = event.clientX - 10;
-    let startY = event.clientY - 10;
-    const startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
-    if (
-      startColor[0] == hexToR(canvasSettings.curCol.fill) &&
-      startColor[1] == hexToG(canvasSettings.curCol.fill) &&
-      startColor[2] == hexToB(canvasSettings.curCol.fill)
-    ) {
-      return;
+        var startX = event.clientX - 10;
+        var startY = event.clientY - 10;
+        let startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
+        if (startColor[0] == hexToR(canvasSettings.curCol.fill) && startColor[1] == hexToG(canvasSettings.curCol.fill)
+            && startColor[2] == hexToB(canvasSettings.curCol.fill)) {
+            return;
+        }
+            floodFill(coord[0], coord[1], {
+                r: hexToR(canvasSettings.curCol.fill),
+                g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
+            });
+            saveImage(canvasReal, storeImg);
+        ;
     }
     floodFill(coord[0], coord[1], {
       r: hexToR(canvasSettings.curCol.fill),
