@@ -1,22 +1,21 @@
 .canvas {
   /* border: 1px black dotted; */
   position: absolute;
+  /* margin: 0; */
   /* top:0px;
     bottom:0px;
     left:0px;
     right:0px */
 }
 #canvas-draft {
-  border: 1px red dotted;
   cursor: pointer;
   background-color: transparent;
+  border: 1px blue dotted;
 }
 #canvas-real {
   border: 1px black dotted;
 }
-#canvas-container {
-  height: 500px;
-}
+
 .position-relative {
   position: relative;
 }
