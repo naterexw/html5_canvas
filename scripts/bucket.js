@@ -19,7 +19,7 @@ class Bucket extends PaintFunction {
                 r: hexToR(canvasSettings.curCol.fill),
                 g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
             });
-            saveImage(canvasReal);
+            saveImage(canvasReal, storeImg);
         ;
     }
   onDragging() {}
