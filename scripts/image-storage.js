@@ -40,7 +40,7 @@ $(window).on("keydown", (e) => {
 
 // Click on save button and get the current image from real canvas
 $("#save").click(function(ev){
-  let saveTp = "jpg";
+  let saveTp = $('#img-option').val();
   $("#save").attr("href",canvasReal.toDataURL(`image/${saveTp}`));
   $("#save").attr("download",`mypainting.${saveTp}`);
 });
