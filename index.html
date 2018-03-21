@@ -227,9 +227,15 @@
     const canvases = document.querySelectorAll('canvas');
     canvases.forEach((canvas) => {
       canvas.width = (window.innerWidth * 0.8);
-      // console.log(canvas.width);
       canvas.height = window.innerHeight * 0.8;
-      // console.log(canvas.height);
+    });
+
+    //initialize canvas on resize
+    $(window).resize(function () {
+      canvases.forEach((canvas) => {
+        canvas.width = (window.innerWidth * 0.8);
+        canvas.height = window.innerHeight * 0.8;
+      });
     });
 
     // receiving input when performing mouse activity
