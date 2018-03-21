@@ -2,15 +2,6 @@ const canvasWidth = 800;
 const canvasHeight = 500;
 
 class Bucket extends PaintFunction {
-<<<<<<< HEAD
-    constructor(contextReal, contextDraft) {
-        super();
-        this.contextReal = contextReal;
-    }
-
-    onMouseDown(coord, event) {
-        let pixelStack = [coord[0], coord[1]];
-=======
   constructor(context) {
     super();
     this.context = context;
@@ -37,7 +28,6 @@ class Bucket extends PaintFunction {
   onMouseLeave() {}
   onMouseEnter() {}
 }
->>>>>>> master
 
 let canvas = canvasReal;
 let ctx = contextReal;
