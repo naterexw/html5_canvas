@@ -109,7 +109,7 @@
               <!-- Eyedropper -->
             </span>
           </div>
-          <div class="col-10 py-2">
+          <div class="col-12 py-2">
             <div class="input-group">
               <div class="custom-file">
                 <input type="file" accept="image/*" class="custom-file-input" id="dr-img" style="cursor: pointer">
@@ -132,22 +132,32 @@
             <div class="py-2">
               <input class="col-picker" type='text' id="custom" />
             </div>
-            <div>Blur<input type="number" name="" id="blur" value = "0">px</div>
-            <div>Brightness <span id = "brightness-degree">100</span> %<input type="range" name="" id="brightness-adjustment" min = "0" max = "100" value = "100"></div>
-            <div>Dropshadow
-              <input type="number" name="offset-x" id="offset-x" value ="0">px
-              <input type="number" name="offset-y" id="offset-y" value ="0">px
-              <input type="number" name="blur-radius" id="dps-blur-radius" value ="0">px
-              <input type="text" name="color" id="dps-color" value= "#">
+            <div>Blur
+              <input type="number" name="" id="blur" value="0">px</div>
+            <div>Brightness
+              <span id="brightness-degree">100</span> %
+              <input type="range" name="" id="brightness-adjustment" min="0" max="100" value="100">
             </div>
-            
-            <div>Grayscale<input type="number" name="" id="blur" value = "0">px</div>
-            <div>hue-rotate<input type="number" name="" id="blur" value = "0">px</div>
-            <div>Invert<input type="text" name="" id="blur" value = "0">px</div>
-            <div>Opacity<input type="text" name="" id="blur" value = "0">px</div>
-            <div>Saturate<input type="text" name="" id="blur" value = "0">px</div>
-            <div>Sepia<input type="text" name="" id="blur" value = "0">px</div>
-            
+            <div>Dropshadow
+              <input type="number" name="offset-x" id="offset-x" value="0">px
+              <input type="number" name="offset-y" id="offset-y" value="0">px
+              <input type="number" name="blur-radius" id="dps-blur-radius" value="0">px
+              <input type="text" name="color" id="dps-color" value="#">
+            </div>
+
+            <div>Grayscale
+              <input type="number" name="" id="blur" value="0">px</div>
+            <div>hue-rotate
+              <input type="number" name="" id="blur" value="0">px</div>
+            <div>Invert
+              <input type="text" name="" id="blur" value="0">px</div>
+            <div>Opacity
+              <input type="text" name="" id="blur" value="0">px</div>
+            <div>Saturate
+              <input type="text" name="" id="blur" value="0">px</div>
+            <div>Sepia
+              <input type="text" name="" id="blur" value="0">px</div>
+
           </div>
         </div>
       </nav>
@@ -172,14 +182,14 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div id="canvas-container">
-            <canvas id="canvas-real" class="canvas" width='800px' height='500px'></canvas>
-            <canvas id="canvas-draft" class="canvas" width='800px' height='500px'></canvas>
-          </div>
+        <div class="row col">
+          <canvas id="canvas-real" class="canvas"></canvas>
+          <canvas id="canvas-draft" class="canvas"></canvas>
         </div>
       </main>
     </div>
+    <!-- <div class="" style="border: 1px solid green">
+    </div> -->
   </div>
 
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
@@ -211,6 +221,15 @@
   <script type='text/javascript' src="./scripts/canvas-filter.js"></script>
   <script type='text/javascript' src="./scripts/reset.js"></script>
   <script>
+    // initialize canvas
+    const canvases = document.querySelectorAll('canvas');
+    canvases.forEach((canvas) => {
+      canvas.width = (window.innerWidth * 0.8);
+      console.log(canvas.width);
+      canvas.height = window.innerHeight * 0.8;
+      console.log(canvas.height);
+    });
+
     // receiving input when performing mouse activity
 
     // Initiate canvas function when clicking corresponding button on canvas
