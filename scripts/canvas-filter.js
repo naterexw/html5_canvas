@@ -62,7 +62,9 @@ $('input[type="range"]').on('mousemove', function () {
     }
 })
 
-$("[type=reset]").click(() => {
+
+
+$("[type=reset],[type=range]").click(() => {
     window.setTimeout(checkChangeFilter,50);
 });
 
