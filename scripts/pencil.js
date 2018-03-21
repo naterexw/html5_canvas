@@ -8,6 +8,7 @@ class Pencil extends PaintFunction {
     this.context.strokeStyle = style.curCol.stroke;
     this.context.lineJoin = style.joint;
     this.context.lineWidth = style.brushSize;
+    this.context.lineCap = 'round';
     this.context.beginPath();
     this.context.moveTo(coord[0], coord[1]);
     this.draw(coord[0], coord[1]);
