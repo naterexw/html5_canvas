@@ -40,7 +40,7 @@ class ImageFill extends PaintFunction {
             coord[0] - this.origX,
             coord[1] - this.origY
         );
-        saveImage(canvasReal);
+        saveImage(canvasReal, storeImg);
     }
     onMouseLeave() {}
     onMouseEnter() {}

@@ -58,7 +58,7 @@ class PolygonFill extends PaintFunction {
       this.contextReal.fill();
       this.startX = 0;
       this.startY = 0;
-      saveImage(canvasReal);
+      saveImage(canvasReal, storeImg);
     }
   }
 

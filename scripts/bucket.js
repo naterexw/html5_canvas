@@ -1,8 +1,34 @@
 class Bucket extends PaintFunction {
+<<<<<<< HEAD
+  constructor(contextReal, contextDraft) {
+    super();
+    this.contextReal = contextReal;
+  }
+
+  onMouseDown(coord, event) {
+    const destinationColor = this.contextReal.getImageData(coord[0], coord[1], 1, 1).data;
+    console.log(destinationColor[0]);
+    console.log(destinationColor[1]);
+    console.log(destinationColor[2]);
+    console.log('test');
+    console.log(hexToR(style.curCol.fill));
+    console.log(hexToG(style.curCol.fill));
+    console.log(hexToB(style.curCol.fill));
+    saveImage(canvasReal, storeImg);
+  }
+
+  onDragging() {}
+  onMouseMove() {}
+  onMouseUp() {}
+  onMouseLeave() {}
+  onMouseEnter() {}
+}
+=======
     constructor(contextReal, contextDraft) {
         super();
         this.contextReal = contextReal;
     }
+>>>>>>> master
 
     onMouseDown(coord, event) {
         let pixelStack = [coord[0], coord[1]];

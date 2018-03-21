@@ -17,7 +17,7 @@ class Eraser extends PaintFunction {
 
     onMouseMove() {}
     onMouseUp() {
-        saveImage(canvasReal);
+        saveImage(canvasReal, storeImg);
     }
     onMouseLeave() {}
     onMouseEnter() {}
