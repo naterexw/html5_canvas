@@ -53,4 +53,5 @@ function addText(e) {
     contextReal.fillText(txt, e.offsetX, e.offsetY + 6);
   }
   addInput(e.clientX, e.clientY);
+  saveImage(canvasReal, storeImg);
 }
