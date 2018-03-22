@@ -1,38 +1,38 @@
 let hasInput = false;
 
 class Text extends PaintFunction {
-  constructor(context) {
+  constructor(contextReal, contextDraft) {
     super();
-    this.context = context;
+    this.contextReal = contextReal;
   }
 
   onMouseDown(coord, event) {
     addText(event);
   }
 
-  onDragging() {}
-  onMouseMove() {}
-  onMouseUp() {}
-  onMouseLeave() {}
-  onMouseEnter() {}
+  onDragging() { }
+  onMouseMove() { }
+  onMouseUp() { }
+  onMouseLeave() { }
+  onMouseEnter() { }
 }
 
 function addText(e) {
   const font = '14px sans-serif';
-
+  
   function addInput(x, y) {
     const input = document.createElement('input');
+    input.style.zIndex = 100;
     input.type = 'text';
     input.placeholder = 'Input text and press enter when complete';
     input.style.background = 'transparent';
-    input.style.border = 'transparent';
     input.style.width = `${350}px`;
     input.style.position = 'fixed';
     input.style.left = `${x}px`;
     input.style.top = `${y}px`;
     input.onkeydown = handleEnter;
     document.body.appendChild(input);
-    input.focus();
+
     hasInput = true;
   }
 
