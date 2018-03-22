@@ -16,6 +16,7 @@
 </head>
 
 <body>
+  <canvas class = "canvas" id = "animation"></canvas>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Canvas app by Nate, Ivan, & Andrew</a>
     <ul class="navbar-nav px-3">
@@ -224,6 +225,8 @@
         <div class="row col">
           <canvas id="canvas-real" class="canvas"></canvas>
           <canvas id="canvas-draft" class="canvas"></canvas>
+          <canvas id="canvas-indicator" class="canvas"></canvas>
+          <canvas id="canvas-ruler" class="canvas"></canvas>
         </div>
       </main>
     </div>
@@ -241,6 +244,7 @@
     crossorigin="anonymous"></script>
   <script type='text/javascript' src="./scripts/canvas-common.js"></script>
   <script type="text/javascript" src="./scripts/spectrum.js"></script>
+  <script type='text/javascript' src="./scripts/canvas-scale-ruler.js"></script>
   <script type='text/javascript' src="./scripts/brush-size.js"></script>
   <script type='text/javascript' src="./scripts/pencil.js"></script>
   <script type='text/javascript' src="./scripts/eraser.js"></script>
@@ -261,6 +265,7 @@
   <script type='text/javascript' src="./scripts/text.js"></script>
   <script type='text/javascript' src="./scripts/canvas-filter.js"></script>
   <script type='text/javascript' src="./scripts/reset.js"></script>
+  <script type='text/javascript' src="./scripts/opening-animation.js"></script>
   <script>
     // initialize canvas
     const canvases = document.querySelectorAll('canvas');
