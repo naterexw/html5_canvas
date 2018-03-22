@@ -19,10 +19,10 @@ $(document).ready(() => {
     // $("#animation").hide();
 
     centerText("Canvas",contextAnimationDrawing, canvasAnimationDrawing);
-    looping();
+    // looping();
 
         
-    // parallelFx(looping(), 50);
+    parallelFx(looping, 1000);
 })
 
 
@@ -49,7 +49,7 @@ class Ball {
 function parallelFx(callback, howManyTimes){
     let arrOfFx=[];
     for(let i = 0; i< howManyTimes; i++){
-        arrOfFx.push(callback());
+        arrOfFx.push(setInterval(callback,200));
     }
 }
 
@@ -70,7 +70,7 @@ function looping() {
         animationStylePicker.ballCounter++;
         }
         // Create the ball with coord, radius and color
-        setTimeout(looping,1);
+        // setTimeout(looping,1);
     }
     console.log(animationStylePicker.ballCounter);
 
