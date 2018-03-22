@@ -53,20 +53,19 @@ $('#bgc').spectrum({
   },
 });
 
-// $('#dps-color').spectrum({
-//   flat: false,
-//   showButtons: false,
-//   showInitial: true,
-//   showInput: true,
-//   allowEmpty: true,
-//   showPalette: true,
-//   palette: [],
-//   maxSelectionSize: 5,
-//   hideAfterPaletteSelect: true,
-//   showAlpha: true,
-//   change: color => {
-//     let col = color.toHexString();
-//     // canvasSettings.curCol.bgc = col;
-//     $('#dps-color').val(col);
-//   },
-// });
+$('#dps-color').spectrum({
+  flat: false,
+  showButtons: false,
+  showInitial: true,
+  showInput: true,
+  allowEmpty: true,
+  showPalette: true,
+  palette: [],
+  maxSelectionSize: 5,
+  hideAfterPaletteSelect: true,
+  showAlpha: true,
+  change: color => {
+    const col = color.toHexString();
+    $('#dps-color').val(col);
+  },
+});

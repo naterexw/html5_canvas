@@ -29,20 +29,20 @@
     <div class="row d-flex justify-content-between ">
       <nav class="col-sm-3 bg-light sidebar-sticky">
         <div class="row ">
+
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Brush size</h5>
                 <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
                   <label class="btn btn-sm btn-outline-primary">
                     <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
                     <i class="fas fa-circle fa-sm xxs align-middle"></i>
                   </label>
-                  <label class="btn btn-sm btn-outline-primary active">
+                  <label class="btn btn-sm btn-outline-primary">
                     <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
                     <i class="fas fa-circle fa-sm align-middle"></i>
                   </label>
-                  <label class="btn btn-sm btn-outline-primary">
+                  <label class="btn btn-sm btn-outline-primary active">
                     <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
                     <i class="fas fa-circle fa-lg align-middle"></i>
                   </label>
@@ -54,10 +54,39 @@
               </div>
             </div>
           </div>
+
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Tools</h5>
+                <div class="row py-1 text-center">
+                  <div class="col">
+                    Stroke
+                  </div>
+                  <div class="col">
+                    Fill
+                  </div>
+                  <div class="col">
+                    Background
+                  </div>
+                </div>
+                <div class="row py-1">
+                  <div class="col">
+                    <input class="col-picker" type="color" id="stroke">
+                  </div>
+                  <div class="col">
+                    <input class="col-picker" type="color" id="fill">
+                  </div>
+                  <div class="col">
+                    <input class="col-picker" type="color" id="bgc">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
                 <div class="row py-1">
                   <span class="btn btn-outline-primary tools mx-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
                     <i class="fas fa-pencil-alt"></i>
@@ -129,7 +158,6 @@
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Add image</h5>
                 <div class="row py-1">
                   <div class="input-group">
                     <div class="custom-file">
@@ -149,23 +177,6 @@
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Color</h5>
-                <div class="btn-group py-1">
-                  <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
-                  <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
-                  <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
-                </div>
-                <input class="col-picker" type="text" id="custom" />
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 py-1">
-            <div class="card">
-              <div class="card-body">
-                <div class="float-right">
-                </div>
-                <h5 class="card-title">Filters</h5>
                 <form>
                   <div class="form-row">
                     <div class="col">
@@ -285,10 +296,10 @@
                       Color:
                     </div>
                     <div class="col">
-                      <input type="text" name="color" id="dps-color" value="black">
+                      <input class="col-picker" type="color" id="dps-color">
                     </div>
                   </div>
-                  <div class="form-row">
+                  <div class="form-row py-2">
                     <div class="col">
                       <input id="slider-reset" type="reset" class="btn btn-sm btn-block btn-outline-danger" value="Reset">
                     </div>

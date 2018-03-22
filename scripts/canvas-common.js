@@ -16,7 +16,7 @@ let dragging = false;
 
 // Styling setting of canvas, applicable to both draft and real canvas(s)
 const canvasSettings = {
-  brushSize: 1,
+  brushSize: 8,
   joint: 'round',
   curCol: {
     stroke: '#000000',
