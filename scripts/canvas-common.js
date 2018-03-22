@@ -29,8 +29,6 @@ const canvasSettings = {
   },
 };
 
-// receiving input when performing mouse activity
-
 $('#canvas-draft').mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];
   currentFunction.onMouseDown(mouseLoc, e, canvasSettings);
