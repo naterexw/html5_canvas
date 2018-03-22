@@ -53,6 +53,7 @@
 }
 
 .xxs {
+  transform: scale(0.5);
   -webkit-transform: scale(0.5);
 }
 .sidebar-sticky {
