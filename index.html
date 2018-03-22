@@ -293,7 +293,7 @@
                   </div>
                   <div class="form-row py-2">
                     <div class="col">
-                      <input id="slider-reset" type="reset" class="btn btn-sm btn-block btn-outline-danger" value="Reset">
+                      <input id="slider-reset" type="reset" class="btn btn-sm btn-block btn-outline-danger" value="Reset filters">
                     </div>
                   </div>
                 </form>
@@ -304,15 +304,18 @@
 
       <main role="main" class="col-sm-9 pt-3 px-4">
         <div class="row d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-          <h1 class="h2">Draw something lah</h1>
+          <h1 class="h2">Draw something
+            <i>&nbsp;&nbsp;</i>
+            <i class="far fa-hand-point-down"></i>
+          </h1>
           <div class="btn-toolbar mb-2 mb-md-0">
-            <span class="btn btn-info mr-2" id="focus">
-              <i class="fas fa-bullseye"></i>
-              Alignment Focus
+            <span class="btn btn-outline-primary mr-2" id="focus">
+              <i class="fas fa-crosshairs"></i>
+              Focus pointer
             </span>
-            <span class="btn btn-danger mr-2" id="reset">
+            <span class="btn btn-outline-danger mr-2" id="reset">
               <i class="fas fa-sync-alt"></i>
-              Reset
+              Clear canvas
             </span>
             <div class="input-group mr-2">
               <select class="custom-select" id="img-option" required>
