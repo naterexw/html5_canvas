@@ -15,6 +15,9 @@
 #canvas-real {
   border: 1px black dotted;
 }
+.pointer {
+  cursor: pointer;
+}
 
 .position-relative {
   position: relative;

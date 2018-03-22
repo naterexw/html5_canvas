@@ -27,197 +27,296 @@
 
   <div class="container-fluid">
     <div class="row d-flex justify-content-between ">
-      <nav class="col-6 col-sm-2 bg-light sidebar-sticky">
+      <nav class="col-sm-3 bg-light sidebar-sticky">
         <div class="row ">
-          <div class="col-12 py-2">
-            <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
-              <label class="btn btn-sm btn-outline-primary">
-                <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
-                <i class="fas fa-circle fa-sm xxs align-middle"></i>
-              </label>
-              <label class="btn btn-sm btn-outline-primary active">
-                <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
-                <i class="fas fa-circle fa-sm align-middle"></i>
-              </label>
-              <label class="btn btn-sm btn-outline-primary">
-                <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
-                <i class="fas fa-circle fa-lg align-middle"></i>
-              </label>
-              <label class="btn btn-sm btn-outline-primary">
-                <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
-                <i class="fas fa-circle fa-2x align-middle"></i>
-              </label>
-            </div>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
-              <i class="fas fa-pencil-alt"></i>
-              <!-- Pencil -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="eraser" data-toggle="tooltip" data-placement="top" title="Eraser">
-              <i class="fas fa-eraser"></i>
-              <!-- Eraser -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="line" data-toggle="tooltip" data-placement="top" title="Line">
-              <i class="fas fa-minus"></i>
-              <!-- Line -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="text" data-toggle="tooltip" data-placement="top" title="Text">
-              <i class="fas fa-font"></i>
-              <!-- Text -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="rectangle" data-toggle="tooltip" data-placement="top" title="Rectangle">
-              <i class="far fa-square"></i>
-              <!-- Rectangle -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="rectangle-fill" data-toggle="tooltip" data-placement="top" title="Filled rectangle">
-              <i class="fas fa-square"></i>
-              <!-- Filled rectangle -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="circle" data-toggle="tooltip" data-placement="top" title="Circle">
-              <i class="far fa-circle"></i>
-              <!-- Circle -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="circle-fill" data-toggle="tooltip" data-placement="top" title="Filled circle">
-              <i class="fas fa-circle"></i>
-              <!-- Filled circle -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
-              <i class="fab fa-gg"></i>
-              <!-- Polygon -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
-              <i class="fab fa-gg-circle"></i>
-              <!-- Polygon-fill -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="bucket" data-toggle="tooltip" data-placement="top" title="Bucket">
-              <i class="fab fa-bitbucket"></i>
-              <!-- Bucket -->
-            </span>
-            <span class="btn btn-outline-primary tools" id="eyedropper" data-toggle="tooltip" data-placement="top" title="Eyedropper">
-              <i class="fas fa-eye-dropper"></i>
-              <!-- Eyedropper -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-danger tools mr-2" id="brush-type1" data-toggle="tooltip" data-placement="top" title="Brush 1">
-              <i class="fab fa-bitbucket"></i>
-              <!-- Brush 1 -->
-            </span>
-            <span class="btn btn-outline-danger tools" id="brush-type2" data-toggle="tooltip" data-placement="top" title="Brush 2">
-              <i class="fas fa-eye-dropper"></i>
-              <!-- Brush 2 -->
-            </span>
-          </div>
-          <div class="col-10 py-2">
-            <div class="input-group">
-              <div class="custom-file">
-                <input type="file" accept="image/*" class="custom-file-input" id="dr-img" style="cursor: pointer">
-                <label class="custom-file-label" for="dr-img" style="cursor: pointer">Select file</label>
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Brush size</h5>
+                <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
+                  <label class="btn btn-sm btn-outline-primary">
+                    <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
+                    <i class="fas fa-circle fa-sm xxs align-middle"></i>
+                  </label>
+                  <label class="btn btn-sm btn-outline-primary active">
+                    <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
+                    <i class="fas fa-circle fa-sm align-middle"></i>
+                  </label>
+                  <label class="btn btn-sm btn-outline-primary">
+                    <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
+                    <i class="fas fa-circle fa-lg align-middle"></i>
+                  </label>
+                  <label class="btn btn-sm btn-outline-primary">
+                    <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
+                    <i class="fas fa-circle fa-2x align-middle"></i>
+                  </label>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-12 py-2">
-            <span class="btn btn-outline-primary tools mr-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
-              <i class="fas fa-image"></i>
-              <!-- Draw with image -->
-            </span>
-          </div>
-          <div class="col-12 py-2">
-            <div class="btn-group py-2">
-              <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
-              <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
-              <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Tools</h5>
+                <div class="row py-1">
+                  <span class="btn btn-outline-primary tools mx-2" id="pencil" data-toggle="tooltip" data-placement="top" title="Pencil">
+                    <i class="fas fa-pencil-alt"></i>
+                    <!-- Pencil -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="eraser" data-toggle="tooltip" data-placement="top" title="Eraser">
+                    <i class="fas fa-eraser"></i>
+                    <!-- Eraser -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="line" data-toggle="tooltip" data-placement="top" title="Line">
+                    <i class="fas fa-minus"></i>
+                    <!-- Line -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="text" data-toggle="tooltip" data-placement="top" title="Text">
+                    <i class="fas fa-font"></i>
+                    <!-- Text -->
+                  </span>
+                </div>
+                <div class="row py-1">
+                  <span class="btn btn-outline-primary tools mx-2" id="rectangle" data-toggle="tooltip" data-placement="top" title="Rectangle">
+                    <i class="far fa-square"></i>
+                    <!-- Rectangle -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="rectangle-fill" data-toggle="tooltip" data-placement="top" title="Filled rectangle">
+                    <i class="fas fa-square"></i>
+                    <!-- Filled rectangle -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="circle" data-toggle="tooltip" data-placement="top" title="Circle">
+                    <i class="far fa-circle"></i>
+                    <!-- Circle -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="circle-fill" data-toggle="tooltip" data-placement="top" title="Filled circle">
+                    <i class="fas fa-circle"></i>
+                    <!-- Filled circle -->
+                  </span>
+                </div>
+                <div class="row py-1">
+                  <span class="btn btn-outline-primary tools mx-2" id="polygon" data-toggle="tooltip" data-placement="top" title="Polygon">
+                    <i class="fab fa-gg"></i>
+                    <!-- Polygon -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="polygon-fill" data-toggle="tooltip" data-placement="top" title="Filled polygon">
+                    <i class="fab fa-gg-circle"></i>
+                    <!-- Polygon-fill -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="bucket" data-toggle="tooltip" data-placement="top" title="Bucket">
+                    <i class="fab fa-bitbucket"></i>
+                    <!-- Bucket -->
+                  </span>
+                  <span class="btn btn-outline-primary tools mx-2" id="eyedropper" data-toggle="tooltip" data-placement="top" title="Eyedropper">
+                    <i class="fas fa-eye-dropper"></i>
+                    <!-- Eyedropper -->
+                  </span>
+                </div>
+                <div class="row py-1">
+                  <span class="btn btn-outline-danger tools mx-2" id="brush-type1" data-toggle="tooltip" data-placement="top" title="Brush 1">
+                    <i class="fab fa-bitbucket"></i>
+                    <!-- Brush 1 -->
+                  </span>
+                  <span class="btn btn-outline-danger tools mx-2" id="brush-type2" data-toggle="tooltip" data-placement="top" title="Brush 2">
+                    <i class="fas fa-eye-dropper"></i>
+                    <!-- Brush 2 -->
+                  </span>
+                </div>
+              </div>
             </div>
+          </div>
 
-            <form action="">
-              <div class="py-2">
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Add image</h5>
+                <div class="row py-1">
+                  <div class="input-group">
+                    <div class="custom-file">
+                      <input type="file" accept="image/*" class="custom-file-input mx-2 pointer" id="dr-img">`
+                      <label class="custom-file-label" for="dr-img">`Select image</label>
+                    </div>
+                    <span class="btn btn-outline-primary tools mx-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
+                      <i class="fas fa-image"></i>
+                      <!-- Draw with image -->
+                    </span>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">Color</h5>
+                <div class="btn-group py-1">
+                  <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
+                  <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
+                  <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
+                </div>
                 <input class="col-picker" type='text' id="custom" />
               </div>
-              <div>Blur
-                <input type="number" name="" id="dw-blur-adj" value="0">px</div>
-              <div>Brightness
-                <span id="dw-brightness-dsply">100</span>%
-                <input type="range" name="" id="dw-brightness-adj" min="0" max="100" value="100">
-              </div>
-              <div>Contrast
-                <span id="dw-contrast-dsply">100</span>%
-                <input type="range" name="" id="dw-contrast-adj" min="0" max="100" value="100">
-              </div>
-              <div>Greyscale
-                <span id="dw-grayscale-dsply">0</span>%
-                <input type="range" name="" id="dw-grayscale-adj" min="0" max="100" value="0">
-              </div>
-              <div>Hue-rotate
-                <span id="dw-huerotate-dsply">0</span> deg
-                <input type="range" name="" id="dw-huerotate-adj" min="0" max="360" value="0">
-              </div>
-              <div>Invert
-                <span id="dw-invert-dsply">0</span>%
-                <input type="range" name="" id="dw-invert-adj" min="0" max="100" value="0">
-              </div>
-              <div>Opacity
-                <span id="dw-opacity-dsply">100</span>%
-                <input type="range" name="" id="dw-opacity-adj" min="0" max="100" value="100">
-              </div>
-              <div>Hue-rotate
-                <span id="dw-saturate-dsply">100</span>%
-                <input type="range" name="" id="dw-saturate-adj" min="0" max="100" value="100">
-              </div>
-              <div>Sepia
-                <span id="dw-sepia-dsply">0</span>%
-                <input type="range" name="" id="dw-sepia-adj" min="0" max="100" value="0">
-              </div>
-              <div>Dropshadow
-                <input type="number" name="offset-x" id="offset-x" value="0">px
-                <input type="number" name="offset-y" id="offset-y" value="0">px
-                <input type="number" name="blur-radius" id="dps-blur-radius" value="0">px
-                <input type="text" name="color" id="dps-color" value="black">: color
-              </div>
-              <input type="reset" value="Reset">
-            </form>
-
+            </div>
           </div>
-        </div>
+
+          <div class="col-12 py-1">
+            <div class="card">
+              <div class="card-body">
+                <div class="float-right">
+                  <input type="reset" class="btn btn-sm btn-outline-danger" value="Clear filters">
+                </div>
+                <h5 class="card-title">Filters</h5>
+                <form>
+                  <div class="form-row">
+                    <div class="col">
+                      Blur:
+                      <span id="dw-blur-dsply">0</span>px
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-blur-adj" min="0" max="20" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Brightness:
+                      <span id="dw-brightness-dsply">100</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-brightness-adj" min="0" max="100" value="100">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Contrast:
+                      <span id="dw-contrast-dsply">100</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-contrast-adj" min="0" max="100" value="100">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Greyscale:
+                      <span id="dw-grayscale-dsply">0</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-grayscale-adj" min="0" max="100" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Hue-rotate:
+                      <span id="dw-huerotate-dsply">0</span> deg
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-huerotate-adj" min="0" max="360" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Invert:
+                      <span id="dw-invert-dsply">0</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-invert-adj" min="0" max="100" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Opacity:
+                      <span id="dw-opacity-dsply">100</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-opacity-adj" min="0" max="100" value="100">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Saturate:
+                      <span id="dw-saturate-dsply">100</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-saturate-adj" min="0" max="100" value="100">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Sepia:
+                      <span id="dw-sepia-dsply">0</span>%
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="" id="dw-sepia-adj" min="0" max="100" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col">
+                      Dropshadow:
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col offset-1">
+                      X-axis:
+                      <span id="dps-offset-x-dsply">0</span>px
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="offset-x" id="dps-offset-x-adj" min="0" max="50" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col offset-1">
+                      Y-axis:
+                      <span id="dps-offset-y-dsply">0</span>px
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="offset-y" id="dps-offset-y-adj" min="0" max="50" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col offset-1">
+                      Blur:
+                      <span id="dps-blur-radius-dsply">0</span>px
+                    </div>
+                    <div class="col">
+                      <input class="pointer" type="range" name="blur-radius" id="dps-blur-radius-adj" min="0" max="20" value="0">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="col offset-1">
+                      Color:
+                    </div>
+                    <div class="col">
+                      <input type="text" name="color" id="dps-color" value="black">
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
       </nav>
 
-      <main role="main" class="col-6 col-sm-10 pt-3 px-4">
+      <main role="main" class="col-sm-9 pt-3 px-4">
         <div class="row d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 class="h2">Draw something lah</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
-            <span class="btn btn-danger mr-2" id="reset">
+            <span class="btn btn-danger mx-2" id="reset">
               <i class="fas fa-sync-alt"></i>
               Reset
             </span>
-            <div class="btn-group mr-2">
-              <!-- <button class="btn btn-sm btn-outline-secondary" id="share">
-                <i class="fas fa-share"></i>
-                Share
-              </button> -->
-              <a class="" href="" id="save" download="mypainting.jpg">
-                <button class="btn btn-outline-secondary" id="save-as">
-                  <i class="fas fa-save"></i>
-                  Save
-                </button>
-              </a>
-              <span class="btn  mr-2">
-                <i class="fas"></i>
-                Image ext:
-                <select name="" id="img-option">
-                  <option value="jpg">jpg</option>
-                  <option value="png">png</option>
-                </select>
-              </span>
+            <div class="input-group mr-2">
+              <select class="custom-select" id="img-option" required>
+                <option value="jpg">Format: JPG</option>
+                <option value="png">Format: PNG</option>
+              </select>
+              <div class="input-group-append">
+                <a href="" id="save" download="mypainting.jpg">
+                  <button class="btn btn-outline-secondary" id="save-as">
+                    <i class="fas fa-save"></i>
+                    Save
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -226,147 +325,147 @@
           <canvas id="canvas-draft" class="canvas"></canvas>
         </div>
       </main>
-    </div>
-    <!-- <div class="" style="border: 1px solid green">
+      </div>
+      <!-- <div class="" style="border: 1px solid green">
     </div> -->
-  </div>
+    </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
-  <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
-    crossorigin="anonymous"></script>
-  <script type='text/javascript' src="./scripts/canvas-common.js"></script>
-  <script type="text/javascript" src="./scripts/spectrum.js"></script>
-  <script type='text/javascript' src="./scripts/brush-size.js"></script>
-  <script type='text/javascript' src="./scripts/pencil.js"></script>
-  <script type='text/javascript' src="./scripts/eraser.js"></script>
-  <script type='text/javascript' src="./scripts/line.js"></script>
-  <script type='text/javascript' src="./scripts/rectangle.js"></script>
-  <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
-  <script type='text/javascript' src="./scripts/circle.js"></script>
-  <script type='text/javascript' src="./scripts/circle-fill.js"></script>
-  <script type='text/javascript' src="./scripts/polygon.js"></script>
-  <script type='text/javascript' src="./scripts/polygon-fill.js"></script>
-  <script type='text/javascript' src="./scripts/eyedropper.js"></script>
-  <script type='text/javascript' src="./scripts/bucket.js"></script>
-  <script type='text/javascript' src="./scripts/brush-type1.js"></script>
-  <script type='text/javascript' src="./scripts/brush-type2.js"></script>
-  <script type='text/javascript' src="./scripts/image-storage.js"></script>
-  <script type='text/javascript' src="./scripts/image-drawer.js"></script>
-  <script type='text/javascript' src="./scripts/color-picker.js"></script>
-  <script type='text/javascript' src="./scripts/text.js"></script>
-  <script type='text/javascript' src="./scripts/canvas-filter.js"></script>
-  <script type='text/javascript' src="./scripts/reset.js"></script>
-  <script>
-    // initialize canvas
-    const canvases = document.querySelectorAll('canvas');
-    canvases.forEach((canvas) => {
-      canvas.width = (window.innerWidth * 0.8);
-      canvas.height = window.innerHeight * 0.8;
-    });
-
-    //initialize canvas on resize
-    $(window).resize(function () {
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js" integrity="sha384-SlE991lGASHoBfWbelyBPLsUlwY1GwNDJo3jSJO04KZ33K2bwfV9YBauFfnzvynJ"
+      crossorigin="anonymous"></script>
+    <script type='text/javascript' src="./scripts/canvas-common.js"></script>
+    <script type="text/javascript" src="./scripts/spectrum.js"></script>
+    <script type='text/javascript' src="./scripts/brush-size.js"></script>
+    <script type='text/javascript' src="./scripts/pencil.js"></script>
+    <script type='text/javascript' src="./scripts/eraser.js"></script>
+    <script type='text/javascript' src="./scripts/line.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle.js"></script>
+    <script type='text/javascript' src="./scripts/rectangle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/circle.js"></script>
+    <script type='text/javascript' src="./scripts/circle-fill.js"></script>
+    <script type='text/javascript' src="./scripts/polygon.js"></script>
+    <script type='text/javascript' src="./scripts/polygon-fill.js"></script>
+    <script type='text/javascript' src="./scripts/eyedropper.js"></script>
+    <script type='text/javascript' src="./scripts/bucket.js"></script>
+    <script type='text/javascript' src="./scripts/brush-type1.js"></script>
+    <script type='text/javascript' src="./scripts/brush-type2.js"></script>
+    <script type='text/javascript' src="./scripts/image-storage.js"></script>
+    <script type='text/javascript' src="./scripts/image-drawer.js"></script>
+    <script type='text/javascript' src="./scripts/color-picker.js"></script>
+    <script type='text/javascript' src="./scripts/text.js"></script>
+    <script type='text/javascript' src="./scripts/canvas-filter.js"></script>
+    <script type='text/javascript' src="./scripts/reset.js"></script>
+    <script>
+      // initialize canvas
+      const canvases = document.querySelectorAll('canvas');
       canvases.forEach((canvas) => {
-        canvas.width = (window.innerWidth * 0.8);
-        canvas.height = window.innerHeight * 0.8;
+        canvas.width = (window.innerWidth * 0.72);
+        canvas.height = window.innerHeight * 0.72;
       });
-    });
 
-    // receiving input when performing mouse activity
+      //initialize canvas on resize
+      $(window).resize(function () {
+        canvases.forEach((canvas) => {
+          canvas.width = (window.innerWidth * 0.72);
+          canvas.height = window.innerHeight * 0.72;
+        });
+      });
 
-    // Initiate canvas function when clicking corresponding button on canvas
-    currentFunction = new Pencil(contextReal, contextDraft);
-    $('span#pencil').addClass('active');
+      // receiving input when performing mouse activity
 
-    // Initialize bootstrap tooltips
-    $('[data-toggle="tooltip"]').tooltip()
-
-    $('span#pencil').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
+      // Initiate canvas function when clicking corresponding button on canvas
       currentFunction = new Pencil(contextReal, contextDraft);
-    });
-    $('span#eraser').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Eraser(contextReal, contextDraft);
-    });
-    $('span#line').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Line(contextReal, contextDraft);
-    });
-    $('span#text').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Text(contextReal, contextDraft);
-    });
-    $('span#rectangle').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Rectangle(contextReal, contextDraft);
-    });
-    $('span#rectangle-fill').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new RectangleFill(contextReal, contextDraft);
-    });
-    $('span#circle').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Circle(contextReal, contextDraft);
-    });
-    $('span#circle-fill').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new CircleFill(contextReal, contextDraft);
-    });
-    $('span#polygon').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Polygon(contextReal, contextDraft);
-    });
-    $('span#polygon-fill').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new PolygonFill(contextReal, contextDraft);
-    });
-    $('#img-fill').click(() => {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new ImageFill(contextReal, contextDraft, deImage);
-    });
-    $('#bucket').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Bucket(contextReal, contextDraft);
-    });
-    $('#eyedropper').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new Eyedropper(contextReal, contextDraft);
-    });
-    $('#brush-type1').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new BrushType1(contextReal, contextDraft);
-    });
-    $('#brush-type2').on('click', function () {
-      $('.tools').removeClass('active');
-      $(this).addClass('active');
-      currentFunction = new BrushType2(contextReal, contextDraft);
-    });
-    $('#reset').on('click', function () {
-      oldFunction = currentFunction;
-      currentFunction = new Reset(contextReal, contextDraft);
-      currentFunction = oldFunction;
-    });
-  </script>
+      $('span#pencil').addClass('active');
+
+      // Initialize bootstrap tooltips
+      $('[data-toggle="tooltip"]').tooltip()
+
+      $('span#pencil').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Pencil(contextReal, contextDraft);
+      });
+      $('span#eraser').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Eraser(contextReal, contextDraft);
+      });
+      $('span#line').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Line(contextReal, contextDraft);
+      });
+      $('span#text').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Text(contextReal, contextDraft);
+      });
+      $('span#rectangle').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Rectangle(contextReal, contextDraft);
+      });
+      $('span#rectangle-fill').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new RectangleFill(contextReal, contextDraft);
+      });
+      $('span#circle').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Circle(contextReal, contextDraft);
+      });
+      $('span#circle-fill').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new CircleFill(contextReal, contextDraft);
+      });
+      $('span#polygon').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Polygon(contextReal, contextDraft);
+      });
+      $('span#polygon-fill').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new PolygonFill(contextReal, contextDraft);
+      });
+      $('#img-fill').click(() => {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new ImageFill(contextReal, contextDraft, deImage);
+      });
+      $('#bucket').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Bucket(contextReal, contextDraft);
+      });
+      $('#eyedropper').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new Eyedropper(contextReal, contextDraft);
+      });
+      $('#brush-type1').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new BrushType1(contextReal, contextDraft);
+      });
+      $('#brush-type2').on('click', function () {
+        $('.tools').removeClass('active');
+        $(this).addClass('active');
+        currentFunction = new BrushType2(contextReal, contextDraft);
+      });
+      $('#reset').on('click', function () {
+        oldFunction = currentFunction;
+        currentFunction = new Reset(contextReal, contextDraft);
+        currentFunction = oldFunction;
+      });
+    </script>
 </body>
 
 </html>
