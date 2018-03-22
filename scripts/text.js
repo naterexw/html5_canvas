@@ -18,8 +18,8 @@ class Text extends PaintFunction {
 }
 
 function addText(e) {
-  const font = '14px sans-serif';
-  
+  const font = `${canvasSettings.brushSize}px sans-serif`;
+  console.log(font);
   function addInput(x, y) {
     const input = document.createElement('input');
     input.style.zIndex = 100;
@@ -49,6 +49,7 @@ function addText(e) {
     contextReal.textBaseline = 'top';
     contextReal.textAlign = 'left';
     contextReal.font = font;
+    contextReal.fillStyle = canvasSettings.curCol.stroke;
     contextReal.fillText(txt, e.offsetX, e.offsetY + 6);
   }
   addInput(e.clientX, e.clientY);
