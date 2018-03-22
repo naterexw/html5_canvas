@@ -20,7 +20,7 @@ class Eyedropper extends PaintFunction {
         };
         canvasSettings.curCol.fill = selectedColor;
         canvasSettings.curCol.stroke = selectedColor;
-        $("#custom").spectrum("set", selectedColor);
+        $("#stroke").spectrum("set", selectedColor);
     }
 
     onMouseLeave() { }
