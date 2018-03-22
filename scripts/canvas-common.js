@@ -19,8 +19,8 @@ const canvasSettings = {
   brushSize: 8,
   joint: 'round',
   curCol: {
-    stroke: '#000000',
-    fill: '#000000',
+    stroke: '#ff0000',
+    fill: '#00ff00',
     bgc: '#FFFFFF',
   },
   txt: {
