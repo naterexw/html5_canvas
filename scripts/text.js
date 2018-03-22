@@ -23,11 +23,10 @@ function addText(e) {
   function addInput(x, y) {
     const input = document.createElement('input');
     input.type = 'text';
-    // input.placeholder = 'Press enter when complete';
-    input.style.outline = 'none';
+    input.placeholder = 'Input text and press enter when complete';
     input.style.background = 'transparent';
     input.style.border = 'transparent';
-    input.style.width = `${300}px`;
+    input.style.width = `${350}px`;
     input.style.position = 'fixed';
     input.style.left = `${x}px`;
     input.style.top = `${y}px`;
@@ -39,7 +38,7 @@ function addText(e) {
 
   function handleEnter(e) {
     const keyCode = e.keyCode;
-    if (keyCode === 13) {
+    if (keyCode === 13) { //<<<---- add here, keycode for esc key is 27
       drawText(this.value, parseInt(this.style.left, 10), parseInt(this.style.top, 10));
       document.body.removeChild(this);
       hasInput = false;
