@@ -10,8 +10,8 @@ class Rectangle extends PaintFunction {
     this.contextDraft.lineWidth = style.brushSize;
     this.contextReal.strokeStyle = style.curCol.stroke;
     this.contextReal.lineWidth = style.brushSize;
-    this.contextDraft.shadowBlur = 'none';
-    this.contextReal.shadowBlur = 'none';
+    this.contextDraft.shadowBlur = 0;
+    this.contextReal.shadowBlur = 0;
     this.origX = coord[0];
     this.origY = coord[1];
   }

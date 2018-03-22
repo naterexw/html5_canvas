@@ -12,8 +12,8 @@ class PolygonFill extends PaintFunction {
       this.contextReal.fillStyle = style.curCol.fill;
       this.contextReal.lineWidth = style.brushSize;
       this.contextReal.lineJoin = style.joint;
-      this.contextReal.shadowBlur = 'none';
-      this.contextDraft.shadowBlur = 'none';
+      this.contextReal.shadowBlur = 0;
+      this.contextDraft.shadowBlur = 0;
       this.contextDraft.strokeStyle = style.curCol.stroke;
       this.contextDraft.fillStyle = style.curCol.fill;
       this.contextDraft.lineWidth = style.brushSize;
