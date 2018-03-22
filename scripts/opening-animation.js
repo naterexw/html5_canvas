@@ -1,27 +1,32 @@
+// let ballCounter = 0;
+// let maxCounter = 500000000;
+
+
+let animationStylePicker = {
+    shades:["#C70039","#FF5733","#FFC305"],
+    r:[1.5,3,5],
+    ballCounter: 0,
+    maxCounter: 500000000
+}
+
+
 $(document).ready(() => {
+    $(".navbar").click(()=>$("#animation, #animation-drawing").toggle());
+    
     $("#animation").width(window.innerWidth);
     $("#animation").height(window.innerHeight);
-
-    $("#animation").hide();
-
-    // centerText("Canvas",contextAnimation, canvasAnimation);
     
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    // looping();
-    
+    // $("#animation").hide();
+
+    centerText("Canvas",contextAnimationDrawing, canvasAnimationDrawing);
+    looping();
+
+        
+    // parallelFx(looping(), 50);
 })
 
 
 
-let ballCounter = 0;
-let maxCounter = 5000000000;
 
 class Ball {
     constructor(coord, radius, color) {
@@ -41,39 +46,44 @@ class Ball {
 }
 
 
+function parallelFx(callback, howManyTimes){
+    let arrOfFx=[];
+    for(let i = 0; i< howManyTimes; i++){
+        arrOfFx.push(callback());
+    }
+}
+
 function randInclusive(min, max) {
     let num = Math.floor(Math.random() * (max - min + 1)) + min;
     return num;
 }
 
 function looping() {
-    if (ballCounter < maxCounter) {
+    if (animationStylePicker.ballCounter < animationStylePicker.maxCounter) {
         // Create random coordinates
         let coordinate = [randInclusive(0, $("#animation").width()), randInclusive(0, $("#animation").height())];
 
-        if (checkPix(contextAnimation,coordinate[0],coordinate[1])){
-            let ball = new Ball(coordinate, 2, "black");
+        if (checkPix(contextAnimationDrawing,coordinate[0],coordinate[1])){
+            let ball = new Ball(coordinate, animationStylePicker.r[randInclusive(0,animationStylePicker.r.length)],animationStylePicker.shades[randInclusive(0,animationStylePicker.shades.length)] );
         // Actually draw that ball
         ball.draw(contextAnimation);
-        ballCounter++;
-        
+        animationStylePicker.ballCounter++;
         }
         // Create the ball with coord, radius and color
-        setTimeout(looping,0.5);
+        setTimeout(looping,1);
     }
+    console.log(animationStylePicker.ballCounter);
 
 }
 
 function centerText(centxt, context, canvas){
     context.fillStyle = "rgba(254, 254, 254, 1)";
-    context.font = '120px serif';
+    context.font = '400px serif';
     context.textAlign = 'center';
-    context.fillText(centxt, canvas.width/2, canvas.height/2);
+    context.fillText(centxt, canvas.width/2, (canvas.height/2)+100);
 }
 
 function checkPix(context, _x ,_y){
-    // Take context and check the pixel to see if it is trasparent
     let pixelData = context.getImageData(_x, _y,1,1).data;
-    // console.table([pixelData[0],pixelData[1],pixelData[2],pixelData[3]]);
     return ((pixelData[0] == 0) && (pixelData[1] == 0) && (pixelData[2] == 0) && (pixelData[3] == 0));
 }

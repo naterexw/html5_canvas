@@ -8,6 +8,12 @@
     left:0px;
     right:0px */
 }
+#animation-drawing{
+  z-index: 10;
+}
+#animation{
+  z-index: 9;
+}
 
 #canvas-indicator{
   z-index: 1;
@@ -16,13 +22,13 @@
   z-index: 0;
 }
 #canvas-draft {
-  z-index: 3;
+  z-index: 5;
   cursor: pointer;
   background-color: transparent;
   border: 1px blue dotted;
 }
 #canvas-real {
-  z-index: 2;
+  z-index: 4;
   border: 1px black dotted;
 }
 

@@ -10,6 +10,8 @@ const contextRuler = canvasRuler.getContext('2d');
 
 const canvasAnimation = document.getElementById('animation');
 const contextAnimation = canvasAnimation.getContext('2d');
+const canvasAnimationDrawing = document.getElementById('animation-drawing');
+const contextAnimationDrawing = canvasAnimationDrawing.getContext('2d');
 
 let currentFunction;
 let dragging = false;
