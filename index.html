@@ -29,27 +29,19 @@
     <div class="row d-flex justify-content-between ">
       <nav class="col-sm-3 bg-light sidebar-sticky">
         <div class="row ">
-
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <div class="btn-group btn-group-toggle mr-2" data-toggle="buttons" id="brushSize">
-                  <label class="btn btn-sm btn-outline-primary">
-                    <input type="radio" name="options" id="brushSize-xs" autocomplete="off" checked>
-                    <i class="fas fa-circle fa-sm xxs align-middle"></i>
-                  </label>
-                  <label class="btn btn-sm btn-outline-primary">
-                    <input type="radio" name="options" id="brushSize-sm" autocomplete="off">
-                    <i class="fas fa-circle fa-sm align-middle"></i>
-                  </label>
-                  <label class="btn btn-sm btn-outline-primary active">
-                    <input type="radio" name="options" id="brushSize-lg" autocomplete="off">
-                    <i class="fas fa-circle fa-lg align-middle"></i>
-                  </label>
-                  <label class="btn btn-sm btn-outline-primary">
-                    <input type="radio" name="options" id="brushSize-2x" autocomplete="off">
-                    <i class="fas fa-circle fa-2x align-middle"></i>
-                  </label>
+                <div class="row align-items-center">
+                  <div class="col">
+                    Brush size:
+                    <span id="brush-size-dsply">
+                    </span>
+                    <input class="pointer" type="range" id="brush-size-adj" step="2" min="4" max="30" value="8">
+                  </div>
+                  <div class="col">
+                    <div id="brushSize" class="mx-auto"></div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -386,14 +378,14 @@
       const canvases = document.querySelectorAll('canvas');
       canvases.forEach((canvas) => {
         canvas.width = (window.innerWidth * 0.72);
-        canvas.height = window.innerHeight * 0.72;
+        canvas.height = (window.innerHeight * 0.8);
       });
 
       //initialize canvas on resize
       $(window).resize(function () {
         canvases.forEach((canvas) => {
           canvas.width = (window.innerWidth * 0.72);
-          canvas.height = window.innerHeight * 0.72;
+          canvas.height = (window.innerHeight * 0.8);
         });
       });
 

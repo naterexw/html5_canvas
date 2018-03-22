@@ -63,10 +63,13 @@
   grid-column: 1/11;
 }
 
-.xxs {
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
+#brushSize {
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  height: 10px; /*Default values*/
+  width: 10px; /*Default values*/
 }
+
 .sidebar-sticky {
   position: -webkit-sticky;
   position: sticky;
