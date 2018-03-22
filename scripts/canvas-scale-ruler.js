@@ -1,6 +1,9 @@
-
-$(document).ready(()=>{
-    $("#canvas-indicator").hide();
+$("#canvas-indicator").hide();
+$("#focus").click(()=>$("#canvas-indicator").toggle())
+$(".canvas").on('mousemove', function(e){
+    const locOfMouse = [e.offsetX, e.offsetY];
+    console.log(`${locOfMouse[0]},${locOfMouse[1]}`);
+    drawFocus(canvasIndicator, contextIndicator,locOfMouse);
 })
 
 function drawFocus (canvas,context, xyloc){
@@ -29,11 +32,7 @@ function drawFocus (canvas,context, xyloc){
     context.stroke();
 }
 
-$(".canvas").on('mousemove', function(e){
-    const locOfMouse = [e.offsetX, e.offsetY];
-    console.log(`${locOfMouse[0]},${locOfMouse[1]}`);
-    drawFocus(canvasIndicator, contextIndicator,locOfMouse);
-})
+
 
 
 
