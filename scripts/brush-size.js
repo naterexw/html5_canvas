@@ -1,11 +1,16 @@
-$("#brushSize :input").change(function () {
-    if (this.id == 'brushSize-xs') {
-        canvasSettings.brushSize = 1;
-    } else if (this.id == 'brushSize-sm') {
-        canvasSettings.brushSize = 4;
-    } else if (this.id == 'brushSize-lg') {
-        canvasSettings.brushSize = 8;
-    } else if (this.id == 'brushSize-2x') {
-        canvasSettings.brushSize = 12;
-    }
+// Brush size
+function checkBrushSize() {
+  canvasSettings.brushSize = $('#brush-size-adj').val();
+  $('#brush-size-dsply').html(canvasSettings.brushSize);
+  $('#brushSize')
+    .css('width', canvasSettings.brushSize)
+    .css('height', canvasSettings.brushSize);
+}
+
+$('input[type="range"]').on('mousemove', () => {
+  if (mousedown) {
+    checkBrushSize();
+  }
 });
+
+$(window).on('keyup', () => checkBrushSize());

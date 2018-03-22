@@ -5,45 +5,42 @@ class Bucket extends PaintFunction {
   constructor(context) {
     super();
     this.context = context;
+    
   }
 
   onMouseDown(coord, event) {
-        var startX = event.clientX - 10;
-        var startY = event.clientY - 10;
-        let startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
-        if (startColor[0] == hexToR(canvasSettings.curCol.fill) && startColor[1] == hexToG(canvasSettings.curCol.fill)
-            && startColor[2] == hexToB(canvasSettings.curCol.fill)) {
-            return;
-        }
-            floodFill(coord[0], coord[1], {
-                r: hexToR(canvasSettings.curCol.fill),
-                g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
-            });
-            saveImage(canvasReal, storeImg);
-        ;
+    let startX = event.clientX - 10;
+    let startY = event.clientY - 10;
+
+    const startColor = this.context.getImageData(coord[0], coord[1], 1, 1).data;
+    if (
+      startColor[0] == hexToR(canvasSettings.curCol.fill) &&
+      startColor[1] == hexToG(canvasSettings.curCol.fill) &&
+      startColor[2] == hexToB(canvasSettings.curCol.fill)
+    ) {
+      return;
     }
     floodFill(coord[0], coord[1], {
       r: hexToR(canvasSettings.curCol.fill),
-      g: hexToG(canvasSettings.curCol.fill),
-      b: hexToB(canvasSettings.curCol.fill),
+      g: hexToG(canvasSettings.curCol.fill), b: hexToB(canvasSettings.curCol.fill)
     });
-    saveImage(canvasReal);
+    saveImage(canvasReal, storeImg);
   }
-  onDragging() {}
-  onMouseMove() {}
-  onMouseUp() {}
-  onMouseLeave() {}
-  onMouseEnter() {}
+  onDragging() { }
+  onMouseMove() { }
+  onMouseUp() { }
+  onMouseLeave() { }
+  onMouseEnter() { }
 }
 
 const canvas = canvasReal;
 const ctx = contextReal;
 
-const getPixelPos = function(x, y) {
+const getPixelPos = function (x, y) {
   return (y * canvas.width + x) * 4;
 };
 
-const matchStartColor = function(data, pos, startColor) {
+const matchStartColor = function (data, pos, startColor) {
   return (
     data[pos] === startColor.r &&
     data[pos + 1] === startColor.g &&
@@ -52,14 +49,14 @@ const matchStartColor = function(data, pos, startColor) {
   );
 };
 
-const colorPixel = function(data, pos, color) {
+const colorPixel = function (data, pos, color) {
   data[pos] = color.r || 0;
   data[pos + 1] = color.g || 0;
   data[pos + 2] = color.b || 0;
   data[pos + 3] = color.hasOwnProperty('a') ? color.a : 255;
 };
 
-var floodFill = function(startX, startY, fillColor) {
+var floodFill = function (startX, startY, fillColor) {
   const dstImg = ctx.getImageData(0, 0, canvas.width, canvas.height);
   const dstData = dstImg.data;
   const startPos = getPixelPos(startX, startY);
@@ -110,15 +107,7 @@ var floodFill = function(startX, startY, fillColor) {
   ctx.putImageData(dstImg, 0, 0);
 };
 
-function hexToR(h) {
-  return parseInt(cutHex(h).substring(0, 2), 16);
-}
-function hexToG(h) {
-  return parseInt(cutHex(h).substring(2, 4), 16);
-}
-function hexToB(h) {
-  return parseInt(cutHex(h).substring(4, 6), 16);
-}
-function cutHex(h) {
-  return h.charAt(0) == '#' ? h.substring(1, 7) : h;
-}
+function hexToR(h) {return parseInt(cutHex(h).substring(0, 2), 16);}
+function hexToG(h) {return parseInt(cutHex(h).substring(2, 4), 16);}
+function hexToB(h) {return parseInt(cutHex(h).substring(4, 6), 16);}
+function cutHex(h) {return (h.charAt(0)=="#") ? h.substring(1,7):h}

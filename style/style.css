@@ -1,24 +1,18 @@
 .canvas {
-  /* border: 1px black dotted; */
   position: absolute;
-  /* background-color: transparent; */
-  /* margin: 0; */
-  /* top:0px;
-    bottom:0px;
-    left:0px;
-    right:0px */
 }
 #animation-drawing{
-  z-index: 10;
+  z-index: 49;
 }
 #animation{
-  z-index: 9;
+  z-index: 50;
 }
 
-#canvas-indicator{
+
+#canvas-indicator {
   z-index: 1;
 }
-#canvas-ruler{
+#canvas-ruler {
   z-index: 0;
 }
 #canvas-draft {
@@ -30,6 +24,9 @@
 #canvas-real {
   z-index: 4;
   border: 1px black dotted;
+}
+.pointer {
+  cursor: pointer;
 }
 
 .position-relative {
@@ -58,10 +55,13 @@
   grid-column: 1/11;
 }
 
-.xxs {
-  transform: scale(0.5);
-  -webkit-transform: scale(0.5);
+#brushSize {
+  border-radius: 50%;
+  background: rgb(0, 0, 0);
+  height: 10px; /*Default values*/
+  width: 10px; /*Default values*/
 }
+
 .sidebar-sticky {
   position: -webkit-sticky;
   position: sticky;
@@ -70,13 +70,4 @@
   padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
-
-
-#animation{
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  z-index: 1000;
 }

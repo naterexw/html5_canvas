@@ -17,21 +17,19 @@ let currentFunction;
 let dragging = false;
 
 // Styling setting of canvas, applicable to both draft and real canvas(s)
-let canvasSettings = {
-  brushSize: 1,
-  joint: "round",
+const canvasSettings = {
+  brushSize: 8,
+  joint: 'round',
   curCol: {
-      stroke: "#000000",
-      fill: "#000000",
-      bgc: "#FFFFFF"
+    stroke: '#ff0000',
+    fill: '#00ff00',
+    bgc: '#FFFFFF',
   },
   txt: {
-      size: "48px",
-      fontfamily: "serif"
-  }
-}
-
-// receiving input when performing mouse activity
+    size: '48px',
+    fontfamily: 'serif',
+  },
+};
 
 $('#canvas-draft').mousedown(e => {
   const mouseLoc = [e.offsetX, e.offsetY];

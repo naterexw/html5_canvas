@@ -49,7 +49,7 @@ class Ball {
 // Drawing desirable text into the destinated canvas 
 function centerText(centxt, context, canvas) {
     context.fillStyle = "rgba(254, 254, 254, 1)";
-    context.font = '400px serif';
+    context.font = '300px serif';
     context.textAlign = 'center';
     context.fillText(centxt, canvas.width / 2, (canvas.height / 2) + 100);
 }

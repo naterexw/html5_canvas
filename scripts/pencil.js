@@ -9,6 +9,7 @@ class Pencil extends PaintFunction {
     this.context.lineJoin = style.joint;
     this.context.lineWidth = style.brushSize;
     this.context.lineCap = 'round';
+    this.context.shadowBlur = 0;
     this.context.beginPath();
     this.context.moveTo(coord[0], coord[1]);
     this.draw(coord[0], coord[1]);
@@ -17,14 +18,14 @@ class Pencil extends PaintFunction {
     this.draw(coord[0], coord[1]);
   }
 
-  onMouseMove() {}
+  onMouseMove() { }
 
   onMouseUp() {
     saveImage(canvasReal, storeImg);
   }
 
-  onMouseLeave() {}
-  onMouseEnter() {}
+  onMouseLeave() { }
+  onMouseEnter() { }
 
   draw(x, y) {
     this.context.lineTo(x, y);
