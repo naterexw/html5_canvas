@@ -11,7 +11,8 @@ class Polygon extends PaintFunction {
       this.contextDraft.strokeStyle = style.curCol.stroke;
       this.contextDraft.lineJoin = style.joint;
       this.contextDraft.lineWidth = style.brushSize;
-
+      this.contextDraft.shadowBlur = 0;
+      this.contextReal.shadowBlur = 0;
       this.contextReal.strokeStyle = style.curCol.stroke;
       this.contextReal.lineJoin = style.joint;
       this.contextReal.lineWidth = style.brushSize;

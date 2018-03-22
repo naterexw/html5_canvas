@@ -1,6 +1,7 @@
 // Color picker
 
 $('#fill').spectrum({
+  color: canvasSettings.curCol.fill,
   flat: false,
   showButtons: false,
   showInitial: true,
@@ -19,6 +20,7 @@ $('#fill').spectrum({
 });
 
 $('#stroke').spectrum({
+  color: canvasSettings.curCol.stroke,
   flat: false,
   showButtons: false,
   showInitial: true,
@@ -36,6 +38,7 @@ $('#stroke').spectrum({
 });
 
 $('#bgc').spectrum({
+  color: canvasSettings.curCol.bgc,
   flat: false,
   showButtons: false,
   showInitial: true,
