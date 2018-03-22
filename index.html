@@ -134,7 +134,7 @@
                   <div class="input-group">
                     <div class="custom-file">
                       <input type="file" accept="image/*" class="custom-file-input mx-2 pointer" id="dr-img">`
-                      <label class="custom-file-label" for="dr-img">`Select image</label>
+                      <label class="custom-file-label" for="dr-img">Select image</label>
                     </div>
                     <span class="btn btn-outline-primary tools mx-2" id="img-fill" data-toggle="tooltip" data-placement="top" title="Draw Image">
                       <i class="fas fa-image"></i>
@@ -165,7 +165,7 @@
             <div class="card">
               <div class="card-body">
                 <div class="float-right">
-                  <input type="reset" class="btn btn-sm btn-outline-danger" value="Clear filters">
+                  <input id="slider-reset" type="reset" class="btn btn-sm btn-outline-danger" value="Clear filters">
                 </div>
                 <h5 class="card-title">Filters</h5>
                 <form>
@@ -465,6 +465,7 @@
         currentFunction = new Reset(contextReal, contextDraft);
         currentFunction = oldFunction;
       });
+
     </script>
 </body>
 
