@@ -3,23 +3,31 @@ const contextReal = canvasReal.getContext('2d');
 const canvasDraft = document.getElementById('canvas-draft');
 const contextDraft = canvasDraft.getContext('2d');
 
+const canvasIndicator = document.getElementById('canvas-indicator');
+const contextIndicator = canvasIndicator.getContext('2d');
+const canvasRuler = document.getElementById('canvas-ruler');
+const contextRuler = canvasRuler.getContext('2d');
+
+const canvasAnimation = document.getElementById('canvas-animation');
+const contextAnimation = canvasAnimation.getContext('2d');
+
 let currentFunction;
 let dragging = false;
 
 // Styling setting of canvas, applicable to both draft and real canvas(s)
-let canvasSettings = {
+const canvasSettings = {
   brushSize: 1,
-  joint: "round",
+  joint: 'round',
   curCol: {
-      stroke: "#000000",
-      fill: "#000000",
-      bgc: "#FFFFFF"
+    stroke: '#000000',
+    fill: '#000000',
+    bgc: '#FFFFFF',
   },
   txt: {
-      size: "48px",
-      fontfamily: "serif"
-  }
-}
+    size: '48px',
+    fontfamily: 'serif',
+  },
+};
 
 // receiving input when performing mouse activity
 

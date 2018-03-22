@@ -1,14 +1,72 @@
 // Color picker
 
-$('#custom').spectrum({
+$('#fill').spectrum({
   flat: false,
+  showButtons: false,
+  showInitial: true,
   showInput: true,
+  allowEmpty: true,
+  showPalette: true,
+  palette: [],
+  maxSelectionSize: 5,
+  hideAfterPaletteSelect: true,
+  showAlpha: true,
 
   change: color => {
-    let col = color.toHexString();  
+    const col = color.toHexString();
     canvasSettings.curCol.fill = col;
-    canvasSettings.curCol.stroke = col;
-    console.log(col);
-    $('#fill').css('background-color', col);
   },
 });
+
+$('#stroke').spectrum({
+  flat: false,
+  showButtons: false,
+  showInitial: true,
+  showInput: true,
+  allowEmpty: true,
+  showPalette: true,
+  palette: [],
+  maxSelectionSize: 5,
+  hideAfterPaletteSelect: true,
+  showAlpha: true,
+  change: color => {
+    const col = color.toHexString();
+    canvasSettings.curCol.stroke = col;
+  },
+});
+
+$('#bgc').spectrum({
+  flat: false,
+  showButtons: false,
+  showInitial: true,
+  showInput: true,
+  allowEmpty: true,
+  showPalette: true,
+  palette: [],
+  maxSelectionSize: 5,
+  hideAfterPaletteSelect: true,
+  showAlpha: true,
+  change: color => {
+    const col = color.toHexString();
+    canvasSettings.curCol.bgc = col;
+    $('#canvas-real').css('background-color', col);
+  },
+});
+
+// $('#dps-color').spectrum({
+//   flat: false,
+//   showButtons: false,
+//   showInitial: true,
+//   showInput: true,
+//   allowEmpty: true,
+//   showPalette: true,
+//   palette: [],
+//   maxSelectionSize: 5,
+//   hideAfterPaletteSelect: true,
+//   showAlpha: true,
+//   change: color => {
+//     let col = color.toHexString();
+//     // canvasSettings.curCol.bgc = col;
+//     $('#dps-color').val(col);
+//   },
+// });

@@ -142,7 +142,6 @@
                     </span>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
@@ -156,7 +155,7 @@
                   <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
                   <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
                 </div>
-                <input class="col-picker" type='text' id="custom" />
+                <input class="col-picker" type="text" id="custom" />
               </div>
             </div>
           </div>
@@ -304,7 +303,11 @@
         <div class="row d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
           <h1 class="h2">Draw something lah</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
-            <span class="btn btn-danger mx-2" id="reset">
+            <span class="btn btn-info mr-2" id="focus">
+              <i class="fas fa-bullseye"></i>
+              Alignment Focus
+            </span>
+            <span class="btn btn-danger mr-2" id="reset">
               <i class="fas fa-sync-alt"></i>
               Reset
             </span>
@@ -325,8 +328,11 @@
           </div>
         </div>
         <div class="row col">
+          <canvas id="canvas-animation" class="canvas"></canvas>
           <canvas id="canvas-real" class="canvas"></canvas>
           <canvas id="canvas-draft" class="canvas"></canvas>
+          <canvas id="canvas-indicator" class="canvas"></canvas>
+          <canvas id="canvas-ruler" class="canvas"></canvas>
         </div>
       </main>
       </div>

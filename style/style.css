@@ -1,18 +1,36 @@
 .canvas {
   /* border: 1px black dotted; */
   position: absolute;
+  /* background-color: transparent; */
   /* margin: 0; */
   /* top:0px;
     bottom:0px;
     left:0px;
     right:0px */
 }
+
+#canvas-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  /* background-color: white; */
+  z-index: -1;
+}
+#canvas-indicator {
+  z-index: 1;
+}
+#canvas-ruler {
+  z-index: 0;
+}
 #canvas-draft {
+  z-index: 3;
   cursor: pointer;
   background-color: transparent;
   border: 1px blue dotted;
 }
 #canvas-real {
+  z-index: 2;
   border: 1px black dotted;
 }
 .pointer {
