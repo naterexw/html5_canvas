@@ -16,7 +16,7 @@
 </head>
 
 <body>
-  <canvas class = "canvas" id = "animation"></canvas>
+  <canvas class="canvas" id="animation"></canvas>
   <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0">
     <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Canvas app by Nate, Ivan, & Andrew</a>
     <ul class="navbar-nav px-3">
@@ -136,15 +136,26 @@
           </div>
           <div class="col-12 py-2">
             <div class="btn-group py-2">
-              <button class="btn btn-sm btn-outline-secondary" value="bgc">BG color</button>
-              <button class="btn btn-sm btn-outline-secondary" value="fill">Fill</button>
-              <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke</button>
+              <button class="btn btn-sm btn-outline-secondary" value="stroke">Stroke
+                <input class="col-picker" type='color' id="stroke" />
+              </button>
+
+            </div>
+            <div class="btn-group py-2">
+              <button class="btn btn-sm btn-outline-secondary" value="fill">Fill
+                <input class="col-picker" type='color' id="fill" />
+              </button>
+            </div>
+            <div class="btn-group py-2">
+              <button class="btn btn-sm btn-outline-secondary" value="bgc">Background
+                <input class="col-picker" type='color' id="bgc" />
+              </button>
             </div>
 
             <form action="">
-              <div class="py-2">
+              <!-- <div class="py-2">
                 <input class="col-picker" type='text' id="custom" />
-              </div>
+              </div> -->
               <div>Blur
                 <input type="number" name="" id="dw-blur-adj" value="0">px</div>
               <div>Brightness
