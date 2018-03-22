@@ -1,15 +1,28 @@
-$("#canvas-indicator").hide();
-$("#focus").click(()=>$("#canvas-indicator").toggle())
-$(".canvas").on('mousemove', function(e){
-    const locOfMouse = [e.offsetX, e.offsetY];
-    console.log(`${locOfMouse[0]},${locOfMouse[1]}`);
-    drawFocus(canvasIndicator, contextIndicator,locOfMouse);
-})
+let gridFocusDisplay = false;
+$(document).ready(()=>{
+    $("#canvas-indicator").hide();
+    $("#focus").click(()=>{
+        if (gridFocusDisplay){
+            $("#canvas-indicator").hide();
+            gridFocusDisplay = false;
+        }
+        else{
+            $("#canvas-indicator").show();
+            gridFocusDisplay = true;
+        }
+    });
+    $(".canvas").on('mousemove', function(e){
+        if(gridFocusDisplay){
+            const locOfMouse = [e.offsetX, e.offsetY];
+            drawFocus(canvasIndicator, contextIndicator, locOfMouse);
+        }
+    });
+});
 
 function drawFocus (canvas,context, xyloc){
-    console.log("draw");
+    // console.log(xyloc);
     context.clearRect(0,0, canvas.width, canvas.height);
-    context.strokeStyle = "#444444";
+    context.strokeStyle = canvasSettings.curCol.stroke;
 
     // Horizontal path
     context.beginPath();
@@ -31,8 +44,3 @@ function drawFocus (canvas,context, xyloc){
     context.closePath();
     context.stroke();
 }
-
-
-
-
-
