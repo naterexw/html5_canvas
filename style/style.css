@@ -9,10 +9,18 @@
     right:0px */
 }
 
-#canvas-indicator{
+#canvas-animation {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  /* background-color: white; */
+  z-index: -1;
+}
+#canvas-indicator {
   z-index: 1;
 }
-#canvas-ruler{
+#canvas-ruler {
   z-index: 0;
 }
 #canvas-draft {
@@ -24,6 +32,9 @@
 #canvas-real {
   z-index: 2;
   border: 1px black dotted;
+}
+.pointer {
+  cursor: pointer;
 }
 
 .position-relative {
@@ -64,13 +75,4 @@
   padding-top: 0.5rem;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-}
-
-
-#animation{
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: white;
-  z-index: 100;
 }
