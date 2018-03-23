@@ -1,11 +1,9 @@
 # Canvas app
 
 HTML5 web app used to draw graphics via scripting in JavaScript.
-[Click here to try the app](http://canvas-html5-app.surge.sh/)
+[Click here to try it out](http://canvas-html5-app.surge.sh/)
 
-## Features
-
-* [to do]
+Click the navbar for a suprise :)
 
 ## Built using:
 
