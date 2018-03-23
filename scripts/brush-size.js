@@ -1,3 +1,6 @@
+// initialize brush size display
+$('#brush-size-dsply').html(canvasSettings.brushSize);
+
 // Brush size
 function checkBrushSize() {
   canvasSettings.brushSize = $('#brush-size-adj').val();
