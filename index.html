@@ -32,7 +32,7 @@
     <div class="row d-flex justify-content-between ">
       <nav class="col-sm-3 bg-light sidebar-sticky">
         <div class="row ">
-          <div class="col-12 py-1">
+          <div class="col-12">
             <div class="card">
               <div class="card-body">
                 <div class="row align-items-center">
@@ -53,9 +53,9 @@
           <div class="col-12 py-1">
             <div class="card">
               <div class="card-body">
-                <div class="row py-1 text-center">
+                <div class="row flex-nowrap">
                   <div class="col">
-                    Stroke/Text
+                    Brush/Text
                   </div>
                   <div class="col">
                     Fill
@@ -64,7 +64,7 @@
                     Background
                   </div>
                 </div>
-                <div class="row py-1">
+                <div class="row">
                   <div class="col">
                     <input class="col-picker" type="color" id="stroke">
                   </div>
@@ -79,7 +79,7 @@
             </div>
           </div>
 
-          <div class="col-12 py-1">
+          <div class="col-12">
             <div class="card">
               <div class="card-body">
                 <div class="row py-1">
@@ -307,12 +307,14 @@
 
       <main role="main" class="col-sm-9 pt-3 px-4">
         <div class="row d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3 border-bottom">
-          <h1 class="h2">Draw something
-            <i>&nbsp;&nbsp;</i>
-            <i class="far fa-hand-point-down"></i>
+          <h1 class="h2">
+            <i>&nbsp;</i>
+            <i class="fas fa-paint-brush"></i>
+            <i>&nbsp;</i>
+            Draw something
           </h1>
           <div class="btn-toolbar mb-2 mb-md-0">
-            <span class="btn btn-outline-primary mr-2" id="focus">
+            <span class="btn btn-outline-primary mr-2" id="focus" data-toggle="button" aria-pressed="false" autocomplete="off">
               <i class="fas fa-crosshairs"></i>
               Focus pointer
             </span>
