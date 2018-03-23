@@ -15,10 +15,11 @@ let saveImage = (canvas, imgArray) => {
     newImg.onload = () => {};
     imgArray.push(newImg);
   });
+  console.log(imgArray);
 };
 
 function retriveImage(img) {
-  contextReal.clearRect(0, 0, 800, 500);
+  contextReal.clearRect(0, 0, canvasReal.width, canvasReal.height);
   console.log(img);
   contextReal.drawImage(img, 0, 0);
 }

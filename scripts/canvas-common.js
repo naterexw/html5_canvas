@@ -8,8 +8,10 @@ const contextIndicator = canvasIndicator.getContext('2d');
 const canvasRuler = document.getElementById('canvas-ruler');
 const contextRuler = canvasRuler.getContext('2d');
 
-const canvasAnimation = document.getElementById('canvas-animation');
+const canvasAnimation = document.getElementById('animation');
 const contextAnimation = canvasAnimation.getContext('2d');
+const canvasAnimationDrawing = document.getElementById('animation-drawing');
+const contextAnimationDrawing = canvasAnimationDrawing.getContext('2d');
 
 let currentFunction;
 let dragging = false;
